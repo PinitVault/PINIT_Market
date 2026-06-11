@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import {
   Database, Archive, Shield, GitCompare, Zap, TrendingUp,
   FileText, CheckCircle2, AlertTriangle, RefreshCw,
+  Eye, Download, Printer, Copy, Camera, Globe, MapPin,
+  Clock, BarChart2, AlertOctagon, Ban,
 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { useApi, formatBytes } from '../hooks/useApi';
@@ -9,6 +12,17 @@ import { getDashboardStats, deriveFileType } from '../services/dashboard.api';
 import { SkeletonCard } from '../components/ui/Skeleton';
 import { Badge, FileTypeBadge, ClassificationBadge } from '../components/ui/Badge';
 import { formatDistanceToNow } from 'date-fns';
+import axios from 'axios';
+import { API_BASE_URL } from '../config/api.config';
+
+interface ShareStats {
+  totalViews: number; uniqueRecipients: number; countriesReached: number;
+  citiesReached: number; avgViewTimeSec: number; downloads: number;
+  blockedDownloads: number; printAttempts: number; copyAttempts: number;
+  screenshotAttempts: number;
+  riskDistribution: { LOW: number; MEDIUM: number; HIGH: number; CRITICAL: number };
+  pageCompletion: null; forwardChains: null; leakIncidents: null; leakSources: null;
+}
 
 // ─── Stat card ────────────────────────────────────────────────────────────────
 
@@ -49,6 +63,17 @@ const TYPE_COLORS: Record<string, string> = {
 
 export function DashboardPage() {
   const { data: stats, loading, error, refetch } = useApi(getDashboardStats);
+  const [shareStats, setShareStats] = useState<ShareStats | null>(null);
+
+  useEffect(() => {
+    const fetch = () =>
+      axios.get(`${API_BASE_URL}/share/analytics/global`)
+        .then(({ data }) => setShareStats((data as any).stats))
+        .catch(() => {});
+    fetch();
+    const id = setInterval(fetch, 15_000);
+    return () => clearInterval(id);
+  }, []);
 
   if (error) {
     return (
@@ -295,6 +320,74 @@ export function DashboardPage() {
               <p className="text-2xs text-gray-500 mt-1">Encryption Standard</p>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* ── Smart Link Analytics ───────────────────────────────────────────── */}
+      {shareStats && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <Eye size={15} className="text-dna-400" />
+            <h2 className="text-sm font-semibold text-white">Smart Link Analytics</h2>
+            <span className="text-2xs text-gray-600 ml-1">· live · auto-refreshes every 15s</span>
+          </div>
+
+          {/* Row 1 — reach metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+            {[
+              { icon: <Eye size={14} className="text-dna-400" />,    label: 'Total Views',       value: shareStats.totalViews,        color: 'bg-dna-500/10 border-dna-500/20' },
+              { icon: <Globe size={14} className="text-cyan" />,      label: 'Unique Recipients', value: shareStats.uniqueRecipients,   color: 'bg-cyan/10 border-cyan/20' },
+              { icon: <Globe size={14} className="text-blue-400" />,  label: 'Countries',         value: shareStats.countriesReached,   color: 'bg-blue-500/10 border-blue-500/20' },
+              { icon: <MapPin size={14} className="text-purple" />,   label: 'Cities',            value: shareStats.citiesReached,      color: 'bg-purple/10 border-purple/20' },
+              { icon: <Clock size={14} className="text-amber-400" />, label: 'Avg View Time',     value: shareStats.avgViewTimeSec > 0 ? `${shareStats.avgViewTimeSec}s` : '—', color: 'bg-amber-500/10 border-amber-500/20' },
+              { icon: <Download size={14} className="text-success" />,label: 'Downloads',         value: shareStats.downloads,          color: 'bg-success/10 border-success/20' },
+            ].map(m => (
+              <div key={m.label} className={`rounded-xl border p-3 ${m.color}`}>
+                <div className="flex items-center gap-1.5 mb-1.5">{m.icon}<span className="text-2xs text-gray-500 font-medium">{m.label}</span></div>
+                <p className="text-xl font-bold text-white">{m.value}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2 — violation/security metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+            {[
+              { icon: <Ban size={14} className="text-red-400" />,        label: 'Blocked Downloads', value: shareStats.blockedDownloads,   color: 'bg-red-500/10 border-red-500/20' },
+              { icon: <Printer size={14} className="text-orange-400" />, label: 'Print Attempts',    value: shareStats.printAttempts,      color: 'bg-orange-500/10 border-orange-500/20' },
+              { icon: <Copy size={14} className="text-yellow-400" />,    label: 'Copy Attempts',     value: shareStats.copyAttempts,       color: 'bg-yellow-500/10 border-yellow-500/20' },
+              { icon: <Camera size={14} className="text-pink-400" />,    label: 'Screenshot Attempts', value: shareStats.screenshotAttempts, color: 'bg-pink-500/10 border-pink-500/20' },
+              { icon: <BarChart2 size={14} className="text-gray-400" />, label: 'Forward Chains',    value: '—',                           color: 'bg-gray-500/10 border-gray-500/20' },
+              { icon: <AlertOctagon size={14} className="text-gray-400" />, label: 'Leak Incidents', value: '—',                           color: 'bg-gray-500/10 border-gray-500/20' },
+            ].map(m => (
+              <div key={m.label} className={`rounded-xl border p-3 ${m.color}`}>
+                <div className="flex items-center gap-1.5 mb-1.5">{m.icon}<span className="text-2xs text-gray-500 font-medium">{m.label}</span></div>
+                <p className="text-xl font-bold text-white">{m.value}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Risk score distribution */}
+          {(shareStats.riskDistribution.LOW + shareStats.riskDistribution.MEDIUM + shareStats.riskDistribution.HIGH + shareStats.riskDistribution.CRITICAL) > 0 && (
+            <div className="card">
+              <div className="flex items-center gap-2 mb-3">
+                <Shield size={14} className="text-dna-400" />
+                <h3 className="text-xs font-semibold text-white">Risk Score Distribution</h3>
+              </div>
+              <div className="grid grid-cols-4 gap-3">
+                {([
+                  { key: 'LOW',      color: 'text-green-400',  bg: 'bg-green-500/15 border-green-500/30'  },
+                  { key: 'MEDIUM',   color: 'text-yellow-400', bg: 'bg-yellow-500/15 border-yellow-500/30' },
+                  { key: 'HIGH',     color: 'text-orange-400', bg: 'bg-orange-500/15 border-orange-500/30' },
+                  { key: 'CRITICAL', color: 'text-red-400',    bg: 'bg-red-500/15 border-red-500/30'       },
+                ] as const).map(({ key, color, bg }) => (
+                  <div key={key} className={`rounded-xl border p-3 text-center ${bg}`}>
+                    <p className={`text-xl font-bold ${color}`}>{shareStats.riskDistribution[key]}</p>
+                    <p className="text-2xs text-gray-500 mt-0.5 font-medium">{key}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

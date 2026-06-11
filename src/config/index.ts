@@ -72,6 +72,10 @@ export const config = {
     storageDir: path.resolve(optional('VAULT_STORAGE_DIR', './vault/encrypted')),
   },
 
+  jwt: {
+    secret: optional('JWT_SECRET', 'dev_jwt_secret_change_in_prod_min_32_chars_long!!'),
+  },
+
   rateLimit: {
     windowMs: optionalInt('RATE_LIMIT_WINDOW_MS', 15 * 60 * 1000), // 15 min
     max: optionalInt('RATE_LIMIT_MAX', 2000),

@@ -236,6 +236,7 @@ function ShareModal({ record, onClose }: { record: VaultRecord; onClose: () => v
   return (
     <Modal open title="Generate Smart Share Link" onClose={onClose} size="md">
       <div className="p-5 space-y-4">
+
         {/* File info */}
         <div className="flex items-center gap-3 p-3 bg-bg-elevated rounded-xl border border-bg-border">
           <div className="w-8 h-8 bg-success/15 rounded-lg flex items-center justify-center shrink-0">

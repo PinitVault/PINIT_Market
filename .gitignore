@@ -6,6 +6,17 @@ tmp/
 *.log
 prisma/migrations/
 
+# Vault encrypted files — never commit user data
+vault/encrypted/*.enc
+vault/encrypted/*.json
+
+# Uploaded temp files
+tmp/
+data/
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Local env overrides
+.env.local

@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Dna, Shield, Archive, FileSearch,
   GitCompare, Award, ChevronRight, Zap, Clock,
-  ShieldCheck, Activity, Microscope, Search, Radio, Ban,
+  ShieldCheck, Activity, Microscope, Search, Radio, Ban, LogOut, User,
 } from 'lucide-react';
 import { cn } from '../ui/utils';
+import { useAuth } from '../../context/AuthContext';
 
 const NAV_GROUPS = [
   {
@@ -45,6 +46,14 @@ const NAV_GROUPS = [
 ];
 
 export function Sidebar() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleLogout() {
+    await logout();
+    navigate('/login');
+  }
+
   return (
     <aside className="fixed left-0 top-0 h-screen w-60 bg-bg-surface border-r border-bg-border flex flex-col z-40 select-none">
 
@@ -97,7 +106,31 @@ export function Sidebar() {
       </nav>
 
       {/* Status footer */}
-      <div className="shrink-0 p-3 border-t border-bg-border">
+      <div className="shrink-0 p-3 border-t border-bg-border space-y-2">
+        {/* User identity */}
+        {user && (
+          <div className="rounded-xl bg-bg-elevated border border-bg-border p-3">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-6 h-6 rounded-full bg-dna-500/20 flex items-center justify-center shrink-0">
+                  <User size={11} className="text-dna-400" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-2xs text-gray-500 font-medium leading-none mb-0.5">Logged in as</p>
+                  <p className="text-xs text-dna-400 font-bold truncate mono">{(user as any).shortId ?? user.sub?.slice(0,8)}</p>
+                </div>
+              </div>
+              <button
+                onClick={handleLogout}
+                title="Sign out"
+                className="shrink-0 text-gray-500 hover:text-red-400 transition-colors"
+              >
+                <LogOut size={13} />
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="rounded-xl bg-bg-elevated border border-bg-border p-3">
           <div className="flex items-center gap-2 mb-1">
             <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse-slow" />

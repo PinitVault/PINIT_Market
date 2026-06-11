@@ -574,7 +574,7 @@ export async function getUnmaskStatus(req: Request, res: Response, next: NextFun
 // ── Privacy Masking — List all unmask requests (owner dashboard) ──────────────
 // GET /share/unmask-requests
 
-export async function listUnmaskRequests(req: Request, res: Response, next: NextFunction): Promise<void> {
+export async function listUnmaskRequests(_req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const requests = await prisma.unmaskRequest.findMany({
       orderBy: { createdAt: 'desc' },
@@ -615,5 +615,62 @@ export async function reviewUnmaskRequest(req: Request, res: Response, next: Nex
     });
 
     res.json({ success: true, status, requestId: id });
+  } catch (err) { next(err); }
+}
+
+// ── Global Share Analytics — all metrics for dashboard ────────────────────────
+// GET /share/analytics/global
+export async function getGlobalShareStats(_req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const logs = await prisma.shareAccessLog.findMany({
+      select: {
+        action: true, country: true, city: true,
+        sessionDurationSec: true, sessionId: true,
+        riskScore: true, riskLevel: true,
+        ipAddress: true, createdAt: true,
+        shareLink: { select: { dnaRecordId: true } },
+      },
+    });
+
+    const byAction = (a: string) => logs.filter(l => l.action === a).length;
+    const uniqueSet = (fn: (l: typeof logs[0]) => string | null | undefined) =>
+      new Set(logs.map(fn).filter(Boolean)).size;
+
+    const viewed   = logs.filter(l => l.action === 'VIEWED');
+    const avgViewTime = viewed.length
+      ? Math.round(viewed.reduce((s, l) => s + (l.sessionDurationSec ?? 0), 0) / viewed.length)
+      : 0;
+
+    // Risk score distribution
+    const riskDist = { LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0 };
+    for (const l of logs) {
+      const k = (l.riskLevel ?? 'LOW') as keyof typeof riskDist;
+      if (k in riskDist) riskDist[k]++;
+    }
+
+    // Unique recipients = unique (ip + sessionId) combos
+    const uniqueRecipients = new Set(logs.map(l => `${l.ipAddress}|${l.sessionId}`)).size;
+
+    res.json({
+      success: true,
+      stats: {
+        totalViews:           byAction('VIEWED'),
+        uniqueRecipients,
+        countriesReached:     uniqueSet(l => l.country),
+        citiesReached:        uniqueSet(l => l.city),
+        avgViewTimeSec:       avgViewTime,
+        downloads:            byAction('DOWNLOADED'),
+        blockedDownloads:     byAction('BLOCKED_DOWNLOAD'),
+        printAttempts:        byAction('PRINT_ATTEMPT'),
+        copyAttempts:         byAction('COPY_ATTEMPT'),
+        screenshotAttempts:   byAction('SCREENSHOT_ATTEMPT'),
+        riskDistribution:     riskDist,
+        // Not yet tracked — future feature placeholders
+        pageCompletion:       null,
+        forwardChains:        null,
+        leakIncidents:        null,
+        leakSources:          null,
+      },
+    });
   } catch (err) { next(err); }
 }

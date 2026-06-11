@@ -20,6 +20,7 @@ import {
   listUnmaskRequests,
   reviewUnmaskRequest,
   debugReport,
+  getGlobalShareStats,
 } from '../controllers/share-link.controller';
 
 export const shareRouter = Router();
@@ -30,6 +31,7 @@ shareRouter.get('/',                           listShareLinks);
 shareRouter.get('/vault/:vaultId',             getVaultShareLinks);
 shareRouter.get('/timeline/:dnaId',            getShareTimeline);
 shareRouter.get('/analytics/geo',              getGeoAnalytics);
+shareRouter.get('/analytics/global',           getGlobalShareStats);
 shareRouter.get('/sessions/live',              getLiveSessions);
 shareRouter.get('/debug/report',               debugReport);              // ── Diagnostic: URL + IP test report
 shareRouter.get('/unmask-requests',            listUnmaskRequests);       // ── Privacy Masking — owner dashboard

@@ -17,18 +17,25 @@ import { DuplicateAttemptsPage }   from './pages/DuplicateAttemptsPage';
 import { UnmaskRequestsPage }      from './pages/UnmaskRequestsPage';
 import { NotFoundPage }             from './pages/NotFoundPage';
 import { ShareViewerPage }          from './pages/ShareViewerPage';
+import { LoginPage }                from './pages/LoginPage';
+import { RegisterPage }             from './pages/RegisterPage';
+import { RequireAuth }              from './components/auth/RequireAuth';
 
 export const router = createBrowserRouter([
-  // ── Public share viewer (no dashboard layout) ─────────────────────────────
+  // ── Auth pages (public) ───────────────────────────────────────────────────
+  { path: '/login',    element: <LoginPage />    },
+  { path: '/register', element: <RegisterPage /> },
+
+  // ── Public share viewer (no dashboard layout, no auth) ────────────────────
   {
     path: '/s/:token',
     element: <ShareViewerPage />,
   },
 
-  // ── Dashboard (authenticated shell) ──────────────────────────────────────
+  // ── Dashboard (protected) ─────────────────────────────────────────────────
   {
     path: '/',
-    element: <DashboardLayout />,
+    element: <RequireAuth><DashboardLayout /></RequireAuth>,
     children: [
       { index: true,                   element: <DashboardPage />           },
       { path: 'generate',              element: <GeneratePage />            },

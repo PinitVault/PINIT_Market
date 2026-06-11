@@ -7,7 +7,7 @@
  * DOES NOT modify any existing logic.
  */
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { format, formatDistanceToNow } from 'date-fns';
 import {
   Clock, Dna, Lock, Search, GitCompare, Award,
@@ -116,6 +116,18 @@ function buildHistory(
         },
       });
 
+      // Build session → GPS map so GPS from VIEWED event propagates to all events in session
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const sessionGps: Record<string, any> = {};
+      for (const log of (link.accessLogs ?? [])) {
+        if (log.locationShared && log.gpsLat != null && log.sessionId) {
+          sessionGps[log.sessionId] = {
+            gpsLat: log.gpsLat, gpsLng: log.gpsLng,
+            gpsAccuracy: log.gpsAccuracy, gpsCity: log.gpsCity,
+          };
+        }
+      }
+
       // Access log events
       for (const log of (link.accessLogs ?? [])) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -177,16 +189,17 @@ function buildHistory(
         if (log.isp)       meta['ISP'] = log.isp;
         if (log.screenResolution) meta['Screen'] = log.screenResolution;
         if (log.sessionDurationSec != null) meta['Session'] = `${log.sessionDurationSec}s`;
-        // ── GPS Location ──
-        if (log.locationShared) {
-          const coords = log.gpsLat != null && log.gpsLng != null
-            ? `${log.gpsLat.toFixed(5)}, ${log.gpsLng.toFixed(5)}`
+        // ── GPS Location — use own GPS or propagate from session's VIEWED event ──
+        const gpsSource = log.locationShared && log.gpsLat != null
+          ? log
+          : (log.sessionId && sessionGps[log.sessionId]) ?? null;
+        if (gpsSource) {
+          const coords   = gpsSource.gpsLat != null && gpsSource.gpsLng != null
+            ? `${Number(gpsSource.gpsLat).toFixed(5)}, ${Number(gpsSource.gpsLng).toFixed(5)}`
             : null;
-          const accuracy = log.gpsAccuracy != null ? `±${Math.round(log.gpsAccuracy)}m` : null;
-          const gpsCity  = log.gpsCity ?? null;
+          const accuracy = gpsSource.gpsAccuracy != null ? `±${Math.round(gpsSource.gpsAccuracy)}m` : null;
+          const gpsCity  = gpsSource.gpsCity ?? null;
           meta['GPS Location'] = [gpsCity, coords, accuracy].filter(Boolean).join(' · ');
-        } else if ((log as any).locationShared === false && (log as any).requestLocation) {
-          meta['GPS Location'] = 'Denied by recipient';
         }
         // ── AI Risk Engine output — surfaced per-event for the audit trail ──
         if (log.riskLevel) {
@@ -209,8 +222,8 @@ function buildHistory(
             log.recipientName ? `By: ${log.recipientName}` : null,
             ipDisplay,
             geoDisplay,
-            log.locationShared && log.gpsLat != null
-              ? `📡 GPS: ${log.gpsCity ?? `${log.gpsLat.toFixed(3)}, ${log.gpsLng!.toFixed(3)}`} ±${Math.round(log.gpsAccuracy ?? 0)}m`
+            gpsSource
+              ? `📡 GPS: ${gpsSource.gpsCity ?? `${Number(gpsSource.gpsLat).toFixed(3)}, ${Number(gpsSource.gpsLng).toFixed(3)}`} ±${Math.round(gpsSource.gpsAccuracy ?? 0)}m`
               : null,
             log.browser ? log.browser : null,
             log.os      ? log.os      : null,
@@ -270,8 +283,7 @@ function getStoredComparisons(): ComparisonResult[] {
 
 // ─── File history card ────────────────────────────────────────────────────────
 
-function FileHistoryCard({ history }: { history: FileHistory }) {
-  const [expanded, setExpanded] = useState(false);
+function FileHistoryCard({ history, expanded, onToggle }: { history: FileHistory; expanded: boolean; onToggle: () => void }) {
 
   const typeColor: Record<string, string> = {
     DNA_GENERATED:   'bg-dna-500/20 border-dna-500/40 text-dna-400',
@@ -301,7 +313,7 @@ function FileHistoryCard({ history }: { history: FileHistory }) {
     <div className="card overflow-hidden p-0">
       {/* Header */}
       <button
-        onClick={() => setExpanded(!expanded)}
+        onClick={onToggle}
         className="w-full flex items-center gap-3 p-4 text-left hover:bg-bg-elevated/40 transition-colors"
       >
         <FileTypeBadge type={history.fileType} />
@@ -426,36 +438,55 @@ export function TimelinePage() {
   const comparisons = useMemo(getStoredComparisons, []);
   const loading = loadDna || loadVault;
 
-  // Geo Intelligence + Session Monitoring widgets — Smart Links audit additions
+  // Lifted expand state — keyed by dnaRecordId so it survives auto-refresh re-renders
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
+  const toggleExpanded = (id: string) =>
+    setExpandedIds(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+
+  // Track the last-known total log count to detect new events
+  const lastLogCount = useRef(0);
+
+  // Fetch geo + live sessions once on mount (these rarely change mid-session)
   useEffect(() => {
     axios.get(`${API_BASE_URL}/share/analytics/geo`)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .then(({ data }) => setGeoAnalytics((data as any).analytics ?? []))
+      .then(({ data }) => setGeoAnalytics((data as any).analytics ?? []))  // eslint-disable-line @typescript-eslint/no-explicit-any
       .catch(() => {});
     axios.get(`${API_BASE_URL}/share/sessions/live`)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .then(({ data }) => setLiveSessions({ live: (data as any).live ?? [], concurrent: (data as any).concurrent ?? [] }))
+      .then(({ data }) => setLiveSessions({ live: (data as any).live ?? [], concurrent: (data as any).concurrent ?? [] }))  // eslint-disable-line @typescript-eslint/no-explicit-any
       .catch(() => {});
   }, []);
 
-  // Fetch ALL share links in one request, then group by dnaRecordId
+  // Poll share events every 20s — only update state when new logs actually arrive
   useEffect(() => {
-    if (!dnaRecords) return;
-    axios.get(`${API_BASE_URL}/share`)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .then(({ data }) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const links: any[] = (data as any).links ?? [];
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const map: Record<string, any[]> = {};
-        for (const link of links) {
-          if (!map[link.dnaRecordId]) map[link.dnaRecordId] = [];
-          map[link.dnaRecordId].push(link);
-        }
-        setShareEventsByDna(map);
-      })
-      .catch(() => {}); // silent — share events are optional
-  }, [dnaRecords]);
+    const fetchLinks = () => {
+      axios.get(`${API_BASE_URL}/share`)
+        .then(({ data }) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const links: any[] = (data as any).links ?? [];
+          const totalLogs = links.reduce((s: number, l: any) => s + (l.accessLogs?.length ?? 0), 0);  // eslint-disable-line @typescript-eslint/no-explicit-any
+
+          // Only update state if new events arrived — avoids unnecessary re-renders
+          if (totalLogs === lastLogCount.current) return;
+          lastLogCount.current = totalLogs;
+
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const map: Record<string, any[]> = {};
+          for (const link of links) {
+            if (!map[link.dnaRecordId]) map[link.dnaRecordId] = [];
+            map[link.dnaRecordId].push(link);
+          }
+          setShareEventsByDna(map);
+        })
+        .catch(() => {});
+    };
+    fetchLinks();
+    const id = setInterval(fetchLinks, 20_000);
+    return () => clearInterval(id);
+  }, []);
 
   const histories = useMemo(() => {
     if (!dnaRecords || !vaultRecords) return [];
@@ -635,7 +666,12 @@ export function TimelinePage() {
       ) : (
         <div className="space-y-3">
           {filtered.map(h => (
-            <FileHistoryCard key={h.dnaRecordId} history={h} />
+            <FileHistoryCard
+              key={h.dnaRecordId}
+              history={h}
+              expanded={expandedIds.has(h.dnaRecordId)}
+              onToggle={() => toggleExpanded(h.dnaRecordId)}
+            />
           ))}
         </div>
       )}

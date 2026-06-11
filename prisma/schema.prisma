@@ -303,9 +303,13 @@ model User {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 
-  email        String    @unique
-  passwordHash String
-  fullName     String
+  // Short human-readable login ID, e.g. "PINIT-A7K2M9X4"
+  shortId      String    @unique
+
+  // Optional — not required for login
+  email        String?   @unique
+  passwordHash String?
+  fullName     String    @default("PINIT User")
   role         UserRole  @default(USER)
   isActive     Boolean   @default(true)
   lastLoginAt  DateTime?

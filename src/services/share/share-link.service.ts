@@ -343,20 +343,46 @@ export class ShareLinkService {
     ctx: { country?: string | null; device?: string | null; ipAddress?: string | null }
   ): PolicyCheckResult {
     if (link.allowedCountries?.length && ctx.country) {
-      if (!link.allowedCountries.includes(ctx.country)) {
-        return { allowed: false, reason: 'BLOCKED_COUNTRY', message: `Access from ${ctx.country} is not permitted for this link` };
+      // Normalise: convert geo-IP full name ("India") to ISO code ("IN") so it matches
+      // stored values (VaultPage saves ISO codes). Also accept direct full-name match.
+      const countryIsoMap: Record<string, string> = {
+        'india': 'IN', 'united states': 'US', 'united states of america': 'US',
+        'united kingdom': 'GB', 'australia': 'AU', 'canada': 'CA',
+        'germany': 'DE', 'france': 'FR', 'japan': 'JP', 'china': 'CN',
+        'singapore': 'SG', 'united arab emirates': 'AE', 'russia': 'RU',
+        'brazil': 'BR', 'south africa': 'ZA', 'italy': 'IT', 'spain': 'ES',
+        'netherlands': 'NL', 'new zealand': 'NZ', 'pakistan': 'PK',
+        'bangladesh': 'BD', 'sri lanka': 'LK', 'indonesia': 'ID',
+        'malaysia': 'MY', 'thailand': 'TH', 'philippines': 'PH',
+        'south korea': 'KR', 'taiwan': 'TW', 'hong kong': 'HK',
+        'mexico': 'MX', 'argentina': 'AR', 'chile': 'CL', 'colombia': 'CO',
+        'sweden': 'SE', 'norway': 'NO', 'denmark': 'DK', 'finland': 'FI',
+        'poland': 'PL', 'ukraine': 'UA', 'turkey': 'TR', 'egypt': 'EG',
+        'nigeria': 'NG', 'kenya': 'KE', 'ghana': 'GH',
+      };
+      const geoKey    = ctx.country.toLowerCase();
+      const geoIso    = countryIsoMap[geoKey] ?? ctx.country.toUpperCase().slice(0, 2);
+      const geoName   = ctx.country;
+      const allowed   = link.allowedCountries;
+      const match = allowed.some(a =>
+        a.toUpperCase() === geoIso ||
+        a.toLowerCase() === geoKey ||
+        a.toLowerCase() === geoName.toLowerCase()
+      );
+      if (!match) {
+        return { allowed: false, reason: 'BLOCKED_COUNTRY', message: `Access from ${ctx.country} is not permitted. Allowed: ${allowed.join(', ')}` };
       }
     }
     if (link.allowedDeviceTypes?.length && ctx.device) {
       const deviceLower = ctx.device.toLowerCase();
       if (!link.allowedDeviceTypes.map(d => d.toLowerCase()).includes(deviceLower)) {
-        return { allowed: false, reason: 'BLOCKED_DEVICE', message: `Access from ${ctx.device} devices is not permitted for this link` };
+        return { allowed: false, reason: 'BLOCKED_DEVICE', message: `${ctx.device} devices are not permitted. Allowed: ${link.allowedDeviceTypes.join(', ')}` };
       }
     }
     if (link.allowedIpPrefixes?.length && ctx.ipAddress) {
       const matches = link.allowedIpPrefixes.some(prefix => ctx.ipAddress!.startsWith(prefix));
       if (!matches) {
-        return { allowed: false, reason: 'BLOCKED_IP', message: 'Access from this IP address is not permitted for this link' };
+        return { allowed: false, reason: 'BLOCKED_IP', message: 'Your IP address is not in the permitted range for this link' };
       }
     }
     return { allowed: true };

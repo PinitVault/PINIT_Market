@@ -21,6 +21,7 @@ import { forensicDiffRouter }      from './api/routes/forensic-diff.routes';
 import { aiRouter }               from './api/routes/ai.routes';
 import { monitoringRouter }        from './api/routes/monitoring.routes';
 import { shareRouter }            from './api/routes/share.routes';
+import { authRouter }             from './api/routes/auth.routes';
 import { getHealthReport }         from './lib/health';
 import { vaultScheduler }         from './services/scheduler/vault-scheduler.service';
 import { startPythonAI } from './lib/python-ai-process';
@@ -57,8 +58,9 @@ app.use(cors({
       origin.includes('127.0.0.1')       ||
       origin.includes('ngrok.io')        ||
       origin.includes('ngrok-free.app')  ||
-      origin.includes('ngrok-free.dev')  ||   // ← .dev domains (broadly-yonder-consult etc.)
+      origin.includes('ngrok-free.dev')  ||
       origin.includes('ngrok.app')       ||
+      origin.includes('vercel.app')      ||   // ← Vercel preview + production deployments
       (!!process.env['ALLOWED_ORIGIN'] && origin === process.env['ALLOWED_ORIGIN']);
 
     if (allowed) return callback(null, true);
@@ -108,6 +110,7 @@ app.use(`${config.apiPrefix}/forensic`,    forensicDiffRouter);
 app.use(`${config.apiPrefix}/ai`,         aiRouter);
 app.use(`${config.apiPrefix}/monitor`,   monitoringRouter);
 app.use(`${config.apiPrefix}/share`,     shareRouter);
+app.use(`${config.apiPrefix}/auth`,      authRouter);
 
 // ─── React SPA catch-all ─────────────────────────────────────────────────────
 // Serves index.html for /dashboard, /compare, /vault etc. (client-side routing)

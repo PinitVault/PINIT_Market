@@ -38,7 +38,7 @@ jest.mock('../src/lib/prisma', () => ({
   prisma: {
     cryptoLayer:     { findFirst: jest.fn() },
     perceptualLayer: { findMany:  jest.fn() },
-    dnaRecord:       { findUnique: jest.fn() },
+    dnaRecord:       { findFirst: jest.fn(), findUnique: jest.fn() },
     auditEvent:      { create: jest.fn(), findFirst: jest.fn() },
   },
 }));
@@ -65,6 +65,9 @@ describe('DuplicateCheckService', () => {
     (prisma.auditEvent.create as jest.Mock).mockResolvedValue({});
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (prisma.auditEvent.findFirst as jest.Mock).mockResolvedValue(null);
+    // Default: no exact match on dnaRecord (falls through to cryptoLayer fallback)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (prisma.dnaRecord.findFirst as jest.Mock).mockResolvedValue(null);
     // Default: no perceptual layer match
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (prisma.perceptualLayer.findMany as jest.Mock).mockResolvedValue([]);

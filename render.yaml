@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: pinit-dna-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pinit-dna-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: LSB_SIGNATURE_SECRET
+        generateValue: true
+      - key: VAULT_MASTER_SECRET
+        generateValue: true
+      - key: VAULT_STORAGE_DIR
+        value: ./vault/encrypted
+      - key: UPLOAD_TEMP_DIR
+        value: ./tmp/uploads
+      - key: MAX_FILE_SIZE
+        value: 20971520
+      - key: LOG_LEVEL
+        value: info
+
+databases:
+  - name: pinit-dna-db
+    databaseName: pinit_dna
+    plan: free
