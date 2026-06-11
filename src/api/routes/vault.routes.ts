@@ -8,7 +8,7 @@
 
 import { Router } from 'express';
 import { uploadSingle } from '../middleware/upload.middleware';
-import { listVaultRecords, storeInVault, getVaultRecord, retrieveFromVault } from '../controllers/vault.controller';
+import { listVaultRecords, storeInVault, getVaultRecord, retrieveFromVault, scanVaultFile } from '../controllers/vault.controller';
 import { vaultIntegrityCheck } from '../controllers/integrity.controller';
 
 const router = Router();
@@ -50,5 +50,13 @@ router.get('/:id', getVaultRecord);
  *   X-Vault-Id: uuid
  */
 router.post('/:id/retrieve', retrieveFromVault);
+
+/**
+ * POST /vault/:id/scan-sensitive
+ * Decrypts the vault file, extracts text, and returns which sensitive data
+ * types were detected (email / phone / aadhaar / pan / address).
+ * Does NOT mask anything — read-only scan for the share modal UI.
+ */
+router.post('/:id/scan-sensitive', scanVaultFile);
 
 export { router as vaultRouter };

@@ -20,6 +20,7 @@ import { certificateMgmtRouter }   from './api/routes/certificate-mgmt.routes';
 import { forensicDiffRouter }      from './api/routes/forensic-diff.routes';
 import { aiRouter }               from './api/routes/ai.routes';
 import { monitoringRouter }        from './api/routes/monitoring.routes';
+import { shareRouter }            from './api/routes/share.routes';
 import { getHealthReport }         from './lib/health';
 import { vaultScheduler }         from './services/scheduler/vault-scheduler.service';
 import { startPythonAI } from './lib/python-ai-process';
@@ -37,6 +38,9 @@ if (fs.existsSync(reactBuildPath)) {
 } else {
   app.use(express.static(publicPath));
 }
+
+// ─── Trust proxy (ngrok, load balancers) — enables real IP via X-Forwarded-For
+app.set('trust proxy', true);
 
 // ─── Security headers ─────────────────────────────────────────────────────────
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -78,14 +82,15 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // ─── Rate limiting ────────────────────────────────────────────────────────────
-app.use(
-  rateLimit({
-    windowMs: config.rateLimit.windowMs,
-    max:      config.rateLimit.max,
-    standardHeaders: true,
-    legacyHeaders:   false,
-  })
-);
+// Skip rate limiting for public share viewer endpoints (no auth needed)
+const apiLimiter = rateLimit({
+  windowMs: config.rateLimit.windowMs,
+  max:      config.rateLimit.max,
+  standardHeaders: true,
+  legacyHeaders:   false,
+  skip: (req) => req.path.startsWith('/api/v1/share/') && req.method === 'GET',
+});
+app.use(apiLimiter);
 
 // ─── Health check (Phase 6 — detailed) ────────────────────────────────────────
 app.get('/health', async (_req, res) => {
@@ -102,6 +107,7 @@ app.use(`${config.apiPrefix}/certificates`, certificateMgmtRouter);
 app.use(`${config.apiPrefix}/forensic`,    forensicDiffRouter);
 app.use(`${config.apiPrefix}/ai`,         aiRouter);
 app.use(`${config.apiPrefix}/monitor`,   monitoringRouter);
+app.use(`${config.apiPrefix}/share`,     shareRouter);
 
 // ─── React SPA catch-all ─────────────────────────────────────────────────────
 // Serves index.html for /dashboard, /compare, /vault etc. (client-side routing)

@@ -13,6 +13,7 @@
 import { Request } from 'express';
 import { prisma } from '../../lib/prisma';
 import { logger } from '../../lib/logger';
+import { resolveClientIp } from '../../lib/request-utils';
 
 export type AuditEventType =
   | 'DNA_GENERATED'
@@ -32,7 +33,13 @@ export type AuditEventType =
   | 'FILE_SHARED'
   | 'SCREEN_CAPTURE_ATTEMPTED'
   | 'INTEGRITY_CHECK_RUN'
-  | 'VAULT_BACKUP_RUN';
+  | 'VAULT_BACKUP_RUN'
+  | 'DUPLICATE_UPLOAD_ATTEMPT'
+  | 'MASKING_ENABLED'
+  | 'UNMASK_REQUESTED'
+  | 'UNMASK_APPROVED'
+  | 'UNMASK_REJECTED'
+  | 'UNMASK_VIEWED';
 
 export interface AuditEventData {
   eventType:    AuditEventType;
@@ -86,9 +93,7 @@ export class AuditService {
     if (!req) return { ip: null, userAgent: null, browser: null, os: null, device: null };
 
     const ua        = req.headers['user-agent'] ?? '';
-    const ip        = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim()
-                   ?? req.socket.remoteAddress
-                   ?? null;
+    const ip = resolveClientIp(req);
 
     // Simple UA parsing (no external library needed)
     const browser   = this.parseBrowser(ua);

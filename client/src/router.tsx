@@ -12,10 +12,20 @@ import { ForensicDiffPage }      from './pages/ForensicDiffPage';
 import { SearchPage }            from './pages/SearchPage';
 import { MonitoringPage }        from './pages/MonitoringPage';
 import { VerifyCertificatePage }  from './pages/VerifyCertificatePage';
-import { VaultIntegrityPage }     from './pages/VaultIntegrityPage';
-import { NotFoundPage }           from './pages/NotFoundPage';
+import { VaultIntegrityPage }       from './pages/VaultIntegrityPage';
+import { DuplicateAttemptsPage }   from './pages/DuplicateAttemptsPage';
+import { UnmaskRequestsPage }      from './pages/UnmaskRequestsPage';
+import { NotFoundPage }             from './pages/NotFoundPage';
+import { ShareViewerPage }          from './pages/ShareViewerPage';
 
 export const router = createBrowserRouter([
+  // ── Public share viewer (no dashboard layout) ─────────────────────────────
+  {
+    path: '/s/:token',
+    element: <ShareViewerPage />,
+  },
+
+  // ── Dashboard (authenticated shell) ──────────────────────────────────────
   {
     path: '/',
     element: <DashboardLayout />,
@@ -31,6 +41,8 @@ export const router = createBrowserRouter([
       { path: 'forensic-diff',         element: <ForensicDiffPage />        },
       { path: 'search',                element: <SearchPage />              },
       { path: 'monitoring',            element: <MonitoringPage />          },
+      { path: 'duplicate-attempts',   element: <DuplicateAttemptsPage />   },
+      { path: 'unmask-requests',      element: <UnmaskRequestsPage />      },
       { path: 'certificates',          element: <CertificatesPage />        },
       { path: 'verify-certificate',    element: <VerifyCertificatePage />   },
       { path: '*',                     element: <NotFoundPage />            },

@@ -25,6 +25,8 @@ export default function App() {
   );
   const [session, setSession] = useState<DnaSession | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [duplicateInfo, setDuplicateInfo] = useState<any | null>(null);
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   // ── Helpers ────────────────────────────────────────────────────────────────
@@ -94,8 +96,21 @@ export default function App() {
       setTimeout(() => setStage('encrypting'), 800);
     } catch (err: unknown) {
       clearTimers();
-      const msg = err instanceof Error ? err.message : 'Failed to connect to DNA API';
-      setError(msg);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const anyErr = err as any;
+      if (anyErr?.isDuplicate) {
+        setDuplicateInfo({
+          existingRecordId: anyErr.existingRecordId,
+          existingFilename: anyErr.existingFilename,
+          matchType:        anyErr.matchType,
+          riskLevel:        anyErr.riskLevel,
+        });
+        setError(anyErr.message);
+      } else {
+        setDuplicateInfo(null);
+        const msg = err instanceof Error ? err.message : 'Failed to connect to DNA API';
+        setError(msg);
+      }
       setStage('idle');
     }
   }, [selectedFile]);
@@ -154,7 +169,49 @@ export default function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              {error && (
+              {error && duplicateInfo ? (
+                /* ── Duplicate file blocked — rich UI ───────────────────── */
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 max-w-2xl mx-auto rounded-xl overflow-hidden border border-amber-500/40"
+                >
+                  <div className="bg-amber-500/10 px-5 py-3 flex items-center gap-2 border-b border-amber-500/20">
+                    <span className="text-lg">🚫</span>
+                    <p className="text-amber-400 font-semibold text-sm">Duplicate File Detected</p>
+                    {duplicateInfo.riskLevel === 'HIGH' && (
+                      <span className="ml-auto text-xs bg-red-500/20 text-red-400 border border-red-500/30 rounded px-2 py-0.5 font-semibold">HIGH RISK</span>
+                    )}
+                  </div>
+                  <div className="bg-bg-card px-5 py-4 space-y-2">
+                    <p className="text-gray-300 text-sm">{error}</p>
+                    <div className="grid grid-cols-2 gap-2 mt-3">
+                      <div className="bg-bg-elevated rounded-lg px-3 py-2">
+                        <p className="text-2xs text-gray-500 uppercase tracking-wide">Match Type</p>
+                        <p className="text-xs text-white font-mono mt-0.5">
+                          {duplicateInfo.matchType === 'EXACT_HASH' ? '🔴 Exact SHA-256 Match' : '🟡 Near-Duplicate (pHash)'}
+                        </p>
+                      </div>
+                      <div className="bg-bg-elevated rounded-lg px-3 py-2">
+                        <p className="text-2xs text-gray-500 uppercase tracking-wide">Existing File</p>
+                        <p className="text-xs text-white font-mono mt-0.5 truncate">{duplicateInfo.existingFilename ?? '—'}</p>
+                      </div>
+                      {duplicateInfo.existingRecordId && (
+                        <div className="bg-bg-elevated rounded-lg px-3 py-2 col-span-2">
+                          <p className="text-2xs text-gray-500 uppercase tracking-wide">Existing DNA Record ID</p>
+                          <p className="text-xs text-dna-400 font-mono mt-0.5">{duplicateInfo.existingRecordId}</p>
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => { setError(null); setDuplicateInfo(null); }}
+                      className="btn btn-secondary btn-sm mt-2 text-xs"
+                    >
+                      Try Different File
+                    </button>
+                  </div>
+                </motion.div>
+              ) : error ? (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -166,7 +223,7 @@ export default function App() {
                     Make sure the backend is running on port 4000.
                   </p>
                 </motion.div>
-              )}
+              ) : null}
               <UploadZone
                 selectedFile={selectedFile}
                 onFileSelected={setSelectedFile}

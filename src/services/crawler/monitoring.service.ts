@@ -13,6 +13,8 @@ import { prisma }      from '../../lib/prisma';
 import { logger }      from '../../lib/logger';
 import { webCrawler }  from './web-crawler.service';
 import { aiService }   from '../ai/ai-embeddings.service';
+import { imageMonitoringService } from './image-monitoring.service';
+import type { ImageMonitoringSummary } from './image-monitoring.service';
 
 export interface MonitoringSummary {
   monitorRecordId: string;
@@ -66,7 +68,7 @@ export class MonitoringService {
 
   // ─── Run monitoring check for one record ─────────────────────────────────
 
-  async runCheck(monitorRecordId: string): Promise<MonitoringSummary> {
+  async runCheck(monitorRecordId: string): Promise<MonitoringSummary | ImageMonitoringSummary> {
     const monitor = await prisma.monitorRecord.findUnique({
       where: { id: monitorRecordId },
       include: { dnaRecord: { include: { ocrRecord: true } } },
@@ -75,6 +77,14 @@ export class MonitoringService {
     if (!monitor) throw new Error(`Monitor record not found: ${monitorRecordId}`);
 
     const filename = monitor.filename;
+
+    // ── Route image files to the dedicated image monitoring pipeline ──────────
+    if (imageMonitoringService.isImage(monitor.fileType, monitor.dnaRecord.imageMimeType)) {
+      logger.info('[Monitor] Routing to IMAGE monitoring pipeline', { filename, fileType: monitor.fileType });
+      return imageMonitoringService.runCheck(monitorRecordId);
+    }
+
+    logger.info('[Monitor] Routing to TEXT monitoring pipeline', { filename, fileType: monitor.fileType });
     logger.info('Running monitoring check', { filename, id: monitorRecordId });
 
     // Get OCR text for keyword generation

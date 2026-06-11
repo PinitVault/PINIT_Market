@@ -15,6 +15,7 @@ import { UniversalVerifier } from '../../services/universal-verifier';
 import { auditService }  from '../../services/audit/audit.service';
 import { autoIndexer }   from '../../services/ai/auto-indexer.service';
 import { UniversalFileRouter } from '../../services/universal-file-router';
+import { duplicateCheckService } from '../../services/duplicate/duplicate-check.service';
 import { prisma } from '../../lib/prisma';
 import { AppError } from '../middleware/error.middleware';
 import { logger } from '../../lib/logger';
@@ -106,6 +107,42 @@ export async function generateDna(
   } catch {
     return next(new AppError(500, 'Failed to read uploaded file from disk.'));
   }
+
+  // ── DUPLICATE CHECK — must run BEFORE any DNA/vault/certificate work ────────
+  // Computes SHA-256 instantly, queries CryptoLayer table, and for images also
+  // runs a pHash near-duplicate scan. Returns 409 Conflict on any match.
+  const dupResult = await duplicateCheckService.check(
+    buffer,
+    req.file.mimetype,
+    req.file.originalname,
+    req,
+  );
+
+  if (dupResult.isDuplicate) {
+    // Clean up the temp file immediately
+    await fs.unlink(req.file.path).catch(() => {});
+
+    logger.warn('[DNA] Duplicate upload blocked', {
+      matchType:        dupResult.matchType,
+      existingRecordId: dupResult.existingRecordId,
+      isHighRisk:       dupResult.isHighRisk,
+    });
+
+    res.status(409).json({
+      success:   false,
+      duplicate: true,
+      error:     'This file already exists in the PINIT-DNA registry. Duplicate uploads are not permitted.',
+      matchType:           dupResult.matchType,
+      existingRecordId:    dupResult.existingRecordId,
+      existingFilename:    dupResult.existingFilename,
+      existingCreatedAt:   dupResult.existingCreatedAt,
+      sha256Hash:          dupResult.sha256Hash,
+      pHashSimilarity:     dupResult.pHashSimilarity,
+      riskLevel:           dupResult.isHighRisk ? 'HIGH' : 'LOW',
+    });
+    return;
+  }
+  // ── End duplicate check ─────────────────────────────────────────────────────
 
   try {
     // UniversalFileRouter: detects file type → routes to correct engine
@@ -343,3 +380,56 @@ export async function getDnaRecord(
     next(err);
   }
 }
+
+// ─── GET /dna/duplicate-attempts ─────────────────────────────────────────────
+// Admin dashboard: returns all DUPLICATE_UPLOAD_ATTEMPT audit events, newest first.
+
+export async function getDuplicateAttempts(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const limit  = Math.min(parseInt(req.query['limit']  as string ?? '100', 10), 500);
+    const offset = parseInt(req.query['offset'] as string ?? '0',   10);
+
+    const [events, total] = await Promise.all([
+      prisma.auditEvent.findMany({
+        where:   { eventType: 'DUPLICATE_UPLOAD_ATTEMPT' },
+        orderBy: { createdAt: 'desc' },
+        take:    limit,
+        skip:    offset,
+      }),
+      prisma.auditEvent.count({ where: { eventType: 'DUPLICATE_UPLOAD_ATTEMPT' } }),
+    ]);
+
+    res.json({
+      success: true,
+      total,
+      count:  events.length,
+      events: events.map((e) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const detail = (e.detail ?? {}) as Record<string, any>;
+        return {
+          id:                  e.id,
+          timestamp:           e.createdAt.toISOString(),
+          filename:            e.filename,
+          fileType:            e.fileType,
+          ipAddress:           e.ipAddress,
+          browser:             e.browser,
+          os:                  e.os,
+          device:              e.device,
+          matchType:           detail['matchType']           ?? null,
+          riskLevel:           detail['riskLevel']           ?? 'LOW',
+          sha256Hash:          detail['sha256Hash']          ?? null,
+          existingDnaRecordId: detail['existingDnaRecordId'] ?? null,
+          existingFilename:    detail['existingFilename']    ?? null,
+          pHashSimilarity:     detail['pHashSimilarity']     ?? null,
+        };
+      }),
+    });
+  } catch (err) {
+    next(err);
+  }
+}
+

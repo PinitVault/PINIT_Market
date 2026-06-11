@@ -4569,7 +4569,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:29.986522Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "99dd46ca-8920-49d8-9150-848d4d20b35a",
@@ -4581,7 +4581,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:29.987717Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "b63b3c5b-5afb-4756-987e-1369d629c9ca",
@@ -4593,7 +4593,7 @@
     "fullText": "WhatsApp Image 2026-05-11 at 13.06.56.jpeg WhatsApp Image 2026 05 11 at 13 06 56",
     "textHash": "5ce8a2f3dd41d8b1",
     "indexedAt": "2026-06-05T04:14:29.988307Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "6a0dfa76-1ef0-4472-a39b-ae6692d42ce8",
@@ -4605,7 +4605,7 @@
     "fullText": "Ashwitha_22r01a67f6.jpeg Ashwitha 22r01a67f6",
     "textHash": "edf7f46f6f3b80f9",
     "indexedAt": "2026-06-05T04:14:29.988652Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "0e311cf2-2be2-4cfc-977d-ef9bc19b2099",
@@ -4617,7 +4617,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:29.988757Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "bd836a32-3eca-47c3-a416-e63cf29b42d4",
@@ -4629,7 +4629,7 @@
     "fullText": "config.json config",
     "textHash": "6e8088256b1f6977",
     "indexedAt": "2026-06-05T04:14:29.988833Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "f3d0f73a-bdf3-487b-9cf6-298ca27018cb",
@@ -4641,7 +4641,7 @@
     "fullText": "IMG_20260222_110540_449.webp IMG 20260222 110540 449",
     "textHash": "0968ec8242fd751f",
     "indexedAt": "2026-06-05T04:14:29.989718Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "3fb41116-7725-4796-8aea-27fe07cf2262",
@@ -4653,7 +4653,7 @@
     "fullText": "WhatsApp Image 2026-05-11 at 12.47.35.jpeg WhatsApp Image 2026 05 11 at 12 47 35",
     "textHash": "c7fd3496e91810d0",
     "indexedAt": "2026-06-05T04:14:29.989983Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "b498d865-18ea-473d-9e6d-e1e2132476ba",
@@ -4665,7 +4665,7 @@
     "fullText": "ChatGPT Image May 11, 2026, 05_16_29 PM.png ChatGPT Image May 11, 2026, 05 16 29 PM",
     "textHash": "ce189920f16c6d65",
     "indexedAt": "2026-06-05T04:14:29.990129Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "0b746bc4-3513-485b-9150-51201f71597d",
@@ -4677,7 +4677,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:29.990401Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "ce454265-64a0-46dd-a6ae-fc2e5c7025bf",
@@ -4689,7 +4689,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.196833Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "d87d4a44-c35e-4700-a14e-9adbb03e0dea",
@@ -4701,7 +4701,7 @@
     "fullText": "test_dna.txt test dna",
     "textHash": "9241e92242da22cf",
     "indexedAt": "2026-06-05T04:14:30.197629Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "100a9175-b028-477c-9e58-80675b012fe4",
@@ -4713,7 +4713,7 @@
     "fullText": "test.pptx test",
     "textHash": "383f2d0bf29a6d35",
     "indexedAt": "2026-06-05T04:14:30.212648Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "e64aa5ee-4f5c-490f-9c0c-d0d496e2a0d8",
@@ -4725,7 +4725,7 @@
     "fullText": "test.pdf test",
     "textHash": "4f9b9f865f97964f",
     "indexedAt": "2026-06-05T04:14:30.215122Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "91ba49a5-8ad3-4cae-838c-f5e5ba3b2833",
@@ -4737,7 +4737,7 @@
     "fullText": "test.wav test",
     "textHash": "e1a75c7cced6618b",
     "indexedAt": "2026-06-05T04:14:30.230098Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "95c6a10a-fe72-43cb-986b-2db9530572ef",
@@ -4749,7 +4749,7 @@
     "fullText": "audit-test.txt audit test",
     "textHash": "e363a8c9b7bcdece",
     "indexedAt": "2026-06-05T04:14:30.234695Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "822d423c-072c-4164-ad05-5ab354cb7bd9",
@@ -4761,7 +4761,7 @@
     "fullText": "test.docx test",
     "textHash": "a9a0e04c71eeee3a",
     "indexedAt": "2026-06-05T04:14:30.234858Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "b6e41dcd-9e38-4b82-8bfc-cc06d758cd2f",
@@ -4773,7 +4773,7 @@
     "fullText": "employees.csv employees",
     "textHash": "904fa7086adc94e1",
     "indexedAt": "2026-06-05T04:14:30.236545Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "c0a4fd48-c8b2-4c06-a723-e82ffde6d27b",
@@ -4785,7 +4785,7 @@
     "fullText": "sample.mp4 sample",
     "textHash": "d05168c0f5cf122d",
     "indexedAt": "2026-06-05T04:14:30.243843Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "055ffaff-74df-4471-a622-cdacb56cf18a",
@@ -4797,7 +4797,7 @@
     "fullText": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
     "textHash": "397232022cb50dc6",
     "indexedAt": "2026-06-05T04:14:30.259124Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "d0ced404-c2c4-4fab-8d83-54d3aace57d6",
@@ -4809,7 +4809,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.423399Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "169454a7-4a00-47e8-82f1-74671b886033",
@@ -4821,7 +4821,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.440456Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "6a729f89-ec55-4650-af81-176665acd076",
@@ -4833,7 +4833,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.440614Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "50cfbb1f-477f-4c4d-a4a5-5498773353d7",
@@ -4845,7 +4845,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.441265Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "8c224a7c-6754-4fd0-bcbf-f6ad4285e22a",
@@ -4857,7 +4857,7 @@
     "fullText": "project.zip project",
     "textHash": "6f0a60b693978c43",
     "indexedAt": "2026-06-05T04:14:30.443198Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "bce588c5-14c8-46c5-a3db-6499998c3c03",
@@ -4869,7 +4869,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.464227Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "a52e9a50-c73d-4349-8d5f-ee2c6cab7432",
@@ -4881,7 +4881,7 @@
     "fullText": "test.pdf test",
     "textHash": "4f9b9f865f97964f",
     "indexedAt": "2026-06-05T04:14:30.478665Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "44a7beab-6dde-433b-80e3-a2af1bd13102",
@@ -4893,7 +4893,7 @@
     "fullText": "interview.pdf interview",
     "textHash": "e5a4693967d1997a",
     "indexedAt": "2026-06-05T04:14:30.482506Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "5f5ac488-ce4d-44fa-919a-11580c0aaf4a",
@@ -4905,7 +4905,7 @@
     "fullText": "interview.pdf interview",
     "textHash": "e5a4693967d1997a",
     "indexedAt": "2026-06-05T04:14:30.488358Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "d62f0330-a5bb-45f0-ba64-0cc9baafb984",
@@ -4917,7 +4917,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.503412Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "8171702b-da8f-448d-a639-c14cbce05c60",
@@ -4929,7 +4929,7 @@
     "fullText": "sample.mp4 sample",
     "textHash": "d05168c0f5cf122d",
     "indexedAt": "2026-06-05T04:14:30.746965Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "ea48bf2a-fa48-43af-a96a-c060f4e018da",
@@ -4941,7 +4941,7 @@
     "fullText": "test.wav test",
     "textHash": "e1a75c7cced6618b",
     "indexedAt": "2026-06-05T04:14:30.748070Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "0db3c6a8-3461-400f-8fbf-a6424cd9c465",
@@ -4953,7 +4953,7 @@
     "fullText": "project.zip project",
     "textHash": "6f0a60b693978c43",
     "indexedAt": "2026-06-05T04:14:30.762663Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "1bb5fbc1-71f8-4745-b54d-f67b39bf6589",
@@ -4965,7 +4965,7 @@
     "fullText": "test.zip test",
     "textHash": "14463cf019aa56f7",
     "indexedAt": "2026-06-05T04:14:30.763810Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "b637125f-a587-4405-9186-4b25b9e9f8b1",
@@ -4977,7 +4977,7 @@
     "fullText": "istockphoto-vedio 1.mp4 istockphoto vedio 1",
     "textHash": "7c30651b23a48a5d",
     "indexedAt": "2026-06-05T04:14:30.783538Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "d0e9da04-7922-48c2-b81b-cdb055c51bfe",
@@ -4989,7 +4989,7 @@
     "fullText": "PINIT Orginal.txt PINIT Orginal.txt Hello World.\r\nI Am PinIT \r\nWhy are you???\r\n\r\nHow are doing today? good",
     "textHash": "d18548310dde935e",
     "indexedAt": "2026-06-05T04:14:30.785855Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "a33bc842-8b87-48e0-b9ef-b4a177163dec",
@@ -5001,7 +5001,7 @@
     "fullText": "prod-test.txt prod test",
     "textHash": "a0f62dd627150faf",
     "indexedAt": "2026-06-05T04:14:30.786222Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "cc303bde-4f82-4eed-9dff-5f9035244c18",
@@ -5013,7 +5013,7 @@
     "fullText": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
     "textHash": "397232022cb50dc6",
     "indexedAt": "2026-06-05T04:14:30.809825Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "881b21eb-8f47-4602-b84f-a1994759ef35",
@@ -5025,7 +5025,7 @@
     "fullText": "Kavvam_Ashwitha_Globalco.pdf Kavvam_Ashwitha_Globalco.pdf Kavvam Ashwitha\nHyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com\nLINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004\nProfessional Summary\nSoftware Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python,\nJavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST\nAPIs, database design, debugging, testing, and application development. Experienced in collaborating across teams, implementing new\nfeatures, resolving production issues, and contributing throughout the software development lifecycle.\nTechnical Skills\nLanguages: Python, JavaScript, SQL\nFrontend: React.js, HTML5, CSS3, Tailwind CSS\nBackend: FastAPI, Django, REST APIs\nDatabases: PostgreSQL, MySQL, SQLite, MongoDB, Supabase\nTools: Git, GitHub, Postman, VS Code, Jupyter Notebook\nConcepts: Data Structures, Algorithms, OOP, SDLC, Debugging, Testing, API Integration\nExperience\nTCT (The Career Tech)Mar 2026 \u2013 Present\nJunior Software DeveloperRemote\n\u2013 Developed backend services and application features using Python, FastAPI, SQL, and modern software development practices.\n\u2013 Built REST APIs, authentication workflows, and database integrations for scalable applications.\n\u2013 Collaborated with team members to implement features, resolve defects, and improve platform stability.\n\u2013 Participated in debugging, testing, deployment support, and maintenance activities.\n\u2013 Worked across frontend and backend components to deliver end-to-end software solutions.\nDevTownMar 2024 \u2013 Apr 2024\nFull Stack Web Development InternRemote\n\u2013 Developed responsive web interfaces and integrated backend APIs using React.js and JavaScript.\n\u2013 Worked on debugging, database connectivity, authentication workflows, and deployment support.\nProjects\nPINIT Vault \u2014 Secure Document Management Platform\n\u2013 Developed a secure document sharing platform using React.js, FastAPI, PostgreSQL, and Supabase.\n\u2013 Implemented authentication, access control, secure sharing workflows, and database integrations.\n\u2013 Designed scalable APIs and optimized backend operations for reliable application performance.\nGen-AI Placement Management System\n\u2013 Built a placement management platform with candidate management, recruiter dashboards, and resume analysis features.\n\u2013 Developed REST APIs, authentication modules, reporting features, and database integrations.\nLung Cancer Prediction System\n\u2013 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite.\n\u2013 Performed data preprocessing, model evaluation, backend integration, and prediction workflows.\nEducation\nCMR Institute of TechnologyNov 2022 \u2013 Apr 2026\nBachelor of Technology in Computer Science and Engineering (Data Science)CGPA: 7.75\nCertifications\n\u2022 AWS Academy Cloud Foundations \u2013 AWS Academy\n\u2022 Oracle Analytics Cloud 2025 Certified Professional \u2013 Oracle\n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage)\n\u2022 Google AI-ML Virtual Internship \u2013 AICTE & EduSkills\n\u2022 Full Stack Web Development \u2013 DevTown",
     "textHash": "e76d50120211f949",
     "indexedAt": "2026-06-05T04:14:30.869819Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "7ef2dc68-0cbc-4251-9a7c-dadb2dcdf3c5",
@@ -5037,7 +5037,7 @@
     "fullText": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com Li n k edIn | GitH u b 274320370463Professional Summary Full Stack Developer with hands-on experience building scalable web applications using React.js, TypeScript, JavaScript, FastAPI , Node.js, PostgreSQL, MongoDB, and Supabase . Experienced in developing REST APIs, authentication systems, secure document platforms, responsive user interfaces, database-driven applications, and AI-powered solutions. Strong foundation in software engineering, API integration, application security, debugging, testing, and full-stack application development. 274320197971Technical Skills Languages: Python, JavaScript, TypeScript, SQL Frontend: React.js, HTML5, CSS3, Tailwind CSS, Redux, Responsive UI Development Backend: Node.js, Express.js, FastAPI , REST APIs, Authentication Systems Databases: PostgreSQL, MongoDB, Supabase AI &amp; APIs: Gemini API, OpenAI API, OCR, AI Integrations Tools: Git, GitHub, Docker, Postman, VS Code, Vercel Concepts: API Integration, Application Security, Database Design, Responsive Design, Performance Optimization, SDLC, Debugging, Testing 274320198188Experience TCT (The Career Tech) Mar 2026 \u2013 Present Junior Software Developer Remote \u2022 Developed full-stack web applications using React.js, TypeScript, FastAPI , Python, PostgreSQL, and Supabase . \u2022 Built REST APIs, authentication workflows, secure sharing systems, and backend services for scalable applications. \u2022 Designed responsive user interfaces and integrated frontend and backend modules to improve application functionality and user experience. \u2022 Worked on debugging, testing, deployment, database integration, performance optimization, and feature enhancements. \u2022 Collaborated using Git and GitHub while contributing to application development, maintenance, and system improvements. 274320198185Projects PINIT Vault \u2013 Secure Resume Sharing &amp; Unified Forensics Platform \u2022 Developed a secure document vault application using React.js, TypeScript, FastAPI , Python, Supabase , and PostgreSQL. \u2022 Implemented AES-256-GCM encryption for secure storage and sharing of resumes and documents. \u2022 Built secure sharing workflows, activity monitoring, and access management features. \u2022 Developed responsive frontend interfaces and backend REST APIs while collaborating through Git and GitHub workflows. PINIT-DNA \u2013 Universal File Ownership &amp; Digital Forensics System \u2022 Designed and implemented a 6-layer DNA fingerprinting framework for digital asset ownership verification and tamper detection. \u2022 Developed REST APIs using Node.js, TypeScript, Express.js, Prisma ORM, and PostgreSQL ( Supabase ). \u2022 Implemented encrypted storage, metadata analysis, and verification workflows. \u2022 Built scalable architectures supporting ownership verification and authenticity validation. Gen-AI Placement Management System \u2022 Developed a recruitment platform using React.js, Node.js, Express.js, MongoDB, and Gemini API. \u2022 Implemented recruiter dashboards, candidate management, authentication workflows, and application tracking modules. \u2022 Built REST APIs and integrated AI-assisted resume analysis features. \u2022 Developed database-driven workflows supporting scalable hiring operations. 274320198170Education CMR Institute of Technology Nov 2022 \u2013 Apr 2026 Bachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 274320198066Certifications AWS Academy Cloud Foundations Google AI-ML Virtual Internship Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) Full Stack Web Development \u2013 DevTown",
     "textHash": "0e0c2b487803b8e4",
     "indexedAt": "2026-06-05T04:14:30.877315Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "ec77bbbe-ed11-4138-a9a7-749489e4bb04",
@@ -5049,7 +5049,7 @@
     "fullText": "ai.jpg ai",
     "textHash": "41e5e357a0731820",
     "indexedAt": "2026-06-05T04:14:31.063974Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "c2b13ee4-d382-4133-b567-b089318679a0",
@@ -5061,7 +5061,7 @@
     "fullText": "10th.pdf 10th",
     "textHash": "a4fdda39fa517b44",
     "indexedAt": "2026-06-05T04:14:31.065330Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "ee960045-dfed-4e54-8d5e-635984551994",
@@ -5073,7 +5073,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:31.080643Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "a852f3db-4340-4205-9957-40f0fb847119",
@@ -5085,7 +5085,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:31.086238Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "dc639dbe-0a6b-4909-8d7b-0977590e0ef4",
@@ -5097,7 +5097,7 @@
     "fullText": "tiger.jpeg tiger",
     "textHash": "4cf5c4759985d00e",
     "indexedAt": "2026-06-05T04:14:31.105443Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "8346a566-1758-419d-a7da-739d997c670c",
@@ -5109,7 +5109,7 @@
     "fullText": "docdna test 1.pdf docdna test 1",
     "textHash": "50bc6d504a42c6e8",
     "indexedAt": "2026-06-05T04:14:31.111696Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "5d967f73-b338-40b8-ba2f-366f3c0fbbbe",
@@ -5121,7 +5121,7 @@
     "fullText": "Kavvam_Ashwitha_Globalco (1).pdf Kavvam_Ashwitha_Globalco (1).pdf Kavvam Ashwitha\nHyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com\nLINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004\nProfessional Summary\nSoftware Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python,\nJavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST\nAPIs, database design, debugging, testing, and application development. Experienced in collaborating across teams, implementing new\nfeatures, resolving production issues, and contributing throughout the software development lifecycle.\nTechnical Skills\nLanguages: Python, JavaScript, SQL\nFrontend: React.js, HTML5, CSS3, Tailwind CSS\nBackend: FastAPI, Django, REST APIs\nDatabases: PostgreSQL, MySQL, SQLite, MongoDB, Supabase\nTools: Git, GitHub, Postman, VS Code, Jupyter Notebook\nConcepts: Data Structures, Algorithms, OOP, SDLC, Debugging, Testing, API Integration\nExperience\nTCT (The Career Tech)Mar 2026 \u2013 Present\nJunior Software DeveloperRemote\n\u2013 Developed backend services and application features using Python, FastAPI, SQL, and modern software development practices.\n\u2013 Built REST APIs, authentication workflows, and database integrations for scalable applications.\n\u2013 Collaborated with team members to implement features, resolve defects, and improve platform stability.\n\u2013 Participated in debugging, testing, deployment support, and maintenance activities.\n\u2013 Worked across frontend and backend components to deliver end-to-end software solutions.\nDevTownMar 2024 \u2013 Apr 2024\nFull Stack Web Development InternRemote\n\u2013 Developed responsive web interfaces and integrated backend APIs using React.js and JavaScript.\n\u2013 Worked on debugging, database connectivity, authentication workflows, and deployment support.\nProjects\nPINIT-DNA \u2014 Universal File Ownership & Digital Forensics Platform\n\u2013 Developed a 6-layer DNA fingerprinting framework for ownership verification, tamper detection, and forensic analysis of digital assets.\n\u2013 Implemented AES-256-GCM encrypted vault storage with secure file retrieval and integrity verification.\n\u2013 Built a Universal File DNA Engine supporting Images, PDF, DOCX, PPTX, TXT, CSV, JSON, ZIP, Audio, and Video files.\n\u2013 Designed DNA comparison, similarity scoring, tampering detection, and forensic reporting modules.\n\u2013 Created ownership certificates, certificate verification portal, audit timeline tracking, and vault integrity monitoring features.\nPinIT Vault \u2014 Secure Digital Identity & Portfolio Management Platform\n\u2013 Developed a secure digital document management platform with encrypted storage, document sharing, and intelligent portfolio\ngeneration features.\n\u2013 Implemented OCR-based document classification, automated document organization, and dynamic portfolio creation workflows.\n\u2013 Designed secure sharing mechanisms with access controls, expiry settings, watermarking, and activity tracking capabilities.\n\u2013 Built responsive user interfaces and integrated scalable frontend-backend workflows using modern web technologies.\n\u2013 Developed portfolio management functionalities including create, view, edit, delete, and smart document integration from a centralized\nvault.\nLung Cancer Prediction System\n\u2013 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite for healthcare prediction.\n\u2013 Performed data preprocessing, feature engineering, model training, validation, and evaluation workflows.\n\u2013 Integrated trained models into web applications for real-time prediction and decision support.\nEducation\nCMR Institute of TechnologyNov 2022 \u2013 Apr 2026\nBachelor of Technology in Computer Science and Engineering (Data Science)CGPA: 7.75\nCertifications\n\u2022 AWS Academy Cloud Foundations \u2013 AWS Academy\n\u2022 Oracle Analytics Cloud 2025 Certified Professional \u2013 Oracle\n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage)\n\u2022 Google AI-ML Virtual Internship \u2013 AICTE & EduSkills\n\u2022 Full Stack Web Development \u2013 DevTown",
     "textHash": "45300d4527846f47",
     "indexedAt": "2026-06-05T04:14:31.173131Z",
-    "_deleted": false
+    "_deleted": true
   },
   {
     "dnaRecordId": "3aa6577a-ecf1-452d-8933-fe573aa971d9",
@@ -5133,6 +5133,930 @@
     "fullText": "PolicySchedule (31).pdf PolicySchedule (31).pdf Vehicle Details\nMakeModelVariantCubic CapacityManufacturing YearSeating capacity\nHYUNDAIVENUE 1.2 KAPPA MT S119720225\nBody TypeRegistration No.RTOHypothecation/Lease*Fuel TypeVIN/Chassis No.\nSUVTS 15 FJ 4575PATANCHERUVUNOPETROLMALFC81BLNM323350\nVehicle IDVElectrical AccessoriesNon-Electrical AccessoriesBI Fuel KitTotal IDVEngine No\n540,000000540,000G4LANM165737\n  Own Damage Premium (A)Amount(INR)Liability Premium (B)Amount(INR)\nBasic Own Damage PremiumBasic Third Party Liability Premium3,416\nVehicle1,724Bi-Fuel Kit0\nNon-Elec. Accessories (IMT-24)0Geographical Area Extension (IMT-1)0\nElec. Accessories (IMT-24)0Sub Total (Third Party Liability)3,416\nBi-Fuel Kit (IMT-25)0Personal Accident (PA) Cover\nGeographical Area Extension (IMT-1)\n0Compulsory PA Cover for Owner Driver Rs 1500000 (IMT-15)475\nIMT 23 Premium0PA Cover for 0 Unnamed Passengers Rs 0 Each (IMT-16)0\nSub Total (Basic Premium)1,724PA cover for Paid Driver of Rs 2 Lac (IMT-17)100\nDiscount/DeductiblesSub Total PA Cover575\nVoluntary Deductibles (0) (IMT-22A)0Legal Liability\nAnti Theft Device (IMT-10)0Paid Driver (IMT-28)50\nAA Membership (IMT-8)0Employees (for 0 persons) (IMT-29)0\nNo Claim Bonus (0%)0Sub Total (Legal Liability)50\nHandicapped Discount (IMT-12)0Net Liability Premium (B)4,041\nSub Total (Deductibles)0Total Premium (A+B)9,465\nTotal Own Damage Premium1,724SGST(9%)852\nAdd On Coverages ( ZD,CM,KP,PB )3700CGST(9%)852\nNet Own Damage Premium (A)5,424Gross Premium Paid11,169\n*Hypothecation Details:                                                                Payment Mode: Online\nICICI Lombard General Insurance Company Limited.\nServicing Office : D. No : 6-3-352 / 1, Second and Third Floor, Osman Plaza, Road No 1, Hyderabad, Telangana 500034, , , \nHYDERABAD, TELANGANA (State Code:36) -500034 \nPrivate Car Package Policy UIN --IRDAN115RP0017V01200102\nCertificate Cum Policy Schedule (FORM 51 OF THE CENTRAL MOTOR VEHICLE RULES, 1989) \nPAN :AAACI7904G  GSTIN: 36AAACI7904G1ZO  CIN :U67200MH2000PLC129408  IRDAI Reg:115\nAdd-on Cover Opted in the Policy: Zero Depreciation(IRDAN115RP0017V01200102/A0368V01200910), Consumables Cover(IRDAN115RP0017V01200102/A0216V01200910), Key Protect Cover\n(IRDAN115RP0017V01200102/A0019V01201213), Loss of Personal Belongings Cover(IRDAN115RP0017V01200102/A0021V01201213)\nLimitations as to use:\u0003The policy covers use of the vehicle for any purpose other than (1) Hire or Reward (2) Carriage of goods (other than samples or personal luggage) (3) Organized racing (4) Pace \nmaking (5) Speed testing (6) Reliability trials (7) Any purpose in connection with motor trade.\nDriver's Clause: Any person including the insured: Provided that the person driving holds an effective driving license at the time of the accident and is not disqualified from holding or obtaining such \nlicense. Provided also that the person holding an effective learners license may also drive the vehicle & that such a person satisfies the requirements of Rule 3 of the Central Motor Vehicle Rules, 1989.\nLimits of Liability Clause: Under Section II-1(i) of the policy-Death of or bodily injury: Such amount as is necessary to meet the requirements of the Motor Vehicle Act 1988.Under Section II-1 (ii) of \nthe policy-Damage to third party property is INR 7.5 Lakhs, PA Cover Under Section III for Owner-Driver is INR 15 Lakhs.\nNo Claim Bonus: The insured is entitled for a No Claim Bonus (NCB) on the own damage section of the policy, if no claim is made or pending during the preceding year(s) - 20%, preceding\ntwo consecutive years - 25%, preceding three consecutive years - 35%, preceding four consecutive years - 45%, preceding five consecutive years - 50% of NCB on OD Premium.\nNCB is allowed provided the policy is renewed within 90 days of the expiry date of the previous policy.\nDeclaration on Tax Invoice We hereby declare that though our aggregate turnover in any preceding financial year from 2017-18 onwards is more than the aggregate turnover notified under sub-rule (4) \nof rule 48, we are not required to prepare an invoice in terms of the provisions of the said sub-rule.\nImportant Notice: The insured is not indemnified if the vehicle is used or driven otherwise than in accordance with the schedule. Any payment made by the company by reasons of wider terms \nappearing in the certificate in order to comply with the Motor Vehicle Act, 1988 is recoverable from the insured. See the clause headed  \"AVOIDANCE OF CERTAIN TERMS & RIGHT \nOF RECOVERY\" For legal interruption, English version will hold good.\nGrievance Clause: For resolution of any query or grievance, Insured may check Grievance redressal policy at https://www.icicilombard.com/grievance-redressal or  connect with the respective servicing \noffice of insurance company. In the event of unsatisfactory response,he/she may approach the insurance ombudsman for the redressal of grievance at www.irdai.gov.in or on website of General Insurance \nCouncil: www.gicouncil.in\nHSN/SAC : 9971",
     "textHash": "986a57d1c6298f64",
     "indexedAt": "2026-06-05T04:14:31.191629Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "af751be6-a11f-4b1d-a71a-821803425967",
+    "filename": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "fileType": "PDF",
+    "title": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "author": "",
+    "snippet": "CONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0  Ashwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 1 of 6  P  R  O  D  U  C  T     R  E  Q  U  I  R  E  M  E  N  T  S     D  O  C  U  M  E  N  T    Intelligent Client Onboarding Engine  Automating B2B Onboarding from 45 Minutes to Under 3 Minutes    A U T H O R  Ashwitha  R O L E  Forward Deployed  Engineer  V E R S I O N  1.0  D A T E  June 2026  A U D I E N C E  CTO \u00b7 Ops Lead \u00b7 PM    01 \u00b7 P R O B L E M   S T A T E M E N T      ",
+    "fullText": "Ashwitha_FDE_Take_Home_Assignment .pdf CONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 1 of 6 \nP  R  O  D  U  C  T     R  E  Q  U  I  R  E  M  E  N  T  S     D  O  C  U  M  E  N  T \n \nIntelligent Client Onboarding Engine \nAutomating B2B Onboarding from 45 Minutes to Under 3 Minutes \n \nA U T H O R \nAshwitha \nR O L E \nForward Deployed \nEngineer \nV E R S I O N \n1.0 \nD A T E \nJune 2026 \nA U D I E N C E \nCTO \u00b7 Ops Lead \u00b7 PM \n \n01 \u00b7 P R O B L E M   S T A T E M E N T \n \n \nA 30-person B2B company relies entirely on manual effort to onboard every new client after a deal closes. One \nemployee copies client data from the CRM into four separate systems; a second employee verifies the work. The \nprocess averages 45 minutes per client, produces frequent data inconsistencies, and provides no centralized visibility \ninto onboarding status. \n \nPain Point Current State Business Impact \nOnboarding duration ~45 min / client Ops team bottleneck; limits monthly \ncapacity \nHuman verification 2 employees always required 40+ min of senior-staff time per deal \nData entry errors Frequent; no detection layer Invoice mismatches, wrong email recipients \nCross-system consistency Manual; varies per employee CRM, invoice & sheet regularly out of sync \nOnboarding visibility None Leadership cannot track status or failures \n \n02 \u00b7 G O A L S   &   S U C C E S S   M E T R I C S \n \n \nObjective Baseline Target Measurement \nEnd-to-end onboarding time ~45 min < 3 min Median run time in audit log \nManual effort per onboarding ~45 min < 3 min Time logged in Command \nCenter \nAutomated completion rate 0% \u2265 95% % runs requiring no human \naction \nCross-system data accuracy ~70% est. 99.5% Verification engine \nmismatch rate \nHuman reviewers required 2 always 0 (exceptions only) Reviews triggered / total \nruns \nFailed step self-recovery N/A \u2265 80% auto-resolved Retries succeeded / retries \ntotal \n \n03 \u00b7 P R O P O S E D   S O L U T I O N \n \n \n\nCONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 2 of 6 \nBuild an Intelligent Onboarding Engine: a centralized onboarding orchestration platform that listens for a Closed Won \nevent in the CRM, validates client data, scores onboarding confidence, executes all downstream steps in parallel, \nverifies each result, and self-heals on failure \u2014 all without human involvement for standard cases. A real-time \nCommand Center gives Operations full visibility. \n \n0 3 B  \u00b7 S Y S T E M   A R C H I T E C T U R E \n \n \nINTELLIGENT CLIENT ONBOARDING ENGINE \u2014 ARCHITECTURE \nCRM  \u2192  Closed Won Event  \u2192  Webhook Fired \n\u2193 \nData Ingestion & Normalization \n\u2193 \nValidation Engine \n\u2193 \nConfidence Scoring Engine \n\u2193 \nParallel Orchestration Engine \nInvoice Welcome \nEmail \nGoogle Sheet Checklist Notify Team (parallel) \n\u2193 \nVerification Engine  +  Self-Healing Layer \n\u2193 \nOnboarding Command Center  \u2192  Complete \n \n \n04 \u00b7 O P E R A T I O N A L   W O R K F L O W \n \n \n# Stage What Happens SLA \n1 \nCRM Trigger \nWebhook fires the instant a deal transitions to Closed Won. \nPayload captured and queued atomically. \n< 1s \n2 \nData Ingestion \nPull full client record from CRM API. Normalize field names, \nsanitize inputs, snapshot to internal store. \n< 2s \n3 \nValidation Engine \nCheck all required fields (email, billing, contract). Flag duplicates. \nDetect incomplete contracts or invalid billing data. \n< 3s \n4 \nConfidence Scoring \nScore 0\u2013100 based on field completeness, data quality signals, \nand duplicate detection. Route to auto / review / manual lane. \n< 1s \n5 \nParallel Orchestration \nSimultaneously: generate invoice \u00b7 send welcome email \u00b7 update \nGoogle Sheet \u00b7 create project checklist \u00b7 notify internal team. \n< 20s \n\nCONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 3 of 6 \n6 \nVerification Engine \nConfirm each step completed successfully and all records match \nthe CRM snapshot. Trigger self-healing on mismatch. \n< 5s \n7 \nSelf-Healing Layer \nOn step failure: retry (\u00d73, exponential backoff) \u00b7 correct data if \npossible \u00b7 escalate to ops queue only if unresolvable. \n< 30s \n8 \nCommand Center \nUpdate \nWrite full audit log. Update live dashboard: status, duration, step \noutcomes, any escalations. Mark onboarding complete. \n< 2s \n \nTotal target wall-clock time: < 3 minutes end-to-end (steps 5\u20136 run in parallel). \n \n05 \u00b7 C O N F I D E N C E   S C O R I N G   E N G I N E \n \n \nEvery onboarding run is assigned a confidence score (0\u2013100) before any action is executed. The score determines the \nrouting lane and eliminates blanket human review. \n \nScore Band Confidence Level System Action \n80 \u2013 100 HIGH Fully automated. No human involvement. Onboarding completes in \n< 3 minutes. \n50 \u2013 79 MEDIUM Automated execution proceeds; account owner receives a review \nrequest before the invoice is finalized. \n0 \u2013 49 LOW Onboarding paused. Ops queue notified with specific failure \nreasons. Man",
+    "textHash": "53073a0809689535",
+    "indexedAt": "2026-06-06T07:09:05.068580Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "af751be6-a11f-4b1d-a71a-821803425967",
+    "filename": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "fileType": "PDF",
+    "title": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "author": "",
+    "snippet": "CONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0  Ashwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 1 of 6  P  R  O  D  U  C  T     R  E  Q  U  I  R  E  M  E  N  T  S     D  O  C  U  M  E  N  T    Intelligent Client Onboarding Engine  Automating B2B Onboarding from 45 Minutes to Under 3 Minutes    A U T H O R  Ashwitha  R O L E  Forward Deployed  Engineer  V E R S I O N  1.0  D A T E  June 2026  A U D I E N C E  CTO \u00b7 Ops Lead \u00b7 PM    01 \u00b7 P R O B L E M   S T A T E M E N T      ",
+    "fullText": "Ashwitha_FDE_Take_Home_Assignment .pdf CONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 1 of 6 \nP  R  O  D  U  C  T     R  E  Q  U  I  R  E  M  E  N  T  S     D  O  C  U  M  E  N  T \n \nIntelligent Client Onboarding Engine \nAutomating B2B Onboarding from 45 Minutes to Under 3 Minutes \n \nA U T H O R \nAshwitha \nR O L E \nForward Deployed \nEngineer \nV E R S I O N \n1.0 \nD A T E \nJune 2026 \nA U D I E N C E \nCTO \u00b7 Ops Lead \u00b7 PM \n \n01 \u00b7 P R O B L E M   S T A T E M E N T \n \n \nA 30-person B2B company relies entirely on manual effort to onboard every new client after a deal closes. One \nemployee copies client data from the CRM into four separate systems; a second employee verifies the work. The \nprocess averages 45 minutes per client, produces frequent data inconsistencies, and provides no centralized visibility \ninto onboarding status. \n \nPain Point Current State Business Impact \nOnboarding duration ~45 min / client Ops team bottleneck; limits monthly \ncapacity \nHuman verification 2 employees always required 40+ min of senior-staff time per deal \nData entry errors Frequent; no detection layer Invoice mismatches, wrong email recipients \nCross-system consistency Manual; varies per employee CRM, invoice & sheet regularly out of sync \nOnboarding visibility None Leadership cannot track status or failures \n \n02 \u00b7 G O A L S   &   S U C C E S S   M E T R I C S \n \n \nObjective Baseline Target Measurement \nEnd-to-end onboarding time ~45 min < 3 min Median run time in audit log \nManual effort per onboarding ~45 min < 3 min Time logged in Command \nCenter \nAutomated completion rate 0% \u2265 95% % runs requiring no human \naction \nCross-system data accuracy ~70% est. 99.5% Verification engine \nmismatch rate \nHuman reviewers required 2 always 0 (exceptions only) Reviews triggered / total \nruns \nFailed step self-recovery N/A \u2265 80% auto-resolved Retries succeeded / retries \ntotal \n \n03 \u00b7 P R O P O S E D   S O L U T I O N \n \n \n\nCONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 2 of 6 \nBuild an Intelligent Onboarding Engine: a centralized onboarding orchestration platform that listens for a Closed Won \nevent in the CRM, validates client data, scores onboarding confidence, executes all downstream steps in parallel, \nverifies each result, and self-heals on failure \u2014 all without human involvement for standard cases. A real-time \nCommand Center gives Operations full visibility. \n \n0 3 B  \u00b7 S Y S T E M   A R C H I T E C T U R E \n \n \nINTELLIGENT CLIENT ONBOARDING ENGINE \u2014 ARCHITECTURE \nCRM  \u2192  Closed Won Event  \u2192  Webhook Fired \n\u2193 \nData Ingestion & Normalization \n\u2193 \nValidation Engine \n\u2193 \nConfidence Scoring Engine \n\u2193 \nParallel Orchestration Engine \nInvoice Welcome \nEmail \nGoogle Sheet Checklist Notify Team (parallel) \n\u2193 \nVerification Engine  +  Self-Healing Layer \n\u2193 \nOnboarding Command Center  \u2192  Complete \n \n \n04 \u00b7 O P E R A T I O N A L   W O R K F L O W \n \n \n# Stage What Happens SLA \n1 \nCRM Trigger \nWebhook fires the instant a deal transitions to Closed Won. \nPayload captured and queued atomically. \n< 1s \n2 \nData Ingestion \nPull full client record from CRM API. Normalize field names, \nsanitize inputs, snapshot to internal store. \n< 2s \n3 \nValidation Engine \nCheck all required fields (email, billing, contract). Flag duplicates. \nDetect incomplete contracts or invalid billing data. \n< 3s \n4 \nConfidence Scoring \nScore 0\u2013100 based on field completeness, data quality signals, \nand duplicate detection. Route to auto / review / manual lane. \n< 1s \n5 \nParallel Orchestration \nSimultaneously: generate invoice \u00b7 send welcome email \u00b7 update \nGoogle Sheet \u00b7 create project checklist \u00b7 notify internal team. \n< 20s \n\nCONFIDENTIAL  |  Intelligent Client Onboarding Engine \u2014 PRD v1.0 \nAshwitha  |  FDE Take-Home  |  Aiwah Labs  |  Page 3 of 6 \n6 \nVerification Engine \nConfirm each step completed successfully and all records match \nthe CRM snapshot. Trigger self-healing on mismatch. \n< 5s \n7 \nSelf-Healing Layer \nOn step failure: retry (\u00d73, exponential backoff) \u00b7 correct data if \npossible \u00b7 escalate to ops queue only if unresolvable. \n< 30s \n8 \nCommand Center \nUpdate \nWrite full audit log. Update live dashboard: status, duration, step \noutcomes, any escalations. Mark onboarding complete. \n< 2s \n \nTotal target wall-clock time: < 3 minutes end-to-end (steps 5\u20136 run in parallel). \n \n05 \u00b7 C O N F I D E N C E   S C O R I N G   E N G I N E \n \n \nEvery onboarding run is assigned a confidence score (0\u2013100) before any action is executed. The score determines the \nrouting lane and eliminates blanket human review. \n \nScore Band Confidence Level System Action \n80 \u2013 100 HIGH Fully automated. No human involvement. Onboarding completes in \n< 3 minutes. \n50 \u2013 79 MEDIUM Automated execution proceeds; account owner receives a review \nrequest before the invoice is finalized. \n0 \u2013 49 LOW Onboarding paused. Ops queue notified with specific failure \nreasons. Man",
+    "textHash": "53073a0809689535",
+    "indexedAt": "2026-06-06T07:09:12.253541Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "6047bdb5-ca6c-4f4b-94de-ed26bb438409",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-08T09:51:37.499042Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "6047bdb5-ca6c-4f4b-94de-ed26bb438409",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-08T09:51:40.491895Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "3dcd0ba9-ba07-49a0-9e46-b2af39922b8f",
+    "filename": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "fileType": "DOCX",
+    "title": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "author": "",
+    "snippet": "PINIT- DNA Smart Links Engine \u2014 Code Audit Report A feature-by-feature evidence-based review of the Smart Links (secure document sharing) implementation \u2014 generation, tracking, secure viewer, audit trail, and gap analysis. 1240536275573Prepared for Ashwitha Kavvam \u2014 PINIT-DNA Project 100583982267Audit date 2026-06- 08 100583982879Scope Smart Links Engine (15-section checklist, 100+ items) 100583982879Method Direct codebase inspection (grep / file reads) \u2014 no assumptions 100583982879Overall compl",
+    "fullText": "PINIT-DNA_SmartLinks_Audit_Report.docx PINIT- DNA Smart Links Engine \u2014 Code Audit Report A feature-by-feature evidence-based review of the Smart Links (secure document sharing) implementation \u2014 generation, tracking, secure viewer, audit trail, and gap analysis. 1240536275573Prepared for Ashwitha Kavvam \u2014 PINIT-DNA Project 100583982267Audit date 2026-06- 08 100583982879Scope Smart Links Engine (15-section checklist, 100+ items) 100583982879Method Direct codebase inspection (grep / file reads) \u2014 no assumptions 100583982879Overall completion \uf0bb 38\u201342% (core share \uf0ae track \uf0ae timeline loop fully working) 100583981426DONE \u25cf PARTIAL \u25cf MISSING 1. Smart Link Generation 1. Smart Link Generation Feature Status Evidence Secure link generation DONE share-link.service.ts \u2014 crypto.randomBytes(8) \uf0ae base64url token, uniqueness checked vs DB JWT token generation MISSING jsonwebtoken is in package.json but never imported/used in share code \u2014 opaque random tokens used instead HMAC signature MISSING No crypto.createHmac anywhere in src/services/share/ Session nonce PARTIAL Client-generated sessionId (sessionStorage) groups events \u2014 not a cryptographic nonce Link expiration DONE expiresAt field; expiresIn (hrs) \uf0ae computed date; isExpired check in getPublicInfo() One-time access links MISSING Only generic maxViews counter \u2014 no single-use flag Link revocation DONE ShareLinkService.revoke() sets isActive=false; DELETE /api/v1/share/:token wired Download limits PARTIAL allowDownload is boolean on/off \u2014 no numeric &apos;max N downloads&apos; View-only mode DONE When allowDownload=false, Download button hidden; file streamed inline only Files: share-link.service.ts, share-link.controller.ts, share.routes.ts Endpoints: POST /api/v1/share, DELETE /api/v1/share/:token Database: share_links table 5791192214032. Access Policies 2. Access Policies Feature Status Evidence Access policy builder PARTIAL ShareModal in VaultPage.tsx \u2014 basic form (expiry/views/download/name/note), not a generalized builder Expiry policies DONE Presets: 1h / 24h / 7 days / 30 days / never Device restrictions MISSING Device type only recorded, never enforced Geo restrictions MISSING Country/city only logged, never used to allow/deny Email verification MISSING No email field/flow in share code OTP verification MISSING Zero matches in codebase MFA escalation MISSING Not implemented User-bound access MISSING requireName captures free-text name only \u2014 not an authenticated identity Files: client/src/pages/VaultPage.tsx (ShareModal) 3. Secure Viewer 3. Secure Viewer Feature Status Evidence Protected viewer DONE ShareViewerPage.tsx \u2014 public route /s/:token, gated by name/expiry/exhaustion screens Watermark overlay DONE Repeating diagonal &apos;PINIT-DNA \u00b7 token \u00b7 name&apos; overlay, pointer-events-none Right-click disable DONE onContextMenu={e =&gt; e.preventDefault()} on page wrapper Print disable MISSING Only DETECTS print attempts (beforeprint + matchMedia) \u2014 content not hidden from print Download disable DONE Download button conditionally rendered only if allowDownload=true Blur on inactivity MISSING No idle-blur logic anywhere Tab-switch detection DONE visibilitychange listener \uf0ae track(&apos;TAB_SWITCH&apos;) Session timeout MISSING No timeout beyond the link&apos;s own expiresAt Files: client/src/pages/ShareViewerPage.tsx 5791192505184. Audit Trail 4. Audit Trail Feature Status Evidence File open logging DONE track(&apos;VIEWED&apos;) on load \uf0ae ShareAccessLog row + viewCount increment Download logging DONE handleDownload() \uf0ae track(&apos;DOWNLOADED&apos;) Share logging DONE SHARE_CREATED event synthesized in TimelinePage.buildHistory() from ShareLink.createdAt Scroll depth tracking DONE onScroll computes %, fires SCROLL at 25/50/75/100% milestones Session duration MISSING sessionId groups events but duration never computed/displayed Access history DONE GET /api/v1/share/:token/logs \uf0ae full accessLogs list per link Audit export MISSING No CSV/PDF export specific to share access logs Files: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx Endpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId Database: share_access_logs table 5791192210875. Device Fingerprinting 5. Device Fingerprinting Feature Status Evidence Browser detection DONE parseUserAgent() regex-classifies Chrome/Firefox/Edge/Safari/Opera OS detection DONE Same function \uf0ae Windows/macOS/Linux/Android/iOS Device fingerprint (canvas/WebGL hash) MISSING Only coarse UA parsing \u2014 no canvas/audio/WebGL fingerprint hash Screen resolution MISSING screen.width/height never read or sent Timezone capture DONE Intl.DateTimeFormat().resolvedOptions().timeZone sent + stored VPN detection MISSING Not implemented Tor detection MISSING Not implemented Files: share-link.service.ts (parseUserAgent) 5791192505186. Geo Intelligence 6. Geo Intelligence Feature Status Evidence IP capture DONE X-Forwarded-For honored for ngrok; app.set(&apos;trust proxy&apos;, true) in app.ts Country detectio",
+    "textHash": "88d2af67d2292d08",
+    "indexedAt": "2026-06-08T09:52:05.342721Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "c626676e-0993-484c-8b81-9aedcfbf22d4",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-08T10:10:39.363654Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "c626676e-0993-484c-8b81-9aedcfbf22d4",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-08T10:10:48.306620Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "6338315c-88ae-4304-8e99-de8044cc3df6",
+    "filename": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "fileType": "DOCX",
+    "title": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "author": "",
+    "snippet": "PINIT- DNA Smart Links Engine \u2014 Code Audit Report A feature-by-feature evidence-based review of the Smart Links (secure document sharing) implementation \u2014 generation, tracking, secure viewer, audit trail, and gap analysis. 1240536275573Prepared for Ashwitha Kavvam \u2014 PINIT-DNA Project 100583982267Audit date 2026-06- 08 100583982879Scope Smart Links Engine (15-section checklist, 100+ items) 100583982879Method Direct codebase inspection (grep / file reads) \u2014 no assumptions 100583982879Overall compl",
+    "fullText": "PINIT-DNA_SmartLinks_Audit_Report.docx PINIT- DNA Smart Links Engine \u2014 Code Audit Report A feature-by-feature evidence-based review of the Smart Links (secure document sharing) implementation \u2014 generation, tracking, secure viewer, audit trail, and gap analysis. 1240536275573Prepared for Ashwitha Kavvam \u2014 PINIT-DNA Project 100583982267Audit date 2026-06- 08 100583982879Scope Smart Links Engine (15-section checklist, 100+ items) 100583982879Method Direct codebase inspection (grep / file reads) \u2014 no assumptions 100583982879Overall completion \uf0bb 38\u201342% (core share \uf0ae track \uf0ae timeline loop fully working) 100583981426DONE \u25cf PARTIAL \u25cf MISSING 1. Smart Link Generation 1. Smart Link Generation Feature Status Evidence Secure link generation DONE share-link.service.ts \u2014 crypto.randomBytes(8) \uf0ae base64url token, uniqueness checked vs DB JWT token generation MISSING jsonwebtoken is in package.json but never imported/used in share code \u2014 opaque random tokens used instead HMAC signature MISSING No crypto.createHmac anywhere in src/services/share/ Session nonce PARTIAL Client-generated sessionId (sessionStorage) groups events \u2014 not a cryptographic nonce Link expiration DONE expiresAt field; expiresIn (hrs) \uf0ae computed date; isExpired check in getPublicInfo() One-time access links MISSING Only generic maxViews counter \u2014 no single-use flag Link revocation DONE ShareLinkService.revoke() sets isActive=false; DELETE /api/v1/share/:token wired Download limits PARTIAL allowDownload is boolean on/off \u2014 no numeric &apos;max N downloads&apos; View-only mode DONE When allowDownload=false, Download button hidden; file streamed inline only Files: share-link.service.ts, share-link.controller.ts, share.routes.ts Endpoints: POST /api/v1/share, DELETE /api/v1/share/:token Database: share_links table 5791192214032. Access Policies 2. Access Policies Feature Status Evidence Access policy builder PARTIAL ShareModal in VaultPage.tsx \u2014 basic form (expiry/views/download/name/note), not a generalized builder Expiry policies DONE Presets: 1h / 24h / 7 days / 30 days / never Device restrictions MISSING Device type only recorded, never enforced Geo restrictions MISSING Country/city only logged, never used to allow/deny Email verification MISSING No email field/flow in share code OTP verification MISSING Zero matches in codebase MFA escalation MISSING Not implemented User-bound access MISSING requireName captures free-text name only \u2014 not an authenticated identity Files: client/src/pages/VaultPage.tsx (ShareModal) 3. Secure Viewer 3. Secure Viewer Feature Status Evidence Protected viewer DONE ShareViewerPage.tsx \u2014 public route /s/:token, gated by name/expiry/exhaustion screens Watermark overlay DONE Repeating diagonal &apos;PINIT-DNA \u00b7 token \u00b7 name&apos; overlay, pointer-events-none Right-click disable DONE onContextMenu={e =&gt; e.preventDefault()} on page wrapper Print disable MISSING Only DETECTS print attempts (beforeprint + matchMedia) \u2014 content not hidden from print Download disable DONE Download button conditionally rendered only if allowDownload=true Blur on inactivity MISSING No idle-blur logic anywhere Tab-switch detection DONE visibilitychange listener \uf0ae track(&apos;TAB_SWITCH&apos;) Session timeout MISSING No timeout beyond the link&apos;s own expiresAt Files: client/src/pages/ShareViewerPage.tsx 5791192505184. Audit Trail 4. Audit Trail Feature Status Evidence File open logging DONE track(&apos;VIEWED&apos;) on load \uf0ae ShareAccessLog row + viewCount increment Download logging DONE handleDownload() \uf0ae track(&apos;DOWNLOADED&apos;) Share logging DONE SHARE_CREATED event synthesized in TimelinePage.buildHistory() from ShareLink.createdAt Scroll depth tracking DONE onScroll computes %, fires SCROLL at 25/50/75/100% milestones Session duration MISSING sessionId groups events but duration never computed/displayed Access history DONE GET /api/v1/share/:token/logs \uf0ae full accessLogs list per link Audit export MISSING No CSV/PDF export specific to share access logs Files: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx Endpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId Database: share_access_logs table 5791192210875. Device Fingerprinting 5. Device Fingerprinting Feature Status Evidence Browser detection DONE parseUserAgent() regex-classifies Chrome/Firefox/Edge/Safari/Opera OS detection DONE Same function \uf0ae Windows/macOS/Linux/Android/iOS Device fingerprint (canvas/WebGL hash) MISSING Only coarse UA parsing \u2014 no canvas/audio/WebGL fingerprint hash Screen resolution MISSING screen.width/height never read or sent Timezone capture DONE Intl.DateTimeFormat().resolvedOptions().timeZone sent + stored VPN detection MISSING Not implemented Tor detection MISSING Not implemented Files: share-link.service.ts (parseUserAgent) 5791192505186. Geo Intelligence 6. Geo Intelligence Feature Status Evidence IP capture DONE X-Forwarded-For honored for ngrok; app.set(&apos;trust proxy&apos;, true) in app.ts Country detectio",
+    "textHash": "88d2af67d2292d08",
+    "indexedAt": "2026-06-08T10:11:30.729141Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "44edde66-67ed-4bc5-ab8b-a098bb89e581",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:08:32.131743Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "44edde66-67ed-4bc5-ab8b-a098bb89e581",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:08:37.291482Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "2448beff-f27f-4a44-aa53-7d9fae84b82f",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:14:49.172904Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "2448beff-f27f-4a44-aa53-7d9fae84b82f",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:14:59.081538Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "99dd46ca-8920-49d8-9150-848d4d20b35a",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:46.164221Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "0b746bc4-3513-485b-9150-51201f71597d",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:46.174785Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "b77b190d-c2a2-4d17-8888-e76d86c33479",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:46.211209Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "bd836a32-3eca-47c3-a416-e63cf29b42d4",
+    "filename": "config.json",
+    "fileType": "JSON",
+    "title": "config.json",
+    "author": "",
+    "snippet": "config",
+    "fullText": "config.json config",
+    "textHash": "6e8088256b1f6977",
+    "indexedAt": "2026-06-10T06:20:46.227128Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "3fb41116-7725-4796-8aea-27fe07cf2262",
+    "filename": "WhatsApp Image 2026-05-11 at 12.47.35.jpeg",
+    "fileType": "IMAGE",
+    "title": "WhatsApp Image 2026-05-11 at 12.47.35.jpeg",
+    "author": "",
+    "snippet": "WhatsApp Image 2026 05 11 at 12 47 35",
+    "fullText": "WhatsApp Image 2026-05-11 at 12.47.35.jpeg WhatsApp Image 2026 05 11 at 12 47 35",
+    "textHash": "c7fd3496e91810d0",
+    "indexedAt": "2026-06-10T06:20:46.253710Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "f3d0f73a-bdf3-487b-9cf6-298ca27018cb",
+    "filename": "IMG_20260222_110540_449.webp",
+    "fileType": "IMAGE",
+    "title": "IMG_20260222_110540_449.webp",
+    "author": "",
+    "snippet": "IMG 20260222 110540 449",
+    "fullText": "IMG_20260222_110540_449.webp IMG 20260222 110540 449",
+    "textHash": "0968ec8242fd751f",
+    "indexedAt": "2026-06-10T06:20:46.254338Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "0e311cf2-2be2-4cfc-977d-ef9bc19b2099",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:46.282277Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "b63b3c5b-5afb-4756-987e-1369d629c9ca",
+    "filename": "WhatsApp Image 2026-05-11 at 13.06.56.jpeg",
+    "fileType": "IMAGE",
+    "title": "WhatsApp Image 2026-05-11 at 13.06.56.jpeg",
+    "author": "",
+    "snippet": "WhatsApp Image 2026 05 11 at 13 06 56",
+    "fullText": "WhatsApp Image 2026-05-11 at 13.06.56.jpeg WhatsApp Image 2026 05 11 at 13 06 56",
+    "textHash": "5ce8a2f3dd41d8b1",
+    "indexedAt": "2026-06-10T06:20:46.285077Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "6a0dfa76-1ef0-4472-a39b-ae6692d42ce8",
+    "filename": "Ashwitha_22r01a67f6.jpeg",
+    "fileType": "IMAGE",
+    "title": "Ashwitha_22r01a67f6.jpeg",
+    "author": "",
+    "snippet": "Ashwitha 22r01a67f6",
+    "fullText": "Ashwitha_22r01a67f6.jpeg Ashwitha 22r01a67f6",
+    "textHash": "edf7f46f6f3b80f9",
+    "indexedAt": "2026-06-10T06:20:46.306363Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "b498d865-18ea-473d-9e6d-e1e2132476ba",
+    "filename": "ChatGPT Image May 11, 2026, 05_16_29 PM.png",
+    "fileType": "IMAGE",
+    "title": "ChatGPT Image May 11, 2026, 05_16_29 PM.png",
+    "author": "",
+    "snippet": "ChatGPT Image May 11, 2026, 05 16 29 PM",
+    "fullText": "ChatGPT Image May 11, 2026, 05_16_29 PM.png ChatGPT Image May 11, 2026, 05 16 29 PM",
+    "textHash": "ce189920f16c6d65",
+    "indexedAt": "2026-06-10T06:20:46.314448Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "ce454265-64a0-46dd-a6ae-fc2e5c7025bf",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.544482Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "e64aa5ee-4f5c-490f-9c0c-d0d496e2a0d8",
+    "filename": "test.pdf",
+    "fileType": "PDF",
+    "title": "test.pdf",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.pdf test",
+    "textHash": "4f9b9f865f97964f",
+    "indexedAt": "2026-06-10T06:20:46.556023Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "822d423c-072c-4164-ad05-5ab354cb7bd9",
+    "filename": "test.docx",
+    "fileType": "DOCX",
+    "title": "test.docx",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.docx test",
+    "textHash": "a9a0e04c71eeee3a",
+    "indexedAt": "2026-06-10T06:20:46.569183Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "100a9175-b028-477c-9e58-80675b012fe4",
+    "filename": "test.pptx",
+    "fileType": "PPTX",
+    "title": "test.pptx",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.pptx test",
+    "textHash": "383f2d0bf29a6d35",
+    "indexedAt": "2026-06-10T06:20:46.584953Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "b6e41dcd-9e38-4b82-8bfc-cc06d758cd2f",
+    "filename": "employees.csv",
+    "fileType": "CSV",
+    "title": "employees.csv",
+    "author": "",
+    "snippet": "employees",
+    "fullText": "employees.csv employees",
+    "textHash": "904fa7086adc94e1",
+    "indexedAt": "2026-06-10T06:20:46.601253Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "c0a4fd48-c8b2-4c06-a723-e82ffde6d27b",
+    "filename": "sample.mp4",
+    "fileType": "VIDEO",
+    "title": "sample.mp4",
+    "author": "",
+    "snippet": "sample",
+    "fullText": "sample.mp4 sample",
+    "textHash": "d05168c0f5cf122d",
+    "indexedAt": "2026-06-10T06:20:46.608638Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "95c6a10a-fe72-43cb-986b-2db9530572ef",
+    "filename": "audit-test.txt",
+    "fileType": "TXT",
+    "title": "audit-test.txt",
+    "author": "",
+    "snippet": "audit test",
+    "fullText": "audit-test.txt audit test",
+    "textHash": "e363a8c9b7bcdece",
+    "indexedAt": "2026-06-10T06:20:46.627836Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "d87d4a44-c35e-4700-a14e-9adbb03e0dea",
+    "filename": "test_dna.txt",
+    "fileType": "TXT",
+    "title": "test_dna.txt",
+    "author": "",
+    "snippet": "test dna",
+    "fullText": "test_dna.txt test dna",
+    "textHash": "9241e92242da22cf",
+    "indexedAt": "2026-06-10T06:20:46.635144Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "91ba49a5-8ad3-4cae-838c-f5e5ba3b2833",
+    "filename": "test.wav",
+    "fileType": "AUDIO",
+    "title": "test.wav",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.wav test",
+    "textHash": "e1a75c7cced6618b",
+    "indexedAt": "2026-06-10T06:20:46.656048Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "055ffaff-74df-4471-a622-cdacb56cf18a",
+    "filename": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "fileType": "AUDIO",
+    "title": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "author": "",
+    "snippet": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
+    "fullText": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
+    "textHash": "397232022cb50dc6",
+    "indexedAt": "2026-06-10T06:20:46.656520Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "6a729f89-ec55-4650-af81-176665acd076",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.921748Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "50cfbb1f-477f-4c4d-a4a5-5498773353d7",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.923975Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "5f5ac488-ce4d-44fa-919a-11580c0aaf4a",
+    "filename": "interview.pdf",
+    "fileType": "PDF",
+    "title": "interview.pdf",
+    "author": "",
+    "snippet": "interview",
+    "fullText": "interview.pdf interview",
+    "textHash": "e5a4693967d1997a",
+    "indexedAt": "2026-06-10T06:20:46.949500Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "d62f0330-a5bb-45f0-ba64-0cc9baafb984",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.949909Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "8c224a7c-6754-4fd0-bcbf-f6ad4285e22a",
+    "filename": "project.zip",
+    "fileType": "ZIP",
+    "title": "project.zip",
+    "author": "",
+    "snippet": "project",
+    "fullText": "project.zip project",
+    "textHash": "6f0a60b693978c43",
+    "indexedAt": "2026-06-10T06:20:46.950656Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "169454a7-4a00-47e8-82f1-74671b886033",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.951178Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "a52e9a50-c73d-4349-8d5f-ee2c6cab7432",
+    "filename": "test.pdf",
+    "fileType": "PDF",
+    "title": "test.pdf",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.pdf test",
+    "textHash": "4f9b9f865f97964f",
+    "indexedAt": "2026-06-10T06:20:46.951831Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "d0ced404-c2c4-4fab-8d83-54d3aace57d6",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.953291Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "44a7beab-6dde-433b-80e3-a2af1bd13102",
+    "filename": "interview.pdf",
+    "fileType": "PDF",
+    "title": "interview.pdf",
+    "author": "",
+    "snippet": "interview",
+    "fullText": "interview.pdf interview",
+    "textHash": "e5a4693967d1997a",
+    "indexedAt": "2026-06-10T06:20:46.953518Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "bce588c5-14c8-46c5-a3db-6499998c3c03",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:46.956543Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "ea48bf2a-fa48-43af-a96a-c060f4e018da",
+    "filename": "test.wav",
+    "fileType": "AUDIO",
+    "title": "test.wav",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.wav test",
+    "textHash": "e1a75c7cced6618b",
+    "indexedAt": "2026-06-10T06:20:47.264033Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "0db3c6a8-3461-400f-8fbf-a6424cd9c465",
+    "filename": "project.zip",
+    "fileType": "ZIP",
+    "title": "project.zip",
+    "author": "",
+    "snippet": "project",
+    "fullText": "project.zip project",
+    "textHash": "6f0a60b693978c43",
+    "indexedAt": "2026-06-10T06:20:47.267159Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "8171702b-da8f-448d-a639-c14cbce05c60",
+    "filename": "sample.mp4",
+    "fileType": "VIDEO",
+    "title": "sample.mp4",
+    "author": "",
+    "snippet": "sample",
+    "fullText": "sample.mp4 sample",
+    "textHash": "d05168c0f5cf122d",
+    "indexedAt": "2026-06-10T06:20:47.299195Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "1bb5fbc1-71f8-4745-b54d-f67b39bf6589",
+    "filename": "test.zip",
+    "fileType": "ZIP",
+    "title": "test.zip",
+    "author": "",
+    "snippet": "test",
+    "fullText": "test.zip test",
+    "textHash": "14463cf019aa56f7",
+    "indexedAt": "2026-06-10T06:20:47.300827Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "b637125f-a587-4405-9186-4b25b9e9f8b1",
+    "filename": "istockphoto-vedio 1.mp4",
+    "fileType": "VIDEO",
+    "title": "istockphoto-vedio 1.mp4",
+    "author": "",
+    "snippet": "istockphoto vedio 1",
+    "fullText": "istockphoto-vedio 1.mp4 istockphoto vedio 1",
+    "textHash": "7c30651b23a48a5d",
+    "indexedAt": "2026-06-10T06:20:47.302036Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "d0e9da04-7922-48c2-b81b-cdb055c51bfe",
+    "filename": "PINIT Orginal.txt",
+    "fileType": "TXT",
+    "title": "PINIT Orginal.txt",
+    "author": "",
+    "snippet": "PINIT Orginal.txt Hello World.\r I Am PinIT \r Why are you???\r \r How are doing today? good",
+    "fullText": "PINIT Orginal.txt PINIT Orginal.txt Hello World.\r\nI Am PinIT \r\nWhy are you???\r\n\r\nHow are doing today? good",
+    "textHash": "d18548310dde935e",
+    "indexedAt": "2026-06-10T06:20:47.342788Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "a33bc842-8b87-48e0-b9ef-b4a177163dec",
+    "filename": "prod-test.txt",
+    "fileType": "TXT",
+    "title": "prod-test.txt",
+    "author": "",
+    "snippet": "prod test",
+    "fullText": "prod-test.txt prod test",
+    "textHash": "a0f62dd627150faf",
+    "indexedAt": "2026-06-10T06:20:47.343895Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "cc303bde-4f82-4eed-9dff-5f9035244c18",
+    "filename": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "fileType": "AUDIO",
+    "title": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "author": "",
+    "snippet": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
+    "fullText": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance",
+    "textHash": "397232022cb50dc6",
+    "indexedAt": "2026-06-10T06:20:47.371063Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "881b21eb-8f47-4602-b84f-a1994759ef35",
+    "filename": "Kavvam_Ashwitha_Globalco.pdf",
+    "fileType": "PDF",
+    "title": "Kavvam_Ashwitha_Globalco.pdf",
+    "author": "",
+    "snippet": "Kavvam_Ashwitha_Globalco.pdf Kavvam Ashwitha Hyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com LINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004 Professional Summary Software Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python, JavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST APIs, database ",
+    "fullText": "Kavvam_Ashwitha_Globalco.pdf Kavvam_Ashwitha_Globalco.pdf Kavvam Ashwitha\nHyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com\nLINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004\nProfessional Summary\nSoftware Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python,\nJavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST\nAPIs, database design, debugging, testing, and application development. Experienced in collaborating across teams, implementing new\nfeatures, resolving production issues, and contributing throughout the software development lifecycle.\nTechnical Skills\nLanguages: Python, JavaScript, SQL\nFrontend: React.js, HTML5, CSS3, Tailwind CSS\nBackend: FastAPI, Django, REST APIs\nDatabases: PostgreSQL, MySQL, SQLite, MongoDB, Supabase\nTools: Git, GitHub, Postman, VS Code, Jupyter Notebook\nConcepts: Data Structures, Algorithms, OOP, SDLC, Debugging, Testing, API Integration\nExperience\nTCT (The Career Tech)Mar 2026 \u2013 Present\nJunior Software DeveloperRemote\n\u2013 Developed backend services and application features using Python, FastAPI, SQL, and modern software development practices.\n\u2013 Built REST APIs, authentication workflows, and database integrations for scalable applications.\n\u2013 Collaborated with team members to implement features, resolve defects, and improve platform stability.\n\u2013 Participated in debugging, testing, deployment support, and maintenance activities.\n\u2013 Worked across frontend and backend components to deliver end-to-end software solutions.\nDevTownMar 2024 \u2013 Apr 2024\nFull Stack Web Development InternRemote\n\u2013 Developed responsive web interfaces and integrated backend APIs using React.js and JavaScript.\n\u2013 Worked on debugging, database connectivity, authentication workflows, and deployment support.\nProjects\nPINIT Vault \u2014 Secure Document Management Platform\n\u2013 Developed a secure document sharing platform using React.js, FastAPI, PostgreSQL, and Supabase.\n\u2013 Implemented authentication, access control, secure sharing workflows, and database integrations.\n\u2013 Designed scalable APIs and optimized backend operations for reliable application performance.\nGen-AI Placement Management System\n\u2013 Built a placement management platform with candidate management, recruiter dashboards, and resume analysis features.\n\u2013 Developed REST APIs, authentication modules, reporting features, and database integrations.\nLung Cancer Prediction System\n\u2013 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite.\n\u2013 Performed data preprocessing, model evaluation, backend integration, and prediction workflows.\nEducation\nCMR Institute of TechnologyNov 2022 \u2013 Apr 2026\nBachelor of Technology in Computer Science and Engineering (Data Science)CGPA: 7.75\nCertifications\n\u2022 AWS Academy Cloud Foundations \u2013 AWS Academy\n\u2022 Oracle Analytics Cloud 2025 Certified Professional \u2013 Oracle\n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage)\n\u2022 Google AI-ML Virtual Internship \u2013 AICTE & EduSkills\n\u2022 Full Stack Web Development \u2013 DevTown",
+    "textHash": "e76d50120211f949",
+    "indexedAt": "2026-06-10T06:20:47.452092Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "7ef2dc68-0cbc-4251-9a7c-dadb2dcdf3c5",
+    "filename": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "fileType": "DOCX",
+    "title": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "author": "",
+    "snippet": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com Li n k edIn | GitH u b 274320370463Professional Summary Full Stack Developer with hands-on experience building scalable web applications using React.js, TypeScript, JavaScript, FastAPI , Node.js, PostgreSQL, MongoDB, and Supabase . Experienced in developing REST APIs, authentication systems, secure document platforms, responsive user interfaces, database-driven applicat",
+    "fullText": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com Li n k edIn | GitH u b 274320370463Professional Summary Full Stack Developer with hands-on experience building scalable web applications using React.js, TypeScript, JavaScript, FastAPI , Node.js, PostgreSQL, MongoDB, and Supabase . Experienced in developing REST APIs, authentication systems, secure document platforms, responsive user interfaces, database-driven applications, and AI-powered solutions. Strong foundation in software engineering, API integration, application security, debugging, testing, and full-stack application development. 274320197971Technical Skills Languages: Python, JavaScript, TypeScript, SQL Frontend: React.js, HTML5, CSS3, Tailwind CSS, Redux, Responsive UI Development Backend: Node.js, Express.js, FastAPI , REST APIs, Authentication Systems Databases: PostgreSQL, MongoDB, Supabase AI &amp; APIs: Gemini API, OpenAI API, OCR, AI Integrations Tools: Git, GitHub, Docker, Postman, VS Code, Vercel Concepts: API Integration, Application Security, Database Design, Responsive Design, Performance Optimization, SDLC, Debugging, Testing 274320198188Experience TCT (The Career Tech) Mar 2026 \u2013 Present Junior Software Developer Remote \u2022 Developed full-stack web applications using React.js, TypeScript, FastAPI , Python, PostgreSQL, and Supabase . \u2022 Built REST APIs, authentication workflows, secure sharing systems, and backend services for scalable applications. \u2022 Designed responsive user interfaces and integrated frontend and backend modules to improve application functionality and user experience. \u2022 Worked on debugging, testing, deployment, database integration, performance optimization, and feature enhancements. \u2022 Collaborated using Git and GitHub while contributing to application development, maintenance, and system improvements. 274320198185Projects PINIT Vault \u2013 Secure Resume Sharing &amp; Unified Forensics Platform \u2022 Developed a secure document vault application using React.js, TypeScript, FastAPI , Python, Supabase , and PostgreSQL. \u2022 Implemented AES-256-GCM encryption for secure storage and sharing of resumes and documents. \u2022 Built secure sharing workflows, activity monitoring, and access management features. \u2022 Developed responsive frontend interfaces and backend REST APIs while collaborating through Git and GitHub workflows. PINIT-DNA \u2013 Universal File Ownership &amp; Digital Forensics System \u2022 Designed and implemented a 6-layer DNA fingerprinting framework for digital asset ownership verification and tamper detection. \u2022 Developed REST APIs using Node.js, TypeScript, Express.js, Prisma ORM, and PostgreSQL ( Supabase ). \u2022 Implemented encrypted storage, metadata analysis, and verification workflows. \u2022 Built scalable architectures supporting ownership verification and authenticity validation. Gen-AI Placement Management System \u2022 Developed a recruitment platform using React.js, Node.js, Express.js, MongoDB, and Gemini API. \u2022 Implemented recruiter dashboards, candidate management, authentication workflows, and application tracking modules. \u2022 Built REST APIs and integrated AI-assisted resume analysis features. \u2022 Developed database-driven workflows supporting scalable hiring operations. 274320198170Education CMR Institute of Technology Nov 2022 \u2013 Apr 2026 Bachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 274320198066Certifications AWS Academy Cloud Foundations Google AI-ML Virtual Internship Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) Full Stack Web Development \u2013 DevTown",
+    "textHash": "0e0c2b487803b8e4",
+    "indexedAt": "2026-06-10T06:20:47.453370Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "ec77bbbe-ed11-4138-a9a7-749489e4bb04",
+    "filename": "ai.jpg",
+    "fileType": "IMAGE",
+    "title": "ai.jpg",
+    "author": "",
+    "snippet": "ai",
+    "fullText": "ai.jpg ai",
+    "textHash": "41e5e357a0731820",
+    "indexedAt": "2026-06-10T06:20:47.689631Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "a852f3db-4340-4205-9957-40f0fb847119",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:47.711171Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "c2b13ee4-d382-4133-b567-b089318679a0",
+    "filename": "10th.pdf",
+    "fileType": "PDF",
+    "title": "10th.pdf",
+    "author": "",
+    "snippet": "10th",
+    "fullText": "10th.pdf 10th",
+    "textHash": "a4fdda39fa517b44",
+    "indexedAt": "2026-06-10T06:20:47.713542Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "bd7d3ed1-e404-4903-802c-06df3495d693",
+    "filename": "istockphoto-vedio 1.mp4",
+    "fileType": "VIDEO",
+    "title": "istockphoto-vedio 1.mp4",
+    "author": "",
+    "snippet": "istockphoto vedio 1",
+    "fullText": "istockphoto-vedio 1.mp4 istockphoto vedio 1",
+    "textHash": "7c30651b23a48a5d",
+    "indexedAt": "2026-06-10T06:20:47.741503Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "2448beff-f27f-4a44-aa53-7d9fae84b82f",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf PINIT DNA SmartLinks Audit",
+    "textHash": "ed5583480d7360f8",
+    "indexedAt": "2026-06-10T06:20:47.744391Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "af751be6-a11f-4b1d-a71a-821803425967",
+    "filename": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "fileType": "PDF",
+    "title": "Ashwitha_FDE_Take_Home_Assignment .pdf",
+    "author": "",
+    "snippet": "Ashwitha FDE Take Home Assignment",
+    "fullText": "Ashwitha_FDE_Take_Home_Assignment .pdf Ashwitha FDE Take Home Assignment",
+    "textHash": "e106f17e3f295243",
+    "indexedAt": "2026-06-10T06:20:47.747612Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "8346a566-1758-419d-a7da-739d997c670c",
+    "filename": "docdna test 1.pdf",
+    "fileType": "PDF",
+    "title": "docdna test 1.pdf",
+    "author": "",
+    "snippet": "docdna test 1",
+    "fullText": "docdna test 1.pdf docdna test 1",
+    "textHash": "50bc6d504a42c6e8",
+    "indexedAt": "2026-06-10T06:20:47.779861Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "c626676e-0993-484c-8b81-9aedcfbf22d4",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf PINIT DNA SmartLinks Audit",
+    "textHash": "ed5583480d7360f8",
+    "indexedAt": "2026-06-10T06:20:47.795408Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "6338315c-88ae-4304-8e99-de8044cc3df6",
+    "filename": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "fileType": "DOCX",
+    "title": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit Report",
+    "fullText": "PINIT-DNA_SmartLinks_Audit_Report.docx PINIT DNA SmartLinks Audit Report",
+    "textHash": "b08bc404bbd15b64",
+    "indexedAt": "2026-06-10T06:20:47.796468Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "3aa6577a-ecf1-452d-8933-fe573aa971d9",
+    "filename": "PolicySchedule (31).pdf",
+    "fileType": "PDF",
+    "title": "PolicySchedule (31).pdf",
+    "author": "",
+    "snippet": "PolicySchedule (31).pdf Vehicle Details MakeModelVariantCubic CapacityManufacturing YearSeating capacity HYUNDAIVENUE 1.2 KAPPA MT S119720225 Body TypeRegistration No.RTOHypothecation/Lease*Fuel TypeVIN/Chassis No. SUVTS 15 FJ 4575PATANCHERUVUNOPETROLMALFC81BLNM323350 Vehicle IDVElectrical AccessoriesNon-Electrical AccessoriesBI Fuel KitTotal IDVEngine No 540,000000540,000G4LANM165737   Own Damage Premium (A)Amount(INR)Liability Premium (B)Amount(INR) Basic Own Damage PremiumBasic Third Party Li",
+    "fullText": "PolicySchedule (31).pdf PolicySchedule (31).pdf Vehicle Details\nMakeModelVariantCubic CapacityManufacturing YearSeating capacity\nHYUNDAIVENUE 1.2 KAPPA MT S119720225\nBody TypeRegistration No.RTOHypothecation/Lease*Fuel TypeVIN/Chassis No.\nSUVTS 15 FJ 4575PATANCHERUVUNOPETROLMALFC81BLNM323350\nVehicle IDVElectrical AccessoriesNon-Electrical AccessoriesBI Fuel KitTotal IDVEngine No\n540,000000540,000G4LANM165737\n  Own Damage Premium (A)Amount(INR)Liability Premium (B)Amount(INR)\nBasic Own Damage PremiumBasic Third Party Liability Premium3,416\nVehicle1,724Bi-Fuel Kit0\nNon-Elec. Accessories (IMT-24)0Geographical Area Extension (IMT-1)0\nElec. Accessories (IMT-24)0Sub Total (Third Party Liability)3,416\nBi-Fuel Kit (IMT-25)0Personal Accident (PA) Cover\nGeographical Area Extension (IMT-1)\n0Compulsory PA Cover for Owner Driver Rs 1500000 (IMT-15)475\nIMT 23 Premium0PA Cover for 0 Unnamed Passengers Rs 0 Each (IMT-16)0\nSub Total (Basic Premium)1,724PA cover for Paid Driver of Rs 2 Lac (IMT-17)100\nDiscount/DeductiblesSub Total PA Cover575\nVoluntary Deductibles (0) (IMT-22A)0Legal Liability\nAnti Theft Device (IMT-10)0Paid Driver (IMT-28)50\nAA Membership (IMT-8)0Employees (for 0 persons) (IMT-29)0\nNo Claim Bonus (0%)0Sub Total (Legal Liability)50\nHandicapped Discount (IMT-12)0Net Liability Premium (B)4,041\nSub Total (Deductibles)0Total Premium (A+B)9,465\nTotal Own Damage Premium1,724SGST(9%)852\nAdd On Coverages ( ZD,CM,KP,PB )3700CGST(9%)852\nNet Own Damage Premium (A)5,424Gross Premium Paid11,169\n*Hypothecation Details:                                                                Payment Mode: Online\nICICI Lombard General Insurance Company Limited.\nServicing Office : D. No : 6-3-352 / 1, Second and Third Floor, Osman Plaza, Road No 1, Hyderabad, Telangana 500034, , , \nHYDERABAD, TELANGANA (State Code:36) -500034 \nPrivate Car Package Policy UIN --IRDAN115RP0017V01200102\nCertificate Cum Policy Schedule (FORM 51 OF THE CENTRAL MOTOR VEHICLE RULES, 1989) \nPAN :AAACI7904G  GSTIN: 36AAACI7904G1ZO  CIN :U67200MH2000PLC129408  IRDAI Reg:115\nAdd-on Cover Opted in the Policy: Zero Depreciation(IRDAN115RP0017V01200102/A0368V01200910), Consumables Cover(IRDAN115RP0017V01200102/A0216V01200910), Key Protect Cover\n(IRDAN115RP0017V01200102/A0019V01201213), Loss of Personal Belongings Cover(IRDAN115RP0017V01200102/A0021V01201213)\nLimitations as to use:\u0003The policy covers use of the vehicle for any purpose other than (1) Hire or Reward (2) Carriage of goods (other than samples or personal luggage) (3) Organized racing (4) Pace \nmaking (5) Speed testing (6) Reliability trials (7) Any purpose in connection with motor trade.\nDriver's Clause: Any person including the insured: Provided that the person driving holds an effective driving license at the time of the accident and is not disqualified from holding or obtaining such \nlicense. Provided also that the person holding an effective learners license may also drive the vehicle & that such a person satisfies the requirements of Rule 3 of the Central Motor Vehicle Rules, 1989.\nLimits of Liability Clause: Under Section II-1(i) of the policy-Death of or bodily injury: Such amount as is necessary to meet the requirements of the Motor Vehicle Act 1988.Under Section II-1 (ii) of \nthe policy-Damage to third party property is INR 7.5 Lakhs, PA Cover Under Section III for Owner-Driver is INR 15 Lakhs.\nNo Claim Bonus: The insured is entitled for a No Claim Bonus (NCB) on the own damage section of the policy, if no claim is made or pending during the preceding year(s) - 20%, preceding\ntwo consecutive years - 25%, preceding three consecutive years - 35%, preceding four consecutive years - 45%, preceding five consecutive years - 50% of NCB on OD Premium.\nNCB is allowed provided the policy is renewed within 90 days of the expiry date of the previous policy.\nDeclaration on Tax Invoice We hereby declare that though our aggregate turnover in any preceding financial year from 2017-18 onwards is more than the aggregate turnover notified under sub-rule (4) \nof rule 48, we are not required to prepare an invoice in terms of the provisions of the said sub-rule.\nImportant Notice: The insured is not indemnified if the vehicle is used or driven otherwise than in accordance with the schedule. Any payment made by the company by reasons of wider terms \nappearing in the certificate in order to comply with the Motor Vehicle Act, 1988 is recoverable from the insured. See the clause headed  \"AVOIDANCE OF CERTAIN TERMS & RIGHT \nOF RECOVERY\" For legal interruption, English version will hold good.\nGrievance Clause: For resolution of any query or grievance, Insured may check Grievance redressal policy at https://www.icicilombard.com/grievance-redressal or  connect with the respective servicing \noffice of insurance company. In the event of unsatisfactory response,he/she may approach the insurance ombudsman for the redressal of grievance at www.irdai.gov.in or on website of General Insurance \nCouncil: www.gicouncil.in\nHSN/SAC : 9971",
+    "textHash": "986a57d1c6298f64",
+    "indexedAt": "2026-06-10T06:20:47.859721Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "6047bdb5-ca6c-4f4b-94de-ed26bb438409",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf PINIT DNA SmartLinks Audit",
+    "textHash": "ed5583480d7360f8",
+    "indexedAt": "2026-06-10T06:20:48.084126Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "755c1ca7-e975-416b-b880-4236935c8191",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf PINIT DNA SmartLinks Audit",
+    "textHash": "ed5583480d7360f8",
+    "indexedAt": "2026-06-10T06:20:48.150705Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "ee960045-dfed-4e54-8d5e-635984551994",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:48.152697Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "a89671a0-e95f-4b44-b295-a21d6a9f9a12",
+    "filename": "modi.webp",
+    "fileType": "IMAGE",
+    "title": "modi.webp",
+    "author": "",
+    "snippet": "modi",
+    "fullText": "modi.webp modi",
+    "textHash": "6082ad3e5ee216e5",
+    "indexedAt": "2026-06-10T06:20:48.155459Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "44edde66-67ed-4bc5-ab8b-a098bb89e581",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf PINIT DNA SmartLinks Audit",
+    "textHash": "ed5583480d7360f8",
+    "indexedAt": "2026-06-10T06:20:48.157738Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "dc639dbe-0a6b-4909-8d7b-0977590e0ef4",
+    "filename": "tiger.jpeg",
+    "fileType": "IMAGE",
+    "title": "tiger.jpeg",
+    "author": "",
+    "snippet": "tiger",
+    "fullText": "tiger.jpeg tiger",
+    "textHash": "4cf5c4759985d00e",
+    "indexedAt": "2026-06-10T06:20:48.157958Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "3dcd0ba9-ba07-49a0-9e46-b2af39922b8f",
+    "filename": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "fileType": "DOCX",
+    "title": "PINIT-DNA_SmartLinks_Audit_Report.docx",
+    "author": "",
+    "snippet": "PINIT DNA SmartLinks Audit Report",
+    "fullText": "PINIT-DNA_SmartLinks_Audit_Report.docx PINIT DNA SmartLinks Audit Report",
+    "textHash": "b08bc404bbd15b64",
+    "indexedAt": "2026-06-10T06:20:48.213246Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "a357d3d0-f49f-4758-b929-ca07125a5cea",
+    "filename": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "fileType": "AUDIO",
+    "title": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+    "author": "",
+    "snippet": "fassounds escape your love upbeat fashion pop dance 412230",
+    "fullText": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 fassounds escape your love upbeat fashion pop dance 412230",
+    "textHash": "440852b3d69abacc",
+    "indexedAt": "2026-06-10T06:20:48.234190Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "303f3348-94c2-483f-8c3e-e8692747fecf",
+    "filename": "Kavvam_Ashwitha_Globalco (1).pdf",
+    "fileType": "PDF",
+    "title": "Kavvam_Ashwitha_Globalco (1).pdf",
+    "author": "",
+    "snippet": "Kavvam Ashwitha Globalco (1)",
+    "fullText": "Kavvam_Ashwitha_Globalco (1).pdf Kavvam Ashwitha Globalco (1)",
+    "textHash": "7d75648364c278fe",
+    "indexedAt": "2026-06-10T06:20:48.234447Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "5d967f73-b338-40b8-ba2f-366f3c0fbbbe",
+    "filename": "Kavvam_Ashwitha_Globalco (1).pdf",
+    "fileType": "PDF",
+    "title": "Kavvam_Ashwitha_Globalco (1).pdf",
+    "author": "",
+    "snippet": "Kavvam_Ashwitha_Globalco (1).pdf Kavvam Ashwitha Hyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com LINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004 Professional Summary Software Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python, JavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST APIs, datab",
+    "fullText": "Kavvam_Ashwitha_Globalco (1).pdf Kavvam_Ashwitha_Globalco (1).pdf Kavvam Ashwitha\nHyderabad, Telangana|Phone+91 6302004848|Envelopeashwithareddykavvam39@gmail.com\nLINKEDINlinkedin.com/in/kavvam-ashwitha/|Githubgithub.com/ashwitha2004\nProfessional Summary\nSoftware Engineer with hands-on experience building web applications, backend services, and scalable software solutions using Python,\nJavaScript, FastAPI, React.js, SQL, and Git. Strong foundation in software engineering principles, object-oriented programming, REST\nAPIs, database design, debugging, testing, and application development. Experienced in collaborating across teams, implementing new\nfeatures, resolving production issues, and contributing throughout the software development lifecycle.\nTechnical Skills\nLanguages: Python, JavaScript, SQL\nFrontend: React.js, HTML5, CSS3, Tailwind CSS\nBackend: FastAPI, Django, REST APIs\nDatabases: PostgreSQL, MySQL, SQLite, MongoDB, Supabase\nTools: Git, GitHub, Postman, VS Code, Jupyter Notebook\nConcepts: Data Structures, Algorithms, OOP, SDLC, Debugging, Testing, API Integration\nExperience\nTCT (The Career Tech)Mar 2026 \u2013 Present\nJunior Software DeveloperRemote\n\u2013 Developed backend services and application features using Python, FastAPI, SQL, and modern software development practices.\n\u2013 Built REST APIs, authentication workflows, and database integrations for scalable applications.\n\u2013 Collaborated with team members to implement features, resolve defects, and improve platform stability.\n\u2013 Participated in debugging, testing, deployment support, and maintenance activities.\n\u2013 Worked across frontend and backend components to deliver end-to-end software solutions.\nDevTownMar 2024 \u2013 Apr 2024\nFull Stack Web Development InternRemote\n\u2013 Developed responsive web interfaces and integrated backend APIs using React.js and JavaScript.\n\u2013 Worked on debugging, database connectivity, authentication workflows, and deployment support.\nProjects\nPINIT-DNA \u2014 Universal File Ownership & Digital Forensics Platform\n\u2013 Developed a 6-layer DNA fingerprinting framework for ownership verification, tamper detection, and forensic analysis of digital assets.\n\u2013 Implemented AES-256-GCM encrypted vault storage with secure file retrieval and integrity verification.\n\u2013 Built a Universal File DNA Engine supporting Images, PDF, DOCX, PPTX, TXT, CSV, JSON, ZIP, Audio, and Video files.\n\u2013 Designed DNA comparison, similarity scoring, tampering detection, and forensic reporting modules.\n\u2013 Created ownership certificates, certificate verification portal, audit timeline tracking, and vault integrity monitoring features.\nPinIT Vault \u2014 Secure Digital Identity & Portfolio Management Platform\n\u2013 Developed a secure digital document management platform with encrypted storage, document sharing, and intelligent portfolio\ngeneration features.\n\u2013 Implemented OCR-based document classification, automated document organization, and dynamic portfolio creation workflows.\n\u2013 Designed secure sharing mechanisms with access controls, expiry settings, watermarking, and activity tracking capabilities.\n\u2013 Built responsive user interfaces and integrated scalable frontend-backend workflows using modern web technologies.\n\u2013 Developed portfolio management functionalities including create, view, edit, delete, and smart document integration from a centralized\nvault.\nLung Cancer Prediction System\n\u2013 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite for healthcare prediction.\n\u2013 Performed data preprocessing, feature engineering, model training, validation, and evaluation workflows.\n\u2013 Integrated trained models into web applications for real-time prediction and decision support.\nEducation\nCMR Institute of TechnologyNov 2022 \u2013 Apr 2026\nBachelor of Technology in Computer Science and Engineering (Data Science)CGPA: 7.75\nCertifications\n\u2022 AWS Academy Cloud Foundations \u2013 AWS Academy\n\u2022 Oracle Analytics Cloud 2025 Certified Professional \u2013 Oracle\n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage)\n\u2022 Google AI-ML Virtual Internship \u2013 AICTE & EduSkills\n\u2022 Full Stack Web Development \u2013 DevTown",
+    "textHash": "45300d4527846f47",
+    "indexedAt": "2026-06-10T06:20:48.291216Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "6fbdb2c5-a1bd-47d9-b93e-65b54780cf12",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:21:14.911604Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "6fbdb2c5-a1bd-47d9-b93e-65b54780cf12",
+    "filename": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "fileType": "PDF",
+    "title": "PINIT-DNA_SmartLinks_Audit.pdf",
+    "author": "",
+    "snippet": "2. Access Policies    Feature Status Evidence  Secure link generation DONE  share-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url  token, uniqueness checked vs DB  JWT token generation MISSING  jsonwebtoken is in package.json but never imported/used in  share code \u2014 opaque random tokens used instead  HMAC signature MISSING  No crypto.createHmac anywhere in src/services/share/  Session nonce PARTIAL  Client-generated sessionId (sessionStorage) groups events  \u2014 not a cryptographic nonce  Link ",
+    "fullText": "PINIT-DNA_SmartLinks_Audit.pdf 2. Access Policies \n \nFeature Status Evidence \nSecure link generation DONE \nshare-link.service.ts \u2014 crypto.randomBytes(8) \u2192 base64url \ntoken, uniqueness checked vs DB \nJWT token generation MISSING \njsonwebtoken is in package.json but never imported/used in \nshare code \u2014 opaque random tokens used instead \nHMAC signature MISSING \nNo crypto.createHmac anywhere in src/services/share/ \nSession nonce PARTIAL \nClient-generated sessionId (sessionStorage) groups events \n\u2014 not a cryptographic nonce \nLink expiration DONE \nexpiresAt field; expiresIn (hrs) \u2192 computed date; isExpired \ncheck in getPublicInfo() \nOne-time access links MISSING \nOnly generic maxViews counter \u2014 no single-use flag \nLink revocation DONE \nShareLinkService.revoke() sets isActive=false; DELETE \n/api/v1/share/:token wired \nDownload limits PARTIAL \nallowDownload is boolean on/off \u2014 no numeric 'max N \ndownloads' \nView-only mode DONE \nWhen allowDownload=false, Download button hidden; file \nstreamed inline only \nFiles: share-link.service.ts, share-link.controller.ts, share.routes.ts \nEndpoints: POST /api/v1/share, DELETE /api/v1/share/:token \nDatabase: share_links table \n \n \nFeature Status Evidence \nAccess policy builder PARTIAL \nShareModal in VaultPage.tsx \u2014 basic form \n(expiry/views/download/name/note), not a generalized builder \nExpiry policies DONE \nPresets: 1h / 24h / 7 days / 30 days / never \nDevice restrictions MISSING \nDevice type only recorded, never enforced \nGeo restrictions MISSING \nCountry/city only logged, never used to allow/deny \nEmail verification MISSING \nNo email field/flow in share code \nOTP verification MISSING \nZero matches in codebase \nMFA escalation MISSING \nNot implemented \nUser-bound access MISSING \nrequireName captures free-text name only \u2014 not an \nauthenticated identity \nFiles: client/src/pages/VaultPage.tsx (ShareModal) \n1. Smart Link Generation \n\n4. Audit Trail \n5. Device Fingerprinting \n \nFeature Status Evidence \nProtected viewer DONE \nShareViewerPage.tsx \u2014 public route /s/:token, gated by \nname/expiry/exhaustion screens \nWatermark overlay DONE \nRepeating diagonal 'PINIT-DNA \u00b7 token \u00b7 name' overlay, \npointer-events-none \nRight-click disable DONE \nonContextMenu={e => e.preventDefault()} on page wrapper \nPrint disable MISSING \nOnly DETECTS print attempts (beforeprint + matchMedia) \u2014 \ncontent not hidden from print \nDownload disable DONE \nDownload button conditionally rendered only if \nallowDownload=true \nBlur on inactivity MISSING \nNo idle-blur logic anywhere \nTab-switch detection DONE \nvisibilitychange listener \u2192 track('TAB_SWITCH') \nSession timeout MISSING \nNo timeout beyond the link's own expiresAt \nFiles: client/src/pages/ShareViewerPage.tsx \n \n \nFeature Status Evidence \nFile open logging DONE \ntrack('VIEWED') on load \u2192 ShareAccessLog row + \nviewCount increment \nDownload logging DONE \nhandleDownload() \u2192 track('DOWNLOADED') \nShare logging DONE \nSHARE_CREATED event synthesized in \nTimelinePage.buildHistory() from ShareLink.createdAt \nScroll depth tracking DONE \nonScroll computes %, fires SCROLL at 25/50/75/100% \nmilestones \nSession duration MISSING \nsessionId groups events but duration never \ncomputed/displayed \nAccess history DONE \nGET /api/v1/share/:token/logs \u2192 full accessLogs list per link \nAudit export MISSING \nNo CSV/PDF export specific to share access logs \nFiles: share-link.service.ts (recordAccess/getTimelineEvents), TimelinePage.tsx \nEndpoints: GET /api/v1/share/:token/logs, GET /api/v1/share/timeline/:dnaId \nDatabase: share_access_logs table \n \n3. Secure Viewer \n\n6. Geo Intelligence \n7. Behavior Tracking \nFeature Status Evidence \nBrowser detection DONE \nparseUserAgent() regex-classifies \nChrome/Firefox/Edge/Safari/Opera \nOS detection DONE \nSame function \u2192 Windows/macOS/Linux/Android/iOS \nDevice fingerprint \n(canvas/WebGL hash) \nMISSING \nOnly coarse UA parsing \u2014 no canvas/audio/WebGL \nfingerprint hash \nScreen resolution MISSING \nscreen.width/height never read or sent \nTimezone capture DONE \nIntl.DateTimeFormat().resolvedOptions().timeZone sent + \nstored \nVPN detection MISSING \nNot implemented \nTor detection MISSING \nNot implemented \nFiles: share-link.service.ts (parseUserAgent) \n \n \nFeature Status Evidence \nIP capture DONE \nX-Forwarded-For honored for ngrok; app.set('trust proxy', \ntrue) in app.ts \nCountry detection DONE \ngeoFromIp() \u2192 ip-api.com \u2192 stored as country \nRegion detection PARTIAL \nregion/isp fetched by geoFromIp() but NOT persisted \u2014 \nschema lacks region/isp columns \nGeo analytics MISSING \nRaw country/city shown per-event only \u2014 no \naggregation/dashboard \nGeo heatmaps MISSING \nNot implemented \nFiles: share-link.service.ts (geoFromIp), TimelinePage.tsx \n \n \nFeature Status Evidence \nMouse tracking MISSING \nNo mousemove/click heatmap logic \nScroll tracking DONE \nSee Section 4 \u2014 25/50/75/100% milestone events \nReading speed MISSING \nNot computed \nInteraction frequency MISSING \nNot computed \nIdle detection MISSING \nNot implemented \n\n8. Screenshot Protection \n9. AI Risk Engine ",
+    "textHash": "3a6e597a8a06bef2",
+    "indexedAt": "2026-06-10T06:21:23.544535Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "471d3f18-2deb-4d0d-b072-c6825fef9bab",
+    "filename": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "fileType": "DOCX",
+    "title": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "author": "",
+    "snippet": "Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com LinkedIn | GitHub 274320370463Professional Summary Software Engineer with hands-on experience building full-stack web applications, backend services, and AI-assisted development workflows using React.js, Next.js, TypeScript, JavaScript, FastAPI , PostgreSQL, and REST APIs. Experienced in leveraging AI coding tools for rapid prototyping, debugging, code generation, and feature development. Strong foundation in",
+    "fullText": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com LinkedIn | GitHub 274320370463Professional Summary Software Engineer with hands-on experience building full-stack web applications, backend services, and AI-assisted development workflows using React.js, Next.js, TypeScript, JavaScript, FastAPI , PostgreSQL, and REST APIs. Experienced in leveraging AI coding tools for rapid prototyping, debugging, code generation, and feature development. Strong foundation in software engineering, API integration, database design, and scalable application development with a passion for building high-quality products in fast-paced environments. 274320197971Technical Skills Languages: JavaScript, TypeScript, Python, SQL Frontend: React.js, Next.js, HTML5, CSS3, Tailwind CSS Backend: Node.js, FastAPI , REST APIs Databases: PostgreSQL, MongoDB, SQLite Tools: Git, GitHub, Postman, VS Code AI Development: ChatGPT, Gemini, Prompt Engineering, AI-Assisted Development Core Concepts: Full Stack Development, Authentication, API Integration, SDLC 274320198188Experience TCT (The Career Tech) | Junior Software Developer | Jan 2026 \u2013 Present \u2022 Developed backend services and application features using Python, FastAPI , SQL, and modern software development practices. \u2022 Built REST APIs, authentication workflows, database integrations, and scalable backend systems. \u2022 Utilized AI-assisted development tools to accelerate debugging, code generation, testing, documentation, and feature implementation. \u2022 Collaborated with team members on application development, testing, deployment, and maintenance activities. 274320198185Projects PINIT-DNA \u2014 AI-Powered Image Fingerprinting &amp; Secure Smart-Sharing Platform \u2022 Architected a 6-layer image DNA fingerprinting system using React.js, TypeScript, Node.js, Express.js, PostgreSQL, and modern full-stack development practices. \u2022 Built secure Smart Link workflows featuring OTP verification, access controls, download restrictions, expiry policies, and authorization middleware. \u2022 Developed AI-powered risk scoring, analytics dashboards, audit monitoring, and intelligent activity tracking modules. \u2022 Leveraged AI-assisted development workflows and prompt engineering techniques to accelerate feature development, debugging, and implementation. PinIT Vault \u2014 Secure Digital Identity &amp; Portfolio Management Platform \u2022 Developed a secure document management platform with encrypted storage, intelligent portfolio generation, and secure sharing features. \u2022 Built responsive interfaces using React.js, Next.js, Tailwind CSS, FastAPI , PostgreSQL, and Supabase . \u2022 Implemented OCR-based document classification, automated organization, and AI-powered workflow automation. \u2022 Designed access controls, activity tracking, and scalable frontend-backend integrations. Lung Cancer Prediction System \u2022 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite for healthcare prediction. \u2022 Performed data preprocessing, feature engineering, model training, validation, and evaluation workflows. \u2022 Integrated trained models into web applications for real-time prediction and decision support. 274320198170 Education CMR Institute of Technology Nov 2022 \u2013 Apr 2026 Bachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 274320198066Certifications AWS Academy Cloud Foundations Google AI-ML Virtual Internship Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) Full Stack Web Development \u2013 DevTown",
+    "textHash": "0621476b348f0e6d",
+    "indexedAt": "2026-06-10T06:22:42.860455Z",
+    "_deleted": false
+  },
+  {
+    "dnaRecordId": "1b496ae9-5462-4c2b-9e0b-b365398ce679",
+    "filename": "Kavvam_Ashwitha_Canvas Craft Media.pdf",
+    "fileType": "PDF",
+    "title": "Kavvam_Ashwitha_Canvas Craft Media.pdf",
+    "author": "",
+    "snippet": "Kavvam Ashwitha  Hyderabad, Telangana |  +91 6302004848 |  ashwithareddykavvam39@gmail.com  LinkedIn| GitHub  Summary  Full Stack Developer with hands-on experience building responsive web applications, interactive dashboards, and AI-powered platforms using React.js,  TypeScript, JavaScript, FastAPI, PostgreSQL, MongoDB, and Supabase. Experienced in developing modern user interfaces, REST APIs, authentication  systems, and end-to-end web solutions. Strong foundation in frontend engineering, full",
+    "fullText": "Kavvam_Ashwitha_Canvas Craft Media.pdf Kavvam Ashwitha \nHyderabad, Telangana |  +91 6302004848 |  ashwithareddykavvam39@gmail.com  LinkedIn| GitHub \nSummary \nFull Stack Developer with hands-on experience building responsive web applications, interactive dashboards, and AI-powered platforms using React.js, \nTypeScript, JavaScript, FastAPI, PostgreSQL, MongoDB, and Supabase. Experienced in developing modern user interfaces, REST APIs, authentication \nsystems, and end-to-end web solutions. Strong foundation in frontend engineering, full-stack development, performance optimization, and delivering \nproduction-ready applications. \n \nTechnical Skills \n   Languages: Python, JavaScript, TypeScript, SQL \n   Frontend: React.js, HTML5, CSS3, Tailwind CSS  \n   Backend: FastAPI, Node.js, Express.js, REST APIs \n   Databases: PostgreSQL, MongoDB \n   Tools: Git, GitHub, Postman, Docker \n   Concepts: Authentication, API Integration, Responsive Design, Debugging, Testing \n \nExperience \n  TCT (The Career Tech) | Software Developer Trainee | Mar 2026 \u2013 Present \n\u2022 Built dynamic, responsive web interfaces using React.js, Tailwind CSS, and REST APIs with pixel-perfect attention to layout and interactivity. \n\u2022 Designed and integrated media-rich UI components including file upload flows, real-time previews, and interactive dashboards deployed in production. \n\u2022 Engineered full-stack features end-to-end \u2014 from FastAPI backend services to polished React frontends \u2014 reducing feature delivery time by owning the \nentire stack. \n\u2022 Implemented authentication workflows and protected route systems ensuring seamless, secure user experience across web applications. \n\u2022 Collaborated in cross-functional teams to ship performance-optimized, mobile-first interfaces meeting design specifications under deadline. \n \n Projects \nPINIT Vault \u2014 Secure Document Management Platform \n\u2022 Built a full-stack SaaS platform using React.js, Tailwind CSS, FastAPI, and PostgreSQL with a polished dashboard UI handling multiple file types. \n\u2022 Engineered a Smart Links system with real-time access tracking, geo-restrictions, and live viewer monitoring, demonstrating advanced state management in \nReact. \n\u2022 Developed a Privacy Masking viewer that detects sensitive information and renders documents in a clean, professional interface. \n\u2022 Designed a real-time forensic monitoring dashboard with live session tracking, timeline views, and audit reporting using React and REST APIs. \nGen-AI Placement Management System \n\u2022 Developed a recruitment platform using React.js, Node.js, Express.js, MongoDB, and Gemini API. \n\u2022 Built recruiter dashboards, candidate management interfaces, and application tracking workflows with responsive UI design. \n\u2022 Integrated AI-powered resume analysis and candidate evaluation features through API-driven workflows. \n\u2022 Developed REST APIs and database-driven modules supporting scalable hiring operations. \nRestaurant Management Platform \n\u2022 Developed a responsive restaurant website using React.js, JavaScript, HTML5, CSS3, and REST API integrations. \n\u2022 Designed modern user interfaces, menu management screens, and customer-friendly navigation components. \n\u2022 Implemented mobile-first layouts, reusable React components, and performance-optimized frontend architecture. \n\u2022 Integrated frontend modules with backend services and dynamic content management workflows. \n \n Education \nCMR Institute of Technology Nov 2022 \u2013 Apr 2026 \nBachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 \n \nCertifications \n\u2022 AWS Academy Cloud Foundations \n\u2022 Google AI-ML Virtual Internship \n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) \n\u2022 Full Stack Web Development \u2013 DevTown",
+    "textHash": "5ef534a239ec719e",
+    "indexedAt": "2026-06-10T14:53:42.752225Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "1b496ae9-5462-4c2b-9e0b-b365398ce679",
+    "filename": "Kavvam_Ashwitha_Canvas Craft Media.pdf",
+    "fileType": "PDF",
+    "title": "Kavvam_Ashwitha_Canvas Craft Media.pdf",
+    "author": "",
+    "snippet": "Kavvam Ashwitha  Hyderabad, Telangana |  +91 6302004848 |  ashwithareddykavvam39@gmail.com  LinkedIn| GitHub  Summary  Full Stack Developer with hands-on experience building responsive web applications, interactive dashboards, and AI-powered platforms using React.js,  TypeScript, JavaScript, FastAPI, PostgreSQL, MongoDB, and Supabase. Experienced in developing modern user interfaces, REST APIs, authentication  systems, and end-to-end web solutions. Strong foundation in frontend engineering, full",
+    "fullText": "Kavvam_Ashwitha_Canvas Craft Media.pdf Kavvam Ashwitha \nHyderabad, Telangana |  +91 6302004848 |  ashwithareddykavvam39@gmail.com  LinkedIn| GitHub \nSummary \nFull Stack Developer with hands-on experience building responsive web applications, interactive dashboards, and AI-powered platforms using React.js, \nTypeScript, JavaScript, FastAPI, PostgreSQL, MongoDB, and Supabase. Experienced in developing modern user interfaces, REST APIs, authentication \nsystems, and end-to-end web solutions. Strong foundation in frontend engineering, full-stack development, performance optimization, and delivering \nproduction-ready applications. \n \nTechnical Skills \n   Languages: Python, JavaScript, TypeScript, SQL \n   Frontend: React.js, HTML5, CSS3, Tailwind CSS  \n   Backend: FastAPI, Node.js, Express.js, REST APIs \n   Databases: PostgreSQL, MongoDB \n   Tools: Git, GitHub, Postman, Docker \n   Concepts: Authentication, API Integration, Responsive Design, Debugging, Testing \n \nExperience \n  TCT (The Career Tech) | Software Developer Trainee | Mar 2026 \u2013 Present \n\u2022 Built dynamic, responsive web interfaces using React.js, Tailwind CSS, and REST APIs with pixel-perfect attention to layout and interactivity. \n\u2022 Designed and integrated media-rich UI components including file upload flows, real-time previews, and interactive dashboards deployed in production. \n\u2022 Engineered full-stack features end-to-end \u2014 from FastAPI backend services to polished React frontends \u2014 reducing feature delivery time by owning the \nentire stack. \n\u2022 Implemented authentication workflows and protected route systems ensuring seamless, secure user experience across web applications. \n\u2022 Collaborated in cross-functional teams to ship performance-optimized, mobile-first interfaces meeting design specifications under deadline. \n \n Projects \nPINIT Vault \u2014 Secure Document Management Platform \n\u2022 Built a full-stack SaaS platform using React.js, Tailwind CSS, FastAPI, and PostgreSQL with a polished dashboard UI handling multiple file types. \n\u2022 Engineered a Smart Links system with real-time access tracking, geo-restrictions, and live viewer monitoring, demonstrating advanced state management in \nReact. \n\u2022 Developed a Privacy Masking viewer that detects sensitive information and renders documents in a clean, professional interface. \n\u2022 Designed a real-time forensic monitoring dashboard with live session tracking, timeline views, and audit reporting using React and REST APIs. \nGen-AI Placement Management System \n\u2022 Developed a recruitment platform using React.js, Node.js, Express.js, MongoDB, and Gemini API. \n\u2022 Built recruiter dashboards, candidate management interfaces, and application tracking workflows with responsive UI design. \n\u2022 Integrated AI-powered resume analysis and candidate evaluation features through API-driven workflows. \n\u2022 Developed REST APIs and database-driven modules supporting scalable hiring operations. \nRestaurant Management Platform \n\u2022 Developed a responsive restaurant website using React.js, JavaScript, HTML5, CSS3, and REST API integrations. \n\u2022 Designed modern user interfaces, menu management screens, and customer-friendly navigation components. \n\u2022 Implemented mobile-first layouts, reusable React components, and performance-optimized frontend architecture. \n\u2022 Integrated frontend modules with backend services and dynamic content management workflows. \n \n Education \nCMR Institute of Technology Nov 2022 \u2013 Apr 2026 \nBachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 \n \nCertifications \n\u2022 AWS Academy Cloud Foundations \n\u2022 Google AI-ML Virtual Internship \n\u2022 Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) \n\u2022 Full Stack Web Development \u2013 DevTown",
+    "textHash": "5ef534a239ec719e",
+    "indexedAt": "2026-06-10T14:53:47.641333Z",
     "_deleted": false
   }
 ]

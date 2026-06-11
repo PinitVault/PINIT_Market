@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard, Dna, Shield, Archive, FileSearch,
   GitCompare, Award, ChevronRight, Zap, Clock,
-  ShieldCheck, Activity, Microscope, Search, Radio,
+  ShieldCheck, Activity, Microscope, Search, Radio, Ban,
 } from 'lucide-react';
 import { cn } from '../ui/utils';
 
@@ -34,10 +34,12 @@ const NAV_GROUPS = [
   {
     label: 'Forensics',
     items: [
-      { to: '/reports',            icon: Shield,      label: 'Forensic Reports'     },
-      { to: '/certificates',       icon: Award,       label: 'Certificates'         },
-      { to: '/verify-certificate', icon: ShieldCheck, label: 'Verify Certificate'   },
-      { to: '/vault-integrity',    icon: Activity,    label: 'Vault Integrity'       },
+      { to: '/reports',              icon: Shield,      label: 'Forensic Reports'      },
+      { to: '/certificates',         icon: Award,       label: 'Certificates'          },
+      { to: '/verify-certificate',   icon: ShieldCheck, label: 'Verify Certificate'    },
+      { to: '/vault-integrity',      icon: Activity,    label: 'Vault Integrity'       },
+      { to: '/duplicate-attempts',   icon: Ban,         label: 'Duplicate Attempts'    },
+      { to: '/unmask-requests',      icon: Shield,      label: 'Unmask Requests'       },
     ],
   },
 ];

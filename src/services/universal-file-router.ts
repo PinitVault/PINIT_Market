@@ -13,6 +13,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
+import crypto from 'crypto';
 import { prisma } from '../lib/prisma';
 import { logger } from '../lib/logger';
 import { config } from '../config';
@@ -165,6 +166,7 @@ export class UniversalFileRouter {
     runEngine: (id: string) => Promise<{ layers: { success: boolean }[]; status: string; totalProcessingMs: number; generatedAt: Date }>
   ): Promise<UniversalRouterResult> {
     const dnaRecordId = uuidv4();
+    const sha256Hash  = crypto.createHash('sha256').update(file.buffer).digest('hex');
 
     // Create PENDING record so the engine can update it
     await prisma.dnaRecord.create({
@@ -177,6 +179,7 @@ export class UniversalFileRouter {
         status:         'PENDING',
         fileType,
         engineVersion:  UNIVERSAL_ENGINE_VERSION,
+        sha256Hash,
       },
     });
 

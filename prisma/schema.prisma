@@ -43,6 +43,11 @@ model DnaRecord {
   // Format: { layers: UniversalLayerResult[] }
   universalFingerprints Json?
 
+  // SHA-256 of raw file bytes — used for duplicate detection across ALL file types.
+  // Populated by universal-file-router (all non-image types) and dna.orchestrator (images).
+  // Nullable so legacy records (pre-duplicate-check) are unaffected.
+  sha256Hash        String?
+
   // Schema version for forward compatibility
   schemaVersion     String   @default("1.0.0")
 
@@ -453,6 +458,148 @@ model CrawlResult {
   @@index([matchType])
   @@index([alertStatus])
   @@map("crawl_results")
+}
+
+// ─── Smart Links Engine ───────────────────────────────────────────────────────
+
+model ShareLink {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // What is being shared
+  vaultId     String
+  dnaRecordId String
+  filename    String
+  mimeType    String   @default("application/octet-stream")
+
+  // Unique public token (used in URL: /s/:token)
+  token       String   @unique
+
+  // Access policies
+  expiresAt   DateTime?        // null = never expires
+  maxViews    Int?              // null = unlimited
+  viewCount   Int      @default(0)
+  isActive    Boolean  @default(true)
+  allowDownload Boolean @default(false)
+  requireName  Boolean @default(false)  // recipient must enter name
+  note         String?  @db.Text        // optional note to recipient
+
+  // ── Extended access policy (Phase: Access Policies / Access Control Matrix)
+  oneTimeUse        Boolean  @default(false) // link self-revokes after first VIEWED
+  maxDownloads      Int?                      // null = governed by allowDownload only
+  downloadCount     Int      @default(0)
+  allowedCountries  String[] @default([])     // empty = no restriction (allow-list of ISO country names)
+  allowedDeviceTypes String[] @default([])    // empty = no restriction (desktop|mobile|tablet)
+  allowedIpPrefixes String[] @default([])     // empty = no restriction (CIDR-ish prefixes, e.g. "203.0.113")
+
+  // ── Identity verification (Phase: Access Policies — Email/OTP gate) ───────
+  requireOtp     Boolean  @default(false)
+  recipientEmail String?
+  otpCodeHash    String?                       // sha256(otp) — never store plaintext
+  otpExpiresAt   DateTime?
+  otpVerified    Boolean  @default(false)
+
+  // ── Integrity (Phase: Smart Link Generation — HMAC signature) ─────────────
+  tokenSignature String?
+
+  // ── Privacy Masking (viewer-layer only — original file NEVER modified) ────
+  privacyMaskingEnabled Boolean  @default(false)
+  maskEmail             Boolean  @default(false)
+  maskPhone             Boolean  @default(false)
+  maskAadhaar           Boolean  @default(false)
+  maskPan               Boolean  @default(false)
+  maskAddress           Boolean  @default(false)
+  maskCustomPatterns    String?  // JSON array of custom regex strings
+
+  // ── GPS Location Request ──────────────────────────────────────────────────
+  requestLocation  Boolean  @default(false)  // ask recipient for GPS permission
+
+  // Relations
+  accessLogs   ShareAccessLog[]
+  unmaskRequests UnmaskRequest[]
+
+  @@index([token])
+  @@index([vaultId])
+  @@index([dnaRecordId])
+  @@map("share_links")
+}
+
+// ─── Privacy Masking — Unmask Access Requests ────────────────────────────────
+
+model UnmaskRequest {
+  id          String    @id @default(uuid())
+  createdAt   DateTime  @default(now())
+  reviewedAt  DateTime?
+
+  shareToken    String
+  shareLink     ShareLink @relation(fields: [shareToken], references: [token], onDelete: Cascade)
+
+  recipientName String?
+  sessionId     String?
+  ipAddress     String?
+  device        String?
+  browser       String?
+  os            String?
+
+  // PENDING | APPROVED | REJECTED
+  status        String    @default("PENDING")
+  reviewNote    String?   // owner's optional note on decision
+
+  @@index([shareToken])
+  @@index([status])
+  @@map("unmask_requests")
+}
+
+model ShareAccessLog {
+  id          String    @id @default(uuid())
+  createdAt   DateTime  @default(now())
+
+  shareLinkId String
+  shareLink   ShareLink @relation(fields: [shareLinkId], references: [id], onDelete: Cascade)
+
+  // Who accessed
+  recipientName String?  // if requireName = true
+  ipAddress   String?
+  userAgent   String?   @db.Text
+  browser     String?
+  os          String?
+  device      String?   // desktop | mobile | tablet
+  country     String?
+  city        String?
+  region      String?   // ── Geo Intelligence: now persisted (was fetched but dropped)
+  isp         String?   // ── Geo Intelligence: ISP / org name from ip-api.com
+  timezone    String?
+  referrer    String?   @db.Text
+
+  // ── Device Fingerprinting extensions ──────────────────────────────────────
+  screenResolution String?  // "1920x1080" — sent by client
+  deviceFingerprint String? // sha256 hash of canvas+webgl+fonts signature
+
+  // ── AI Risk Engine — computed at write-time from event + context history ──
+  riskScore   Int?      // 0-100
+  riskLevel   String?   // LOW | MEDIUM | HIGH | CRITICAL
+  riskFactors String?   @db.Text // JSON array of human-readable reasons
+
+  // ── Session Monitoring — duration of the session this event belongs to ────
+  sessionDurationSec Int?
+
+  // ── GPS Location (optional — user consent required) ───────────────────────
+  gpsLat        Float?    // latitude  (null if denied / not requested)
+  gpsLng        Float?    // longitude
+  gpsAccuracy   Float?    // accuracy radius in metres
+  gpsCity       String?   // reverse-geocoded city name
+  gpsTimestamp  DateTime? // when the browser captured the position
+  locationShared Boolean  @default(false) // true=allowed, false=denied/skipped
+
+  // What happened
+  action      String    // VIEWED | DOWNLOADED | BLOCKED_* | COPY_ATTEMPT | SCREENSHOT_ATTEMPT | ...
+  sessionId   String?   // groups events in one visit
+
+  @@index([shareLinkId])
+  @@index([action])
+  @@index([sessionId])
+  @@map("share_access_logs")
 }
 
 // ─── Enums ────────────────────────────────────────────────────────────────────

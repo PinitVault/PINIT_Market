@@ -8,8 +8,8 @@
 @layer base {
   html, body, #root {
     height: 100%;
-    background-color: #080b14;
-    color: #f1f5f9;
+    background-color: #f6f8fb;
+    color: #1e293b;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -17,11 +17,28 @@
   * { box-sizing: border-box; }
 
   ::-webkit-scrollbar        { width: 5px; height: 5px; }
-  ::-webkit-scrollbar-track  { background: #0a0f1e; }
-  ::-webkit-scrollbar-thumb  { background: #1e293b; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #2d3f5a; }
+  ::-webkit-scrollbar-track  { background: #eef2f7; }
+  ::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-  h1,h2,h3,h4,h5,h6 { font-weight: 600; letter-spacing: -0.01em; }
+  h1,h2,h3,h4,h5,h6 { font-weight: 600; letter-spacing: -0.01em; color: #0f172a; }
+
+  /* ── Light-mode text remap ─────────────────────────────────────────────────
+     The whole app was authored against a dark palette using text-white /
+     text-gray-300..600 utility classes everywhere. Rather than touching every
+     component, remap those exact utilities to dark-on-light equivalents so
+     everything stays readable on the new light background. ──────────────── */
+  .text-white   { color: #0f172a !important; }
+  .text-gray-200{ color: #1e293b !important; }
+  .text-gray-300{ color: #334155 !important; }
+  .text-gray-400{ color: #475569 !important; }
+  .text-gray-500{ color: #64748b !important; }
+  .text-gray-600{ color: #94a3b8 !important; }
+  .border-white\/10, .border-white\/5 { border-color: #e2e8f0 !important; }
+  .bg-white\/5  { background-color: rgba(15, 23, 42, 0.04) !important; }
+  .bg-white\/10 { background-color: rgba(15, 23, 42, 0.06) !important; }
+  .hover\:text-white:hover { color: #0f172a !important; }
+  .hover\:bg-white\/5:hover { background-color: rgba(15, 23, 42, 0.05) !important; }
 }
 
 @layer components {
@@ -37,7 +54,7 @@
     @apply card transition-all duration-200 hover:border-dna-500/30 cursor-pointer;
   }
   .card-hover:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 16px rgba(15,23,42,0.10);
   }
 
   /* ── Buttons ─────────────────────────────────────────────────────────────── */
@@ -51,15 +68,15 @@
            focus:ring-dna-500 shadow-sm;
   }
   .btn-secondary {
-    @apply btn bg-bg-elevated hover:bg-bg-muted border border-bg-border text-gray-300
-           hover:text-white px-4 py-2.5 focus:ring-bg-border;
+    @apply btn bg-bg-elevated hover:bg-bg-muted border border-bg-border text-gray-700
+           hover:text-gray-900 px-4 py-2.5 focus:ring-bg-border;
   }
   .btn-danger {
     @apply btn bg-danger/10 hover:bg-danger/20 border border-danger/30 text-danger
            px-4 py-2.5 focus:ring-danger;
   }
   .btn-ghost {
-    @apply btn text-gray-400 hover:text-white hover:bg-bg-elevated px-3 py-2;
+    @apply btn text-gray-500 hover:text-gray-900 hover:bg-bg-elevated px-3 py-2;
   }
   .btn-sm  { @apply text-xs px-3 py-1.5; }
   .btn-lg  { @apply text-base px-6 py-3; }
@@ -79,8 +96,8 @@
 
   /* ── Forms ───────────────────────────────────────────────────────────────── */
   .input {
-    @apply w-full bg-bg-elevated border border-bg-border rounded-lg px-3 py-2.5
-           text-sm text-white placeholder-gray-500
+    @apply w-full bg-white border border-bg-border rounded-lg px-3 py-2.5
+           text-sm text-gray-900 placeholder-gray-400
            focus:outline-none focus:ring-2 focus:ring-dna-500/50 focus:border-dna-500/60
            transition-all duration-150;
   }
@@ -94,7 +111,7 @@
            bg-bg-surface border-b border-bg-border;
   }
   .data-table td {
-    @apply px-4 py-3.5 border-b border-bg-border/60 text-gray-300;
+    @apply px-4 py-3.5 border-b border-bg-border/60 text-gray-700;
   }
   .data-table tr:hover td {
     @apply bg-bg-elevated/40;
@@ -115,7 +132,7 @@
   .skeleton {
     @apply bg-bg-elevated rounded;
     background-size: 200% 100%;
-    background-image: linear-gradient(90deg, #141d2e 0%, #1e293b 40%, #141d2e 80%);
+    background-image: linear-gradient(90deg, #e8edf3 0%, #f6f8fb 40%, #e8edf3 80%);
     animation: shimmer 1.5s infinite linear;
   }
 }

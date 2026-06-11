@@ -10,7 +10,7 @@
 
 import { Router } from 'express';
 import { uploadSingle, uploadComparison } from '../middleware/upload.middleware';
-import { listDnaRecords, generateDna, verifyDna, getDnaRecord, getSupportedTypes } from '../controllers/dna.controller';
+import { listDnaRecords, generateDna, verifyDna, getDnaRecord, getSupportedTypes, getDuplicateAttempts } from '../controllers/dna.controller';
 import { compareDna } from '../controllers/comparison.controller';
 
 const router = Router();
@@ -40,6 +40,8 @@ router.get('/', listDnaRecords);
  * Must be registered BEFORE /:id to avoid route shadowing.
  */
 router.get('/supported-types', getSupportedTypes);
+/** GET /dna/duplicate-attempts — Admin: list all blocked duplicate upload attempts */
+router.get('/duplicate-attempts', getDuplicateAttempts);
 
 router.post('/generate', uploadSingle, generateDna);
 

@@ -7,18 +7,21 @@
  * DOES NOT modify any existing logic.
  */
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { format, formatDistanceToNow } from 'date-fns';
 import {
   Clock, Dna, Lock, Search, GitCompare, Award,
   Shield, RefreshCw, Filter, ChevronDown, ChevronUp,
+  Share2, Eye, Download, Copy, Ban,
 } from 'lucide-react';
+import axios from 'axios';
 import { useApi } from '../hooks/useApi';
 import { listDnaRecords, listVaultRecords, deriveFileType } from '../services/dashboard.api';
 import { FileTypeBadge, Badge } from '../components/ui/Badge';
 import { SkeletonCard } from '../components/ui/Skeleton';
 import { EmptyState } from '../components/ui/EmptyState';
 import { cn } from '../components/ui/utils';
+import { API_BASE_URL } from '../config/api.config';
 import type { DnaRecord, VaultRecord, ComparisonResult } from '../types/dashboard.types';
 
 // ─── Event types ──────────────────────────────────────────────────────────────
@@ -26,7 +29,7 @@ import type { DnaRecord, VaultRecord, ComparisonResult } from '../types/dashboar
 interface AuditEvent {
   id: string;
   timestamp: string;
-  type: 'DNA_GENERATED' | 'VAULT_STORED' | 'COMPARED' | 'CERTIFICATE';
+  type: 'DNA_GENERATED' | 'VAULT_STORED' | 'COMPARED' | 'CERTIFICATE' | 'SHARE_CREATED' | 'SHARE_ACCESSED' | 'SHARE_DOWNLOADED' | 'SHARE_COPIED' | 'SHARE_REVOKED';
   title: string;
   detail: string;
   icon: React.ReactNode;
@@ -45,10 +48,12 @@ interface FileHistory {
 
 // ─── Build history from available data ────────────────────────────────────────
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function buildHistory(
   dnaRecords: DnaRecord[],
   vaultRecords: VaultRecord[],
-  comparisons: ComparisonResult[]
+  comparisons: ComparisonResult[],
+  shareEventsByDna: Record<string, any[]> = {}
 ): FileHistory[] {
   const vaultByDna = new Map(vaultRecords.map(v => [v.dnaRecordId, v]));
   const histories: FileHistory[] = [];
@@ -90,6 +95,131 @@ function buildHistory(
         icon: <Award size={14} />, color: 'bg-purple/20 border-purple/40 text-purple',
         meta: { 'Certificate ID': `CERT-DNA-${vault.id.slice(0, 8).toUpperCase()}` },
       });
+    }
+
+    // Share link events
+    const shareLinks = shareEventsByDna[r.id] ?? [];
+    for (const link of shareLinks) {
+      // Link created
+      events.push({
+        id: `share-created-${link.id}`,
+        timestamp: link.createdAt,
+        type: 'SHARE_CREATED',
+        title: 'Smart Share Link Generated',
+        detail: `Token: ${link.token} · ${link.expiresAt ? `Expires ${new Date(link.expiresAt).toLocaleDateString()}` : 'No expiry'}${link.maxViews ? ` · Max ${link.maxViews} views` : ''}`,
+        icon: <Share2 size={14} />, color: 'bg-orange/20 border-orange/40 text-orange',
+        meta: {
+          Token: link.token,
+          'Allow Download': link.allowDownload ? 'Yes' : 'No',
+          'Require Name': link.requireName ? 'Yes' : 'No',
+          Status: link.isActive ? 'ACTIVE' : 'REVOKED',
+        },
+      });
+
+      // Access log events
+      for (const log of (link.accessLogs ?? [])) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const actionIcon: Record<string, any> = {
+          VIEWED:              <Eye size={14} />,
+          DOWNLOADED:          <Download size={14} />,
+          COPIED:              <Copy size={14} />,
+          COPY_ATTEMPT:        <Copy size={14} />,
+          SCREENSHOT_ATTEMPT:  <Ban size={14} />,
+          SCROLL:              <Eye size={14} />,
+          TAB_SWITCH:          <Eye size={14} />,
+          PRINT_ATTEMPT:       <Ban size={14} />,
+          BLOCKED_EXPIRED:     <Ban size={14} />,
+          BLOCKED_MAX_VIEWS:   <Ban size={14} />,
+        };
+        const actionColor: Record<string, string> = {
+          VIEWED:             'bg-blue/20 border-blue/30 text-blue-400',
+          DOWNLOADED:         'bg-success/20 border-success/40 text-success',
+          COPIED:             'bg-dna-500/20 border-dna-500/40 text-dna-400',
+          COPY_ATTEMPT:       'bg-warning/20 border-warning/40 text-warning',
+          SCREENSHOT_ATTEMPT: 'bg-danger/20 border-danger/40 text-danger',
+          SCROLL:             'bg-gray-500/10 border-gray-500/20 text-gray-400',
+          TAB_SWITCH:         'bg-warning/10 border-warning/20 text-warning',
+          PRINT_ATTEMPT:      'bg-danger/10 border-danger/20 text-danger',
+          BLOCKED_EXPIRED:    'bg-danger/20 border-danger/40 text-danger',
+          BLOCKED_MAX_VIEWS:  'bg-danger/20 border-danger/40 text-danger',
+        };
+        const actionLabel: Record<string, string> = {
+          VIEWED:             'Link Viewed by Recipient',
+          DOWNLOADED:         'File Downloaded via Link',
+          COPIED:             'Link Copied',
+          COPY_ATTEMPT:       '⚠ Copy Attempt Detected',
+          SCREENSHOT_ATTEMPT: '🚨 Screenshot Attempt Detected',
+          SCROLL:             'Scroll Activity',
+          TAB_SWITCH:         'Tab Switch Detected',
+          PRINT_ATTEMPT:      '🚨 Print Attempt Detected',
+          BLOCKED_EXPIRED:    'Access Blocked — Link Expired',
+          BLOCKED_MAX_VIEWS:  'Access Blocked — View Limit Reached',
+        };
+
+        // [DEBUG] Stage-5: log raw IP value from API before display logic
+        console.debug('[IP-AUDIT] Stage-5 UI received log', { action: log.action, ipAddress: log.ipAddress ?? 'NULL', country: log.country });
+
+        // Format IP — show friendly label for localhost
+        const isLocalhost = !log.ipAddress || log.ipAddress === '::1' || log.ipAddress?.startsWith('127.');
+        const ipDisplay   = isLocalhost ? '🖥 Local Dev' : `🌐 ${log.ipAddress}`;
+        const geoDisplay  = log.country
+          ? `📍 ${log.country}${log.city ? `, ${log.city}` : ''}`
+          : isLocalhost ? '📍 Local Network' : '📍 Location unknown';
+
+        const meta: Record<string, string> = { Token: link.token, Action: log.action };
+        if (log.recipientName) meta['Recipient'] = log.recipientName;
+        meta['IP Address'] = isLocalhost ? 'Local (::1)' : (log.ipAddress ?? 'Unknown');
+        meta['Location']   = log.country ? `${log.country}${log.city ? `, ${log.city}` : ''}` : isLocalhost ? 'Local network' : 'Unknown';
+        if (log.browser)   meta['Browser'] = log.browser;
+        if (log.os)        meta['OS'] = log.os;
+        if (log.timezone)  meta['Timezone'] = log.timezone;
+        if (log.region)    meta['Region'] = log.region;
+        if (log.isp)       meta['ISP'] = log.isp;
+        if (log.screenResolution) meta['Screen'] = log.screenResolution;
+        if (log.sessionDurationSec != null) meta['Session'] = `${log.sessionDurationSec}s`;
+        // ── GPS Location ──
+        if (log.locationShared) {
+          const coords = log.gpsLat != null && log.gpsLng != null
+            ? `${log.gpsLat.toFixed(5)}, ${log.gpsLng.toFixed(5)}`
+            : null;
+          const accuracy = log.gpsAccuracy != null ? `±${Math.round(log.gpsAccuracy)}m` : null;
+          const gpsCity  = log.gpsCity ?? null;
+          meta['GPS Location'] = [gpsCity, coords, accuracy].filter(Boolean).join(' · ');
+        } else if ((log as any).locationShared === false && (log as any).requestLocation) {
+          meta['GPS Location'] = 'Denied by recipient';
+        }
+        // ── AI Risk Engine output — surfaced per-event for the audit trail ──
+        if (log.riskLevel) {
+          meta['Risk'] = `${log.riskLevel}${log.riskScore != null ? ` (${log.riskScore})` : ''}`;
+        }
+        if (log.riskFactors) {
+          try {
+            const factors: string[] = JSON.parse(log.riskFactors);
+            if (factors.length) meta['Risk Factors'] = factors.join('; ');
+          } catch { /* not JSON — show raw */ if (log.riskFactors) meta['Risk Factors'] = log.riskFactors; }
+        }
+
+        events.push({
+          id: `share-access-${log.id}`,
+          timestamp: log.createdAt,
+          type: log.action === 'DOWNLOADED'         ? 'SHARE_DOWNLOADED' :
+                log.action === 'COPIED'             ? 'SHARE_COPIED'     : 'SHARE_ACCESSED',
+          title: actionLabel[log.action] ?? `Link ${log.action}`,
+          detail: [
+            log.recipientName ? `By: ${log.recipientName}` : null,
+            ipDisplay,
+            geoDisplay,
+            log.locationShared && log.gpsLat != null
+              ? `📡 GPS: ${log.gpsCity ?? `${log.gpsLat.toFixed(3)}, ${log.gpsLng!.toFixed(3)}`} ±${Math.round(log.gpsAccuracy ?? 0)}m`
+              : null,
+            log.browser ? log.browser : null,
+            log.os      ? log.os      : null,
+          ].filter(Boolean).join(' · '),
+          icon:  actionIcon[log.action]  ?? <Eye size={14} />,
+          color: actionColor[log.action] ?? 'bg-gray-500/20 border-gray-500/40 text-gray-400',
+          meta,
+        });
+      }
     }
 
     // Comparisons involving this DNA record
@@ -144,17 +274,27 @@ function FileHistoryCard({ history }: { history: FileHistory }) {
   const [expanded, setExpanded] = useState(false);
 
   const typeColor: Record<string, string> = {
-    DNA_GENERATED: 'bg-dna-500/20 border-dna-500/40 text-dna-400',
-    VAULT_STORED:  'bg-success/20 border-success/40 text-success',
-    COMPARED:      'bg-cyan/20 border-cyan/40 text-cyan',
-    CERTIFICATE:   'bg-purple/20 border-purple/40 text-purple',
+    DNA_GENERATED:   'bg-dna-500/20 border-dna-500/40 text-dna-400',
+    VAULT_STORED:    'bg-success/20 border-success/40 text-success',
+    COMPARED:        'bg-cyan/20 border-cyan/40 text-cyan',
+    CERTIFICATE:     'bg-purple/20 border-purple/40 text-purple',
+    SHARE_CREATED:   'bg-orange/20 border-orange/40 text-orange',
+    SHARE_ACCESSED:  'bg-blue/20 border-blue/30 text-blue-400',
+    SHARE_DOWNLOADED:'bg-success/20 border-success/40 text-success',
+    SHARE_COPIED:    'bg-dna-500/20 border-dna-500/40 text-dna-400',
+    SHARE_REVOKED:   'bg-danger/20 border-danger/40 text-danger',
   };
 
   const typeIcon: Record<string, React.ReactNode> = {
-    DNA_GENERATED: <Dna size={14} />,
-    VAULT_STORED:  <Lock size={14} />,
-    COMPARED:      <GitCompare size={14} />,
-    CERTIFICATE:   <Award size={14} />,
+    DNA_GENERATED:   <Dna size={14} />,
+    VAULT_STORED:    <Lock size={14} />,
+    COMPARED:        <GitCompare size={14} />,
+    CERTIFICATE:     <Award size={14} />,
+    SHARE_CREATED:   <Share2 size={14} />,
+    SHARE_ACCESSED:  <Eye size={14} />,
+    SHARE_DOWNLOADED:<Download size={14} />,
+    SHARE_COPIED:    <Copy size={14} />,
+    SHARE_REVOKED:   <Ban size={14} />,
   };
 
   return (
@@ -221,12 +361,37 @@ function FileHistoryCard({ history }: { history: FileHistory }) {
                     {event.meta && Object.keys(event.meta).length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-2">
                         {Object.entries(event.meta).map(([k, v]) => (
-                          <div key={k} className="bg-bg-elevated border border-bg-border rounded-lg px-2.5 py-1">
+                          <div key={k} className={cn(
+                            'border rounded-lg px-2.5 py-1',
+                            k === 'Risk' && /HIGH|CRITICAL/.test(v)
+                              ? 'bg-danger/10 border-danger/30'
+                              : k === 'Risk' && /MEDIUM/.test(v)
+                              ? 'bg-warning/10 border-warning/30'
+                              : 'bg-bg-elevated border-bg-border'
+                          )}>
                             <span className="text-2xs text-gray-500">{k}: </span>
-                            <span className="text-2xs text-gray-300 mono">{v.length > 20 ? v.slice(0, 20) + '…' : v}</span>
+                            <span className={cn(
+                              'text-2xs mono',
+                              k === 'Risk' && /HIGH|CRITICAL/.test(v) ? 'text-danger'
+                                : k === 'Risk' && /MEDIUM/.test(v) ? 'text-warning'
+                                : 'text-gray-300'
+                            )}>
+                              {v.length > 60 ? v.slice(0, 60) + '…' : v}
+                            </span>
                           </div>
                         ))}
                       </div>
+                    )}
+
+                    {/* Audit export — Smart Links CSV download per share token */}
+                    {event.type === 'SHARE_CREATED' && event.meta?.['Token'] && (
+                      <a
+                        href={`${API_BASE_URL}/share/${event.meta['Token']}/export`}
+                        target="_blank" rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-2 text-2xs text-dna-400 hover:text-dna-300 underline underline-offset-2"
+                      >
+                        <Download size={11} /> Export full audit log (CSV)
+                      </a>
                     )}
                   </div>
 
@@ -249,16 +414,53 @@ function FileHistoryCard({ history }: { history: FileHistory }) {
 export function TimelinePage() {
   const { data: dnaRecords, loading: loadDna, error: errDna, refetch } = useApi(listDnaRecords);
   const { data: vaultRecords, loading: loadVault }                      = useApi(listVaultRecords);
-  const [search, setSearch] = useState('');
+  const [search, setSearch]     = useState('');
   const [filterType, setFilterType] = useState('ALL');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [shareEventsByDna, setShareEventsByDna] = useState<Record<string, any[]>>({});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [geoAnalytics, setGeoAnalytics] = useState<any[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [liveSessions, setLiveSessions] = useState<{ live: any[]; concurrent: any[] }>({ live: [], concurrent: [] });
 
   const comparisons = useMemo(getStoredComparisons, []);
   const loading = loadDna || loadVault;
 
+  // Geo Intelligence + Session Monitoring widgets — Smart Links audit additions
+  useEffect(() => {
+    axios.get(`${API_BASE_URL}/share/analytics/geo`)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .then(({ data }) => setGeoAnalytics((data as any).analytics ?? []))
+      .catch(() => {});
+    axios.get(`${API_BASE_URL}/share/sessions/live`)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .then(({ data }) => setLiveSessions({ live: (data as any).live ?? [], concurrent: (data as any).concurrent ?? [] }))
+      .catch(() => {});
+  }, []);
+
+  // Fetch ALL share links in one request, then group by dnaRecordId
+  useEffect(() => {
+    if (!dnaRecords) return;
+    axios.get(`${API_BASE_URL}/share`)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .then(({ data }) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const links: any[] = (data as any).links ?? [];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const map: Record<string, any[]> = {};
+        for (const link of links) {
+          if (!map[link.dnaRecordId]) map[link.dnaRecordId] = [];
+          map[link.dnaRecordId].push(link);
+        }
+        setShareEventsByDna(map);
+      })
+      .catch(() => {}); // silent — share events are optional
+  }, [dnaRecords]);
+
   const histories = useMemo(() => {
     if (!dnaRecords || !vaultRecords) return [];
-    return buildHistory(dnaRecords, vaultRecords, comparisons);
-  }, [dnaRecords, vaultRecords, comparisons]);
+    return buildHistory(dnaRecords, vaultRecords, comparisons, shareEventsByDna);
+  }, [dnaRecords, vaultRecords, comparisons, shareEventsByDna]);
 
   const filtered = useMemo(() => histories.filter(h =>
     (filterType === 'ALL' || h.fileType === filterType) &&
@@ -350,6 +552,66 @@ export function TimelinePage() {
               </div>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Geo Intelligence + Live Session Monitoring widgets */}
+      {(geoAnalytics.length > 0 || liveSessions.live.length > 0 || liveSessions.concurrent.length > 0) && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {/* Geo analytics */}
+          {geoAnalytics.length > 0 && (
+            <div className="card">
+              <p className="text-xs font-semibold text-white mb-3">🌍 Geo Intelligence — Access by Country</p>
+              <div className="space-y-2">
+                {geoAnalytics.slice(0, 6).map((g, i) => (
+                  <div key={i} className="flex items-center justify-between text-xs">
+                    <div className="min-w-0">
+                      <span className="text-gray-300">{g.country ?? 'Unknown'}</span>
+                      {g.cities?.length > 0 && (
+                        <span className="text-gray-600 ml-1.5">· {g.cities.slice(0, 3).join(', ')}</span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      {g.riskCount > 0 && <Badge variant="danger">{g.riskCount} risky</Badge>}
+                      <span className="text-gray-500 mono">{g.count} events</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Live / concurrent sessions */}
+          {(liveSessions.live.length > 0 || liveSessions.concurrent.length > 0) && (
+            <div className="card">
+              <p className="text-xs font-semibold text-white mb-3">🟢 Session Monitoring — Live Activity</p>
+              <div className="space-y-2">
+                {liveSessions.live.length === 0 && (
+                  <p className="text-2xs text-gray-500">No active sessions in the last 5 minutes</p>
+                )}
+                {liveSessions.live.slice(0, 6).map((s, i) => (
+                  <div key={i} className="flex items-center justify-between text-xs">
+                    <span className="text-gray-300 mono">{(s.token ?? '').slice(0, 12)}…</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-gray-500">{s.recipientName ?? s.country ?? 'Anonymous'}</span>
+                      <Badge variant="success">live</Badge>
+                    </div>
+                  </div>
+                ))}
+                {liveSessions.concurrent.length > 0 && (
+                  <div className="pt-2 mt-2 border-t border-bg-border">
+                    <p className="text-2xs text-warning font-semibold mb-1">⚠ Concurrent sessions detected</p>
+                    {liveSessions.concurrent.slice(0, 4).map((c, i) => (
+                      <div key={i} className="flex items-center justify-between text-2xs text-gray-400">
+                        <span className="mono">{(c.token ?? '').slice(0, 12)}…</span>
+                        <span>{c.sessionCount} sessions</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

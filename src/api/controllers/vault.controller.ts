@@ -13,6 +13,12 @@ import { AppError } from '../middleware/error.middleware';
 import { logger } from '../../lib/logger';
 import { auditService } from '../../services/audit/audit.service';
 import { autoIndexer }  from '../../services/ai/auto-indexer.service';
+import {
+  detectSensitiveTypes,
+  extractTextFromPdf,
+  extractTextFromDocx,
+  extractTextFromPlain,
+} from '../../services/privacy/privacy-masking.service';
 
 const vaultService = new VaultService();
 
@@ -198,6 +204,66 @@ export async function retrieveFromVault(
     }
     if (err instanceof Error && err.message.includes('Unsupported state')) {
       return next(new AppError(422, 'Vault file integrity check failed — auth tag mismatch. File may be tampered.'));
+    }
+    next(err);
+  }
+}
+
+// ─── POST /vault/:id/scan-sensitive ───────────────────────────────────────────
+// Decrypt the vault file, extract text, detect which sensitive types are present.
+// Returns detection flags WITHOUT masking anything.
+// Called by the share modal when the owner enables Privacy Masking.
+
+export async function scanVaultFile(req: Request, res: Response, next: NextFunction): Promise<void> {
+  const { id } = req.params;
+  try {
+    const result = await vaultService.retrieve(id);
+    const mime   = result.originalMimeType;
+    const buffer = result.originalBuffer;
+
+    // Image / video / audio — no text to extract
+    const IMAGE_TYPES  = ['image/jpeg','image/png','image/gif','image/webp','image/bmp','image/tiff'];
+    const BINARY_TYPES = ['video/','audio/','application/octet-stream'];
+    const isImage  = IMAGE_TYPES.includes(mime);
+    const isBinary = BINARY_TYPES.some(t => mime.startsWith(t));
+
+    if (isImage || isBinary) {
+      res.json({
+        success: true,
+        supported: false,
+        reason: isImage ? 'Images do not contain extractable text — masking cannot be applied to this file.' : 'Binary file type — no text to scan.',
+        email: false, phone: false, aadhaar: false, pan: false, address: false,
+        hasAnyMatch: false,
+      });
+      return;
+    }
+
+    // Extract text based on MIME
+    let text = '';
+    try {
+      if (mime === 'application/pdf') {
+        text = await extractTextFromPdf(buffer);
+      } else if (mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+        text = await extractTextFromDocx(buffer);
+      } else if (mime.startsWith('text/') || mime === 'application/json') {
+        text = extractTextFromPlain(buffer);
+      } else {
+        res.json({ success: true, supported: false, reason: 'Unsupported file type for text extraction.',
+          email: false, phone: false, aadhaar: false, pan: false, address: false, hasAnyMatch: false });
+        return;
+      }
+    } catch {
+      res.json({ success: true, supported: false, reason: 'Could not extract text from this file.',
+        email: false, phone: false, aadhaar: false, pan: false, address: false, hasAnyMatch: false });
+      return;
+    }
+
+    const detection = detectSensitiveTypes(text);
+    logger.info('[Privacy] Scan complete', { vaultId: id, ...detection });
+    res.json({ success: true, ...detection });
+  } catch (err) {
+    if (err instanceof Error && err.message.includes('not found')) {
+      return next(new AppError(404, err.message));
     }
     next(err);
   }

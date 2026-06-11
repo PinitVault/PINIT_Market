@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Dark background palette ──────────────────────────────────────────
+        // ── Light background palette ─────────────────────────────────────────
         bg: {
-          base:    '#080b14',
-          surface: '#0a0f1e',
-          card:    '#0f1623',
-          elevated:'#141d2e',
-          border:  '#1e293b',
-          muted:   '#1a2234',
+          base:    '#f6f8fb',
+          surface: '#eef2f7',
+          card:    '#ffffff',
+          elevated:'#f1f5f9',
+          border:  '#e2e8f0',
+          muted:   '#e8edf3',
         },
         // ── Primary accent — DNA purple/indigo ───────────────────────────────
         dna: {

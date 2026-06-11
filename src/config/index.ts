@@ -74,7 +74,7 @@ export const config = {
 
   rateLimit: {
     windowMs: optionalInt('RATE_LIMIT_WINDOW_MS', 15 * 60 * 1000), // 15 min
-    max: optionalInt('RATE_LIMIT_MAX', 100),
+    max: optionalInt('RATE_LIMIT_MAX', 2000),
   },
 
   log: {

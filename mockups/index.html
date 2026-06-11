@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>PINIT-DNA App Structure Mockups</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#e8edf3;color:#1e293b;}
+
+/* ── layout ── */
+.page{padding:28px 20px 40px;}
+h1{text-align:center;font-size:20px;font-weight:800;color:#1e293b;padding:28px 0 4px;}
+.subtitle{text-align:center;font-size:12px;color:#64748b;margin-bottom:32px;}
+
+.screens-row{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;}
+.screen-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.screen-label{font-size:11px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.06em;background:#ede9fe;padding:3px 12px;border-radius:20px;}
+
+/* ── phone shell ── */
+.phone{width:320px;background:#fff;border-radius:32px;box-shadow:0 8px 40px rgba(0,0,0,.18);overflow:hidden;border:6px solid #1e293b;position:relative;}
+.phone-status{background:#1e293b;color:#fff;font-size:9px;display:flex;justify-content:space-between;align-items:center;padding:6px 16px;}
+.phone-body{height:580px;overflow-y:auto;background:#f8fafc;}
+.phone-nav{display:flex;background:#fff;border-top:1px solid #e2e8f0;position:sticky;bottom:0;}
+.nav-item{flex:1;padding:8px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;font-size:8px;color:#94a3b8;}
+.nav-item.active{color:#6366f1;}
+.nav-icon{font-size:16px;line-height:1;}
+
+/* ── common components ── */
+.screen-header{background:#fff;padding:14px 16px 10px;border-bottom:1px solid #f1f5f9;position:sticky;top:0;z-index:10;}
+.screen-title{font-size:15px;font-weight:800;color:#1e293b;}
+.screen-sub{font-size:10px;color:#94a3b8;margin-top:1px;}
+.section{padding:12px 14px;}
+.section-title{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+
+.card{background:#fff;border-radius:14px;padding:12px 14px;margin-bottom:10px;border:1.5px solid #e2e8f0;}
+.card-sm{background:#fff;border-radius:12px;padding:10px 12px;border:1.5px solid #e2e8f0;}
+
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 14px;}
+.stat-card{background:#fff;border-radius:14px;padding:12px;border:1.5px solid #e2e8f0;}
+.stat-val{font-size:22px;font-weight:800;line-height:1;}
+.stat-lbl{font-size:9px;color:#64748b;margin-top:3px;}
+
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;}
+.bg-green{background:#dcfce7;color:#16a34a;}
+.bg-orange{background:#ffedd5;color:#ea580c;}
+.bg-red{background:#fee2e2;color:#dc2626;}
+.bg-blue{background:#dbeafe;color:#1d4ed8;}
+.bg-purple{background:#ede9fe;color:#7c3aed;}
+.bg-gray{background:#f1f5f9;color:#64748b;}
+
+.btn{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;border-radius:10px;font-size:11px;font-weight:700;border:none;cursor:pointer;}
+.btn-primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;width:100%;justify-content:center;border-radius:12px;padding:11px;}
+.btn-sm{padding:5px 10px;font-size:9px;border-radius:8px;}
+.btn-outline{background:#fff;border:1.5px solid #e2e8f0;color:#1e293b;}
+.btn-danger{background:#fee2e2;color:#dc2626;border:1.5px solid #fca5a5;}
+
+.file-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #f8fafc;}
+.file-row:last-child{border-bottom:none;}
+.file-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.file-name{font-size:12px;font-weight:600;color:#1e293b;}
+.file-meta{font-size:9px;color:#94a3b8;margin-top:1px;}
+.file-actions{display:flex;gap:4px;margin-left:auto;}
+.icon-btn{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;border:1.5px solid #e2e8f0;background:#f8fafc;flex-shrink:0;}
+
+.risk-pill{display:flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;}
+
+.timeline-item{display:flex;gap:10px;padding:8px 14px 8px;position:relative;}
+.tl-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;border:1.5px solid;}
+.tl-line{position:absolute;left:26px;top:36px;bottom:-8px;width:1px;background:#e2e8f0;}
+.tl-title{font-size:11px;font-weight:600;color:#1e293b;}
+.tl-meta{font-size:9px;color:#94a3b8;margin-top:2px;}
+.tl-time{font-size:8px;color:#cbd5e1;margin-left:auto;flex-shrink:0;}
+
+.pill-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+
+.alert-card{border-radius:12px;padding:10px 12px;margin-bottom:8px;display:flex;gap:8px;align-items:flex-start;border:1.5px solid;}
+.alert-critical{background:#fff1f2;border-color:#fca5a5;}
+.alert-high{background:#fff7ed;border-color:#fed7aa;}
+.alert-low{background:#f0fdf4;border-color:#bbf7d0;}
+
+.toggle{width:34px;height:19px;border-radius:10px;position:relative;flex-shrink:0;}
+.toggle.on{background:#6366f1;}
+.toggle.off{background:#cbd5e1;}
+.toggle::after{content:'';position:absolute;top:2.5px;width:14px;height:14px;background:#fff;border-radius:50%;}
+.toggle.on::after{left:17px;}
+.toggle.off::after{left:2.5px;}
+
+.geo-bar{display:flex;align-items:center;gap:6px;padding:5px 0;font-size:10px;}
+.geo-track{flex:1;height:6px;border-radius:3px;background:#e2e8f0;}
+.geo-fill{height:6px;border-radius:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6);}
+
+.session-live{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;margin-bottom:6px;font-size:10px;}
+.pulse{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 2px #bbf7d0;flex-shrink:0;}
+.pulse-red{background:#ef4444;box-shadow:0 0 0 2px #fecaca;}
+
+.dna-layer{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #f1f5f9;font-size:10px;}
+.dna-layer:last-child{border-bottom:none;}
+.layer-bar{flex:1;height:5px;border-radius:3px;}
+
+.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 12px;}
+.qa-btn{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;}
+.qa-icon{font-size:22px;}
+.qa-label{font-size:10px;font-weight:700;color:#1e293b;text-align:center;}
+.qa-sub{font-size:8px;color:#94a3b8;text-align:center;}
+
+.section-divider{height:6px;background:#f1f5f9;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>PINIT-DNA — App Structure & Navigation</h1>
+<div class="subtitle">Where every feature lives inside your 5-tab app</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 1 — HOME
+════════════════════════════════════════════════════════ -->
+<div class="screens-row">
+
+<div class="screen-wrap">
+<div class="screen-label">🏠 Tab 1 — Home</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <!-- header -->
+    <div class="screen-header">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="screen-title">Good morning, Ashwitha 👋</div>
+          <div class="screen-sub">Here's your protection overview</div>
+        </div>
+        <div style="width:32px;height:32px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px;">A</div>
+      </div>
+    </div>
+
+    <!-- CRITICAL alert banner -->
+    <div style="margin:10px 14px 0;background:#fff1f2;border:1.5px solid #fca5a5;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:8px;">
+      <span style="font-size:16px;">🚨</span>
+      <div style="flex:1;">
+        <div style="font-size:11px;font-weight:700;color:#dc2626;">High Risk Detected</div>
+        <div style="font-size:9px;color:#94a3b8;">financials_Q4.xlsx — 3 copy attempts</div>
+      </div>
+      <span style="font-size:10px;color:#6366f1;font-weight:700;">View →</span>
+    </div>
+
+    <!-- stat grid -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-val" style="color:#6366f1;">12</div>
+        <div class="stat-lbl">🔒 Protected Files</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:#8b5cf6;">8</div>
+        <div class="stat-lbl">🧬 DNA Records</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:#16a34a;">4</div>
+        <div class="stat-lbl">🔗 Active Links</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:#dc2626;">2</div>
+        <div class="stat-lbl">⚠️ Risk Alerts</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- quick actions -->
+    <div class="section">
+      <div class="section-title">Quick Actions</div>
+    </div>
+    <div class="quick-actions">
+      <div class="qa-btn" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1;">
+        <div class="qa-icon">🛡️</div>
+        <div class="qa-label" style="color:#fff;">Upload & Protect</div>
+        <div class="qa-sub" style="color:#c7d2fe;">Encrypt + Generate DNA</div>
+      </div>
+      <div class="qa-btn">
+        <div class="qa-icon">🧬</div>
+        <div class="qa-label">Generate DNA</div>
+        <div class="qa-sub">Fingerprint a file</div>
+      </div>
+      <div class="qa-btn">
+        <div class="qa-icon">🔗</div>
+        <div class="qa-label">Share File</div>
+        <div class="qa-sub">Smart link + policies</div>
+      </div>
+      <div class="qa-btn">
+        <div class="qa-icon">🔍</div>
+        <div class="qa-label">Compare DNA</div>
+        <div class="qa-sub">Check tampering</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- recent activity -->
+    <div class="section">
+      <div class="section-title">Recent Activity</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#eff6ff;border-color:#bfdbfe;color:#2563eb;">👁</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">Link Viewed · contract_v2.pdf</div>
+        <div class="tl-meta">Bengaluru, IN · Edge · <span class="badge bg-green">LOW</span></div>
+      </div>
+      <div class="tl-time">2m ago</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#fff1f2;border-color:#fca5a5;color:#dc2626;">⚠</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">Copy Attempt · financials_Q4.xlsx</div>
+        <div class="tl-meta">New York, US · Chrome · <span class="badge bg-red">HIGH</span></div>
+      </div>
+      <div class="tl-time">18m ago</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#f0fdf4;border-color:#86efac;color:#16a34a;">🔒</div>
+      <div style="flex:1;">
+        <div class="tl-title">File Encrypted · design_v3.png</div>
+        <div class="tl-meta">AES-256-GCM · 2.4 MB</div>
+      </div>
+      <div class="tl-time">1h ago</div>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item active"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 2 — VAULT
+════════════════════════════════════════════════════════ -->
+<div class="screen-wrap">
+<div class="screen-label">🔒 Tab 2 — Vault</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <div class="screen-header">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div class="screen-title">Vault Explorer</div>
+          <div class="screen-sub">12 encrypted files</div>
+        </div>
+        <div class="btn btn-sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;">+ Upload</div>
+      </div>
+      <!-- search -->
+      <div style="margin-top:8px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:7px 12px;font-size:11px;color:#94a3b8;">🔍 Search files…</div>
+    </div>
+
+    <!-- file list -->
+    <div style="background:#fff;margin:10px 14px;border-radius:14px;border:1.5px solid #e2e8f0;overflow:hidden;">
+
+      <!-- file 1 -->
+      <div class="file-row">
+        <div class="file-icon" style="background:#eff6ff;">📄</div>
+        <div style="flex:1;min-width:0;">
+          <div class="file-name">contract_v2.pdf</div>
+          <div class="file-meta">1.2 MB · AES-256-GCM · 🧬 DNA ready</div>
+          <div style="margin-top:4px;display:flex;gap:3px;">
+            <span class="badge bg-green">🔗 3 active links</span>
+            <span class="badge bg-green">LOW RISK</span>
+          </div>
+        </div>
+      </div>
+      <!-- action bar for file 1 -->
+      <div style="padding:6px 14px 10px;display:flex;gap:5px;border-bottom:1px solid #f8fafc;">
+        <div class="icon-btn" title="View">👁</div>
+        <div class="icon-btn" title="Download">⬇</div>
+        <div class="icon-btn" title="Generate DNA">🧬</div>
+        <div class="icon-btn" title="Share" style="background:#ede9fe;border-color:#c4b5fd;">🔗</div>
+        <div class="icon-btn" title="Revoke" style="background:#fee2e2;border-color:#fca5a5;">🚫</div>
+      </div>
+
+      <!-- file 2 — HIGH RISK highlighted -->
+      <div class="file-row" style="background:#fff7ed;">
+        <div class="file-icon" style="background:#ffedd5;">📊</div>
+        <div style="flex:1;min-width:0;">
+          <div class="file-name">financials_Q4.xlsx</div>
+          <div class="file-meta">3.8 MB · AES-256-GCM · 🧬 DNA ready</div>
+          <div style="margin-top:4px;display:flex;gap:3px;">
+            <span class="badge bg-red">🚨 HIGH RISK</span>
+            <span class="badge bg-orange">3 copy attempts</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding:6px 14px 10px;display:flex;gap:5px;border-bottom:1px solid #f8fafc;background:#fff7ed;">
+        <div class="icon-btn">👁</div>
+        <div class="icon-btn">⬇</div>
+        <div class="icon-btn">🧬</div>
+        <div class="icon-btn" style="background:#ede9fe;border-color:#c4b5fd;">🔗</div>
+        <div class="icon-btn" style="background:#fee2e2;border-color:#fca5a5;color:#dc2626;font-weight:700;">🚫 Revoke</div>
+      </div>
+
+      <!-- file 3 -->
+      <div class="file-row">
+        <div class="file-icon" style="background:#f0fdf4;">🖼</div>
+        <div style="flex:1;min-width:0;">
+          <div class="file-name">design_final.png</div>
+          <div class="file-meta">2.4 MB · AES-256-GCM</div>
+          <div style="margin-top:4px;">
+            <span class="badge bg-gray">No active links</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding:6px 14px 10px;display:flex;gap:5px;">
+        <div class="icon-btn">👁</div>
+        <div class="icon-btn">⬇</div>
+        <div class="icon-btn">🧬</div>
+        <div class="icon-btn" style="background:#ede9fe;border-color:#c4b5fd;">🔗</div>
+        <div class="icon-btn">🚫</div>
+      </div>
+
+    </div>
+
+    <!-- icon legend -->
+    <div style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <span class="badge bg-gray">👁 View</span>
+      <span class="badge bg-gray">⬇ Download</span>
+      <span class="badge bg-purple">🧬 DNA</span>
+      <span class="badge bg-purple">🔗 Share</span>
+      <span style="padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;background:#fee2e2;color:#dc2626;">🚫 Revoke</span>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item active"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+<!-- VAULT: Share modal pop-up screen -->
+<div class="screen-wrap">
+<div class="screen-label">🔗 Vault → Share Modal</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body" style="background:rgba(0,0,0,.4);">
+    <!-- bottom sheet modal -->
+    <div style="position:absolute;bottom:56px;left:0;right:0;background:#fff;border-radius:24px 24px 0 0;padding:16px 16px 20px;max-height:540px;overflow-y:auto;">
+      <!-- handle -->
+      <div style="width:36px;height:4px;background:#e2e8f0;border-radius:2px;margin:0 auto 14px;"></div>
+      <div style="font-size:14px;font-weight:800;margin-bottom:14px;">Generate Smart Link</div>
+
+      <!-- file pill -->
+      <div style="display:flex;align-items:center;gap:8px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:8px 10px;margin-bottom:14px;">
+        <span>📄</span>
+        <div style="font-size:11px;font-weight:600;">contract_v2.pdf</div>
+        <span class="badge bg-green" style="margin-left:auto;">Encrypted</span>
+      </div>
+
+      <!-- expiry pills -->
+      <div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:6px;">Expires After</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;">
+        <div style="padding:5px 10px;border-radius:20px;font-size:10px;border:1.5px solid #e2e8f0;color:#94a3b8;">1h</div>
+        <div style="padding:5px 10px;border-radius:20px;font-size:10px;border:1.5px solid #e2e8f0;color:#94a3b8;">24h</div>
+        <div style="padding:5px 10px;border-radius:20px;font-size:10px;background:#ede9fe;border:1.5px solid #a5b4fc;color:#6366f1;font-weight:700;">7 days ✓</div>
+        <div style="padding:5px 10px;border-radius:20px;font-size:10px;border:1.5px solid #e2e8f0;color:#94a3b8;">30d</div>
+        <div style="padding:5px 10px;border-radius:20px;font-size:10px;border:1.5px solid #e2e8f0;color:#94a3b8;">Never</div>
+      </div>
+
+      <!-- toggles -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-top:1px solid #f1f5f9;">
+        <div style="font-size:11px;font-weight:600;">One-Time Access</div>
+        <div class="toggle on"></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-top:1px solid #f1f5f9;">
+        <div style="font-size:11px;font-weight:600;">Require OTP Verification</div>
+        <div class="toggle on"></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-top:1px solid #f1f5f9;">
+        <div style="font-size:11px;font-weight:600;">Allow Download</div>
+        <div class="toggle off"></div>
+      </div>
+
+      <!-- geo -->
+      <div style="margin-top:10px;font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:6px;">Allowed Countries</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px;">
+        <span class="badge bg-blue">🇮🇳 IN</span>
+        <span class="badge bg-blue">🇺🇸 US</span>
+        <span style="font-size:9px;color:#6366f1;padding:2px 6px;border:1.5px dashed #a5b4fc;border-radius:8px;cursor:pointer;">+ Add</span>
+        <span style="font-size:9px;color:#94a3b8;margin-left:auto;">empty = any country</span>
+      </div>
+
+      <button class="btn btn-primary" style="font-size:12px;">🔗 Generate Smart Link</button>
+    </div>
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item active"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+</div><!-- end row -->
+
+<!-- ════════════════════════════════════════════════════════
+     TAB 3 — PORTFOLIO  +  TAB 4 — ACTIVITY
+════════════════════════════════════════════════════════ -->
+<div class="screens-row">
+
+<div class="screen-wrap">
+<div class="screen-label">🗂 Tab 3 — Portfolio</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <div class="screen-header">
+      <div class="screen-title">My Portfolio</div>
+      <div class="screen-sub">DNA records, comparisons & certificates</div>
+      <!-- sub-tabs -->
+      <div style="display:flex;gap:6px;margin-top:8px;overflow-x:auto;">
+        <div style="padding:4px 10px;background:#6366f1;color:#fff;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🧬 DNA Records</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🔍 Compare</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">📜 Certificates</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🤖 AI Search</div>
+      </div>
+    </div>
+
+    <!-- DNA record card -->
+    <div style="padding:10px 14px;">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:18px;">📄</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;">contract_v2.pdf</div>
+            <div style="font-size:9px;color:#64748b;">Generated Jun 8, 21:00 · 6 layers</div>
+          </div>
+          <span class="badge bg-green" style="margin-left:auto;">AUTHENTIC</span>
+        </div>
+        <!-- 6 DNA layers -->
+        <div style="font-size:9px;font-weight:700;color:#64748b;margin-bottom:6px;text-transform:uppercase;">6-Layer Fingerprint</div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Pixel Hash</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#6366f1,#8b5cf6);"></div>
+          <span class="badge bg-purple">✓</span>
+        </div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Perceptual</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
+          <span class="badge bg-blue">✓</span>
+        </div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Metadata</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#16a34a,#4ade80);"></div>
+          <span class="badge bg-green">✓</span>
+        </div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Structural</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+          <span class="badge bg-orange">✓</span>
+        </div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Frequency</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#8b5cf6,#c084fc);"></div>
+          <span class="badge bg-purple">✓</span>
+        </div>
+        <div class="dna-layer">
+          <span style="width:80px;color:#64748b;">Visual Hash</span>
+          <div class="layer-bar" style="background:linear-gradient(90deg,#0ea5e9,#38bdf8);"></div>
+          <span class="badge bg-blue">✓</span>
+        </div>
+        <div style="display:flex;gap:5px;margin-top:10px;">
+          <button class="btn btn-sm btn-outline" style="flex:1;justify-content:center;">📜 Certificate</button>
+          <button class="btn btn-sm btn-outline" style="flex:1;justify-content:center;">🔍 Compare</button>
+        </div>
+      </div>
+
+      <!-- second record -->
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:18px;">🖼</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;">design_final.png</div>
+            <div style="font-size:9px;color:#64748b;">Generated Jun 8, 20:30 · 6 layers</div>
+          </div>
+          <span class="badge bg-orange" style="margin-left:auto;">MODIFIED</span>
+        </div>
+        <div style="margin-top:8px;padding:7px 10px;background:#fff7ed;border-radius:8px;border:1.5px solid #fed7aa;font-size:9px;color:#ea580c;">
+          ⚠ Layer 3 (Metadata) differs from original DNA — possible tampering
+        </div>
+        <div style="display:flex;gap:5px;margin-top:8px;">
+          <button class="btn btn-sm btn-outline" style="flex:1;justify-content:center;">📜 Certificate</button>
+          <button class="btn btn-sm" style="flex:1;justify-content:center;background:#ffedd5;color:#ea580c;border:1.5px solid #fed7aa;">🔍 View Report</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item active"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+<!-- ════════ TAB 4 — ACTIVITY ════════ -->
+<div class="screen-wrap">
+<div class="screen-label">📊 Tab 4 — Activity</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <div class="screen-header">
+      <div class="screen-title">Activity</div>
+      <div class="screen-sub">Timeline · Risk Alerts · Sessions · Geo</div>
+      <div style="display:flex;gap:6px;margin-top:8px;overflow-x:auto;">
+        <div style="padding:4px 10px;background:#6366f1;color:#fff;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">📋 Timeline</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🚨 Risk Alerts</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🟢 Sessions</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🌍 Geo</div>
+      </div>
+    </div>
+
+    <!-- Timeline tab (active) -->
+    <div style="padding:10px 14px 4px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+        <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;">📄 contract_v2.pdf</div>
+        <a style="font-size:9px;color:#6366f1;text-decoration:none;">Export CSV ↓</a>
+      </div>
+    </div>
+
+    <!-- timeline events -->
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#eff6ff;border-color:#bfdbfe;color:#2563eb;">👁</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">Link Viewed by Recipient</div>
+        <div class="tl-meta">Bengaluru, IN · Edge · Screen 1536×864</div>
+        <div class="pill-row">
+          <span class="badge bg-green">Risk: LOW (12)</span>
+          <span class="badge bg-gray">Session: 9s</span>
+        </div>
+      </div>
+      <div class="tl-time">2m</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#fff7ed;border-color:#fed7aa;color:#ea580c;">⚠</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">⚠ Copy Attempt Detected</div>
+        <div class="tl-meta">New York, US · Chrome · fp_a3b4c5d6</div>
+        <div class="pill-row">
+          <span class="badge bg-orange">Risk: MEDIUM (42)</span>
+          <span class="badge bg-orange">new country</span>
+        </div>
+      </div>
+      <div class="tl-time">18m</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#fff1f2;border-color:#fca5a5;color:#dc2626;">🚨</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">🚨 Screenshot Attempt</div>
+        <div class="tl-meta">Singapore · Chrome · Mobile</div>
+        <div class="pill-row">
+          <span class="badge bg-red">Risk: HIGH (78)</span>
+          <span class="badge bg-red">3rd attempt</span>
+        </div>
+      </div>
+      <div class="tl-time">32m</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#f5f3ff;border-color:#ddd6fe;color:#7c3aed;">🔗</div>
+      <div class="tl-line"></div>
+      <div style="flex:1;">
+        <div class="tl-title">Smart Link Generated</div>
+        <div class="tl-meta">Token: xK9mP2… · OTP required · 7d expiry</div>
+      </div>
+      <div class="tl-time">1h</div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot" style="background:#f0fdf4;border-color:#86efac;color:#16a34a;">🔒</div>
+      <div style="flex:1;">
+        <div class="tl-title">File Encrypted & Vaulted</div>
+        <div class="tl-meta">AES-256-GCM · Key derivation: PBKDF2</div>
+      </div>
+      <div class="tl-time">2h</div>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item active"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+<!-- Activity sub-tabs: Risk Alerts + Geo + Sessions preview -->
+<div class="screen-wrap">
+<div class="screen-label">📊 Activity → Risk + Geo + Sessions</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <div class="screen-header">
+      <div class="screen-title">Activity</div>
+      <div style="display:flex;gap:6px;margin-top:8px;overflow-x:auto;">
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;white-space:nowrap;">📋 Timeline</div>
+        <div style="padding:4px 10px;background:#dc2626;color:#fff;border-radius:8px;font-size:9px;font-weight:700;white-space:nowrap;">🚨 Risk Alerts</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;white-space:nowrap;">🟢 Sessions</div>
+        <div style="padding:4px 10px;background:#f8fafc;border:1.5px solid #e2e8f0;color:#64748b;border-radius:8px;font-size:9px;white-space:nowrap;">🌍 Geo</div>
+      </div>
+    </div>
+
+    <!-- Risk Alerts tab -->
+    <div style="padding:10px 14px;">
+
+      <div class="alert-card alert-critical">
+        <span style="font-size:18px;flex-shrink:0;">🚨</span>
+        <div style="flex:1;">
+          <div style="font-size:11px;font-weight:700;color:#dc2626;">CRITICAL — financials_Q4.xlsx</div>
+          <div style="font-size:9px;color:#64748b;margin:3px 0;">Score 91 · 3 copy attempts · 5 countries · off-hours 02:14</div>
+          <div style="display:flex;gap:4px;">
+            <button class="btn btn-sm btn-danger" style="font-size:9px;">🚫 Revoke</button>
+            <button class="btn btn-sm btn-outline" style="font-size:9px;">📋 Audit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-card alert-high">
+        <span style="font-size:18px;flex-shrink:0;">⚠️</span>
+        <div style="flex:1;">
+          <div style="font-size:11px;font-weight:700;color:#ea580c;">HIGH — design_final.png</div>
+          <div style="font-size:9px;color:#64748b;margin:3px 0;">Score 62 · Screenshot attempt · concurrent sessions</div>
+          <div style="display:flex;gap:4px;">
+            <button class="btn btn-sm" style="background:#ffedd5;color:#ea580c;border:1.5px solid #fed7aa;font-size:9px;">🚫 Revoke</button>
+            <button class="btn btn-sm btn-outline" style="font-size:9px;">📋 Audit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-card alert-low">
+        <span style="font-size:18px;flex-shrink:0;">✅</span>
+        <div style="flex:1;">
+          <div style="font-size:11px;font-weight:700;color:#16a34a;">LOW — contract_v2.pdf</div>
+          <div style="font-size:9px;color:#64748b;margin:3px 0;">Score 12 · No anomalies detected</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Live sessions mini -->
+    <div style="padding:10px 14px;">
+      <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:8px;">🟢 Live Sessions</div>
+      <div class="session-live">
+        <div class="pulse"></div>
+        <div style="flex:1;"><div style="font-weight:600;">Rahul M. · contract_v2.pdf</div><div style="color:#64748b;">Bengaluru, IN · 9 min</div></div>
+        <button class="btn btn-sm btn-outline" style="font-size:9px;">Logout</button>
+      </div>
+      <div class="session-live" style="background:#fff1f2;border-color:#fca5a5;">
+        <div class="pulse pulse-red"></div>
+        <div style="flex:1;"><div style="font-weight:700;color:#dc2626;">⚠ Concurrent · design_final.png</div><div style="color:#64748b;">2 IPs: Pune + Singapore</div></div>
+        <button class="btn btn-sm btn-danger" style="font-size:9px;">Revoke</button>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Geo mini -->
+    <div style="padding:10px 14px;">
+      <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:8px;">🌍 Geo Intelligence</div>
+      <div class="geo-bar"><span>🇮🇳</span><span style="width:56px;">India</span><div class="geo-track"><div class="geo-fill" style="width:82%"></div></div><span style="width:26px;text-align:right;">284</span><span class="badge bg-green">ok</span></div>
+      <div class="geo-bar"><span>🇺🇸</span><span style="width:56px;">USA</span><div class="geo-track"><div class="geo-fill" style="width:45%"></div></div><span style="width:26px;text-align:right;">156</span><span class="badge bg-green">ok</span></div>
+      <div class="geo-bar"><span>🇸🇬</span><span style="width:56px;">Singapore</span><div class="geo-track"><div class="geo-fill" style="width:28%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div><span style="width:26px;text-align:right;">97</span><span class="badge bg-orange">⚠3</span></div>
+      <div class="geo-bar"><span>🇨🇳</span><span style="width:56px;">China</span><div class="geo-track"><div class="geo-fill" style="width:12%;background:#ef4444"></div></div><span style="width:26px;text-align:right;">41</span><span class="badge bg-red">⛔</span></div>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item active"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+<!-- ════════ TAB 5 — PROFILE ════════ -->
+<div class="screen-wrap">
+<div class="screen-label">👤 Tab 5 — Profile</div>
+<div class="phone">
+  <div class="phone-status"><span>9:41</span><span>📶 100%</span></div>
+  <div class="phone-body">
+
+    <div class="screen-header" style="text-align:center;padding-bottom:14px;">
+      <div style="width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;margin:0 auto 8px;">A</div>
+      <div style="font-weight:800;font-size:14px;">Ashwitha Reddy</div>
+      <div style="font-size:10px;color:#64748b;">ashwitha@company.com</div>
+      <div style="display:flex;gap:6px;justify-content:center;margin-top:8px;">
+        <span class="badge bg-purple">Pro Plan</span>
+        <span class="badge bg-green">✓ Verified</span>
+      </div>
+    </div>
+
+    <div style="padding:10px 14px;">
+
+      <!-- security section -->
+      <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:8px;">🔐 Security</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f8fafc;">
+          <div style="font-size:11px;font-weight:600;">Change Password</div>
+          <span style="color:#94a3b8;font-size:12px;">›</span>
+        </div>
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f8fafc;">
+          <div>
+            <div style="font-size:11px;font-weight:600;">Risk Alerts — Email</div>
+            <div style="font-size:9px;color:#64748b;">Get notified on HIGH/CRITICAL events</div>
+          </div>
+          <div class="toggle on"></div>
+        </div>
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:11px;font-weight:600;">Auto-revoke on CRITICAL</div>
+            <div style="font-size:9px;color:#64748b;">Revoke link if risk score ≥ 85</div>
+          </div>
+          <div class="toggle off"></div>
+        </div>
+      </div>
+
+      <!-- default link policies -->
+      <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;margin:14px 0 8px;">⚙️ Default Link Policies</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f8fafc;">
+          <div style="font-size:11px;font-weight:600;">Default Expiry</div>
+          <span class="badge bg-purple">7 days</span>
+        </div>
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f8fafc;">
+          <div style="font-size:11px;font-weight:600;">Default OTP Required</div>
+          <div class="toggle on"></div>
+        </div>
+        <div style="padding:10px 12px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:11px;font-weight:600;">Allowed Countries</div>
+          <div style="display:flex;gap:3px;"><span class="badge bg-blue">IN</span><span class="badge bg-blue">US</span></div>
+        </div>
+      </div>
+
+      <!-- stats -->
+      <div style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;margin:14px 0 8px;">📈 My Stats</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+        <div class="card-sm" style="text-align:center;padding:8px;">
+          <div style="font-size:18px;font-weight:800;color:#6366f1;">12</div>
+          <div style="font-size:8px;color:#64748b;">Files</div>
+        </div>
+        <div class="card-sm" style="text-align:center;padding:8px;">
+          <div style="font-size:18px;font-weight:800;color:#8b5cf6;">8</div>
+          <div style="font-size:8px;color:#64748b;">DNA Records</div>
+        </div>
+        <div class="card-sm" style="text-align:center;padding:8px;">
+          <div style="font-size:18px;font-weight:800;color:#16a34a;">47</div>
+          <div style="font-size:8px;color:#64748b;">Events</div>
+        </div>
+      </div>
+
+      <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:14px;color:#dc2626;border-color:#fca5a5;font-size:11px;">Sign Out</button>
+    </div>
+
+  </div>
+  <div class="phone-nav">
+    <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
+    <div class="nav-item"><div class="nav-icon">🔒</div>Vault</div>
+    <div class="nav-item"><div class="nav-icon">🗂</div>Portfolio</div>
+    <div class="nav-item"><div class="nav-icon">📊</div>Activity</div>
+    <div class="nav-item active"><div class="nav-icon">👤</div>Profile</div>
+  </div>
+</div>
+</div>
+
+</div><!-- end row -->
+
+<div style="text-align:center;padding:8px 20px 32px;font-size:11px;color:#94a3b8;">PINIT-DNA — 5-Tab App Structure · Home · Vault · Portfolio · Activity · Profile</div>
+</div>
+</body>
+</html>

@@ -430,22 +430,31 @@ export function CertificatesPage() {
       setItems(initial);
       setLoading(false);
 
-      // For vaults without certificates, auto-issue (idempotent)
+      // For vaults without certificates, auto-issue in batches of 3 to avoid 429
       const toIssue = vaults.filter((v: VaultRecord) => !certByVault.has(v.id));
       if (toIssue.length > 0) {
-        const issued = await Promise.allSettled(
-          toIssue.map((v: VaultRecord) => issueCertificate(v.dnaRecordId, v.id))
-        );
-        setItems(prev => prev.map(item => {
-          const idx = toIssue.findIndex((v: VaultRecord) => v.id === item.vault.id);
-          if (idx === -1) return item;
-          const r = issued[idx];
-          return {
-            ...item,
-            certificate: r.status === 'fulfilled' ? r.value : null,
-            loading: false,
-          };
-        }));
+        const BATCH = 3;
+        const allResults: PromiseSettledResult<IssuedCertificate>[] = [];
+        for (let i = 0; i < toIssue.length; i += BATCH) {
+          const batch = toIssue.slice(i, i + BATCH);
+          const batchResults = await Promise.allSettled(
+            batch.map((v: VaultRecord) => issueCertificate(v.dnaRecordId, v.id))
+          );
+          allResults.push(...batchResults);
+          // Update UI after each batch
+          setItems(prev => prev.map(item => {
+            const idx = toIssue.findIndex((v: VaultRecord) => v.id === item.vault.id);
+            if (idx === -1 || idx >= allResults.length) return item;
+            const r = allResults[idx];
+            return {
+              ...item,
+              certificate: r.status === 'fulfilled' ? r.value : null,
+              loading: false,
+            };
+          }));
+          // Small delay between batches
+          if (i + BATCH < toIssue.length) await new Promise(r => setTimeout(r, 300));
+        }
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load certificates');

@@ -7,6 +7,7 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
+import crypto from 'crypto';
 import { prisma } from '../lib/prisma';
 import { logger } from '../lib/logger';
 import { config } from '../config';
@@ -65,6 +66,7 @@ export class DnaOrchestrator {
     });
 
     // ── Create a PENDING record in the DB immediately so callers can poll status
+    const sha256Hash = crypto.createHash('sha256').update(image.buffer).digest('hex');
     await prisma.dnaRecord.create({
       data: {
         id:              dnaRecordId,
@@ -73,6 +75,7 @@ export class DnaOrchestrator {
         imageSizeBytes:  image.sizeBytes,
         schemaVersion:   config.dna.schemaVersion,
         status:          'PENDING',
+        sha256Hash,
         // Universal engine fields (null-safe for legacy callers)
         fileType:        universalCtx?.fileType    ?? null,
         engineVersion:   universalCtx?.engineVersion ?? null,

@@ -263,19 +263,30 @@ export function MonitoringPage() {
               {(checkResult as Record<string,unknown>)['matchesFound'] as number > 0
                 ? <AlertTriangle size={18} className="text-warning" />
                 : <CheckCircle2 size={18} className="text-success" />}
-              <p className="font-semibold text-white">
-                Check Complete — {(checkResult as Record<string,unknown>)['matchesFound'] as number > 0
-                  ? `${(checkResult as Record<string,unknown>)['matchesFound']} match(es) found!`
-                  : 'No matches found'}
-              </p>
+              <div className="flex-1">
+                <p className="font-semibold text-white">
+                  Check Complete — {(checkResult as Record<string,unknown>)['matchesFound'] as number > 0
+                    ? `${(checkResult as Record<string,unknown>)['matchesFound']} match(es) found!`
+                    : 'No matches found'}
+                </p>
+                {(checkResult as Record<string,unknown>)['method'] === 'PHASH_COMPARISON' && (
+                  <p className="text-2xs text-dna-400 mono mt-0.5">
+                    🔬 pHash image comparison · stored: {String((checkResult as Record<string,unknown>)['storedPHash']).slice(0,16)}
+                  </p>
+                )}
+              </div>
               <button onClick={() => setCheckResult(null)} className="ml-auto btn-ghost btn-icon">
                 <XCircle size={14} />
               </button>
             </div>
-            <div className="grid grid-cols-3 gap-3 text-center">
+            {/* Stats grid — image pipeline has extra fields */}
+            <div className={cn('gap-3 text-center grid', (checkResult as Record<string,unknown>)['method'] === 'PHASH_COMPARISON' ? 'grid-cols-4' : 'grid-cols-3')}>
               {[
-                { label: 'URLs Checked', value: (checkResult as Record<string,unknown>)['urlsChecked'] },
-                { label: 'Matches Found', value: (checkResult as Record<string,unknown>)['matchesFound'] },
+                { label: 'URLs Checked',       value: (checkResult as Record<string,unknown>)['urlsChecked'] },
+                ...(((checkResult as Record<string,unknown>)['method'] === 'PHASH_COMPARISON') ? [
+                  { label: 'Downloaded',        value: (checkResult as Record<string,unknown>)['candidatesDownloaded'] },
+                ] : []),
+                { label: 'Matches Found',      value: (checkResult as Record<string,unknown>)['matchesFound'] },
                 { label: 'Highest Similarity', value: `${(checkResult as Record<string,unknown>)['highestSimilarity']}%` },
               ].map(s => (
                 <div key={s.label} className="bg-bg-elevated rounded-lg p-2">
@@ -284,6 +295,48 @@ export function MonitoringPage() {
                 </div>
               ))}
             </div>
+            {/* Image matches detail */}
+            {(checkResult as Record<string,unknown>)['method'] === 'PHASH_COMPARISON' &&
+             ((checkResult as Record<string,unknown>)['matches'] as unknown[])?.length > 0 && (
+              <div className="mt-3 space-y-2">
+                <p className="text-2xs text-gray-500 font-semibold">MATCHED CANDIDATES</p>
+                {((checkResult as Record<string,unknown>)['matches'] as Array<Record<string,unknown>>).map((m, i) => (
+                  <div key={i} className="bg-bg-elevated rounded-lg p-2 flex items-center gap-3">
+                    <span className={cn('text-xs font-bold mono shrink-0',
+                      m['matchType'] === 'DUPLICATE' ? 'text-danger' :
+                      m['matchType'] === 'NEAR_MATCH' ? 'text-orange' : 'text-warning'
+                    )}>{Math.round((m['pHashSimilarity'] as number) * 100)}%</span>
+                    <div className="flex-1 min-w-0">
+                      <a href={String(m['imageUrl'])} target="_blank" rel="noreferrer"
+                        className="text-2xs text-dna-400 hover:underline truncate block mono">
+                        {String(m['imageUrl']).slice(0, 80)}…
+                      </a>
+                      <p className="text-2xs text-gray-600">Hamming dist: {String(m['pHashDistance'])} · {String(m['source'])}</p>
+                    </div>
+                    <Badge variant={m['matchType'] === 'DUPLICATE' ? 'danger' : m['matchType'] === 'NEAR_MATCH' ? 'orange' : 'warning'}>
+                      {String(m['matchType']).replace('_',' ')}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+            )}
+            {/* Image rejection summary */}
+            {(checkResult as Record<string,unknown>)['method'] === 'PHASH_COMPARISON' &&
+             ((checkResult as Record<string,unknown>)['rejections'] as unknown[])?.length > 0 && (
+              <details className="mt-2">
+                <summary className="text-2xs text-gray-600 cursor-pointer hover:text-gray-400">
+                  {((checkResult as Record<string,unknown>)['rejections'] as unknown[]).length} candidates rejected (click to expand)
+                </summary>
+                <div className="mt-2 space-y-1 max-h-40 overflow-y-auto">
+                  {((checkResult as Record<string,unknown>)['rejections'] as Array<Record<string,unknown>>).slice(0,10).map((r, i) => (
+                    <div key={i} className="flex gap-2 text-2xs">
+                      <span className="text-gray-600 mono shrink-0">{Math.round((r['score'] as number)*100)}%</span>
+                      <span className="text-gray-500 truncate">{String(r['reason'])}</span>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -367,25 +420,10 @@ export function MonitoringPage() {
 
       {/* Enroll modal */}
       <Modal open={enrollOpen} onClose={() => { setEnrollOpen(false); setEnrollUrls(''); }} title="Enroll File for Monitoring" size="md">
-        <div className="p-5 space-y-4">
+        <div className="p-5 space-y-3">
           <p className="text-xs text-gray-400">
-            Select a file to monitor. Optionally paste known URLs where this file may appear — the crawler will check them directly.
+            Select a file to monitor. The system will check the internet every 24 hours for unauthorized copies.
           </p>
-
-          {/* URL input */}
-          <div>
-            <label className="text-xs font-semibold text-gray-300 block mb-1.5">
-              Watch URLs <span className="text-gray-500 font-normal">(optional — one per line)</span>
-            </label>
-            <textarea
-              value={enrollUrls}
-              onChange={e => setEnrollUrls(e.target.value)}
-              placeholder={"https://postimg.cc/tZtgqgwr\nhttps://i.postimg.cc/hjNQ0zrq/tiger.jpg"}
-              rows={3}
-              className="input w-full text-xs font-mono resize-none"
-            />
-            <p className="text-2xs text-gray-600 mt-1">Paste URLs where this file was posted (postimages, imgur, Google Drive, etc.)</p>
-          </div>
 
           {notMonitored.length === 0 ? (
             <p className="text-sm text-gray-500 text-center py-4">All files are already enrolled for monitoring.</p>

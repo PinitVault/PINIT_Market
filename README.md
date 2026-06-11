@@ -2,7 +2,7 @@
 
 > A production-ready backend API that generates and verifies a 6-layer invisible fingerprint for any digital image — proving ownership and detecting tampering even after compression, resizing, or colour adjustment.
 
----
+## ngrok http 3000
 
 ## What Is This Project?
 

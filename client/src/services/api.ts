@@ -17,11 +17,33 @@ export async function generateDna(file: File): Promise<GenerateDnaResponse> {
   const form = new FormData();
   form.append('image', file);
 
-  const { data } = await client.post<GenerateDnaResponse>('/dna/generate', form, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  });
-
-  return data;
+  try {
+    const { data } = await client.post<GenerateDnaResponse>('/dna/generate', form, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return data;
+  } catch (err: unknown) {
+    // 409 Conflict = duplicate file — surface as a typed error with extra context
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const axiosErr = err as any;
+    if (axiosErr?.response?.status === 409) {
+      const body = axiosErr.response.data ?? {};
+      const dupErr = new Error(body.error ?? 'Duplicate file detected') as Error & {
+        isDuplicate: boolean;
+        existingRecordId?: string;
+        existingFilename?: string;
+        matchType?: string;
+        riskLevel?: string;
+      };
+      dupErr.isDuplicate        = true;
+      dupErr.existingRecordId   = body.existingRecordId;
+      dupErr.existingFilename   = body.existingFilename;
+      dupErr.matchType          = body.matchType;
+      dupErr.riskLevel          = body.riskLevel;
+      throw dupErr;
+    }
+    throw err;
+  }
 }
 
 /**
