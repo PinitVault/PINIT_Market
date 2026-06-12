@@ -140,60 +140,48 @@ if (require.main === module) {
     // Phase 5: Start scheduled tasks
     vaultScheduler.start();
 
-    // Start Python AI microservice as child process (no separate terminal needed)
-    startPythonAI();
+    // Python AI and auto-reindex are disabled in production (free tier: 512MB RAM limit).
+    // Enable locally with ENABLE_AI=true.
+    if (process.env['ENABLE_AI'] === 'true') {
+      startPythonAI();
 
-    // Log Tika status (Tika runs in Docker separately — just check if available)
-    setTimeout(async () => {
-      const { tikaService } = await import('./services/tika/tika.service');
-      const available = await tikaService.isAvailable();
-      if (available) {
-        logger.info('Apache Tika is available — enhanced metadata extraction active');
-      } else {
-        logger.info('Apache Tika not running — start with: docker run -d -p 9998:9998 apache/tika');
-      }
-    }, 3000);
-
-    // Auto-reindex all records into FAISS after 20s (give Python AI time to start)
-    // Uses OCR text from DB — completes in < 5 seconds, user never sees it
-    setTimeout(async () => {
-      try {
-        const { prisma: db } = await import('./lib/prisma');
-        const { aiService }  = await import('./services/ai/ai-embeddings.service');
-
-        const online = await aiService.isOnline();
-        if (!online) return;
-
-        const records = await db.dnaRecord.findMany({
-          select: {
-            id: true, imageFilename: true, fileType: true,
-            ocrRecord: { select: { extractedText: true } },
-          },
-        });
-
-        let indexed = 0;
-        const BATCH = 10;
-        for (let i = 0; i < records.length; i += BATCH) {
-          await Promise.all(records.slice(i, i + BATCH).map(async (r) => {
-            try {
-              const ocrText = r.ocrRecord?.extractedText;
-              const text = ocrText && ocrText.length > 50
-                ? `${r.imageFilename} ${ocrText}`
-                : r.imageFilename.replace(/\.[^.]+$/, '').replace(/[_\-\.]/g, ' ').trim();
-
-              await aiService.indexDocument({
-                dnaRecordId: r.id, filename: r.imageFilename,
-                fileType: r.fileType ?? 'IMAGE', text,
-              });
-              indexed++;
-            } catch { /* non-fatal */ }
-          }));
+      setTimeout(async () => {
+        try {
+          const { prisma: db } = await import('./lib/prisma');
+          const { aiService }  = await import('./services/ai/ai-embeddings.service');
+          const online = await aiService.isOnline();
+          if (!online) return;
+          const records = await db.dnaRecord.findMany({
+            select: {
+              id: true, imageFilename: true, fileType: true,
+              ocrRecord: { select: { extractedText: true } },
+            },
+          });
+          let indexed = 0;
+          const BATCH = 10;
+          for (let i = 0; i < records.length; i += BATCH) {
+            await Promise.all(records.slice(i, i + BATCH).map(async (r) => {
+              try {
+                const ocrText = r.ocrRecord?.extractedText;
+                const text = ocrText && ocrText.length > 50
+                  ? `${r.imageFilename} ${ocrText}`
+                  : r.imageFilename.replace(/\.[^.]+$/, '').replace(/[_\-\.]/g, ' ').trim();
+                await aiService.indexDocument({
+                  dnaRecordId: r.id, filename: r.imageFilename,
+                  fileType: r.fileType ?? 'IMAGE', text,
+                });
+                indexed++;
+              } catch { /* non-fatal */ }
+            }));
+          }
+          logger.info(`Auto-reindex complete: ${indexed}/${records.length} documents indexed`);
+        } catch (err) {
+          logger.debug('Auto-reindex failed (non-fatal)', { error: String(err) });
         }
-        logger.info(`Auto-reindex complete: ${indexed}/${records.length} documents indexed silently`);
-      } catch (err) {
-        logger.debug('Auto-reindex failed (non-fatal)', { error: String(err) });
-      }
-    }, 20_000);
+      }, 20_000);
+    } else {
+      logger.info('Python AI disabled — set ENABLE_AI=true to enable');
+    }
 
     // Phase 6: Register graceful shutdown (also stops Python AI)
     const { registerGracefulShutdown } = require('./lib/graceful-shutdown');
