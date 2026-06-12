@@ -40,8 +40,8 @@ if (fs.existsSync(reactBuildPath)) {
   app.use(express.static(publicPath));
 }
 
-// ─── Trust proxy (ngrok, load balancers) — enables real IP via X-Forwarded-For
-app.set('trust proxy', true);
+// ─── Trust proxy (Render uses 1 hop, ngrok uses 1 hop)
+app.set('trust proxy', 1);
 
 // ─── Security headers ─────────────────────────────────────────────────────────
 app.use(helmet({ contentSecurityPolicy: false }));
