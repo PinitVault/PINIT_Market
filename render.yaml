@@ -3,7 +3,7 @@ services:
     name: pinit-dna-backend
     runtime: node
     plan: free
-    buildCommand: npm install --include=dev && npx prisma generate && npm run build
+    buildCommand: npm install --include=dev && npx prisma generate && npm run build && pip install -r python-ai/requirements.txt --quiet
     startCommand: npx prisma migrate deploy && npm run start:prod
     envVars:
       - key: NODE_ENV
