@@ -8,6 +8,14 @@
 import { PrismaClient } from '@prisma/client';
 import { logger } from './logger';
 
+// Add connection timeouts so slow DB connections fail fast (avoids Render's proxy dropping the TCP
+// connection after 30 s, which the browser reports as "Network Error" rather than an HTTP error).
+const _rawDbUrl = process.env['DATABASE_URL'] ?? '';
+if (_rawDbUrl && !_rawDbUrl.includes('connect_timeout')) {
+  const _sep = _rawDbUrl.includes('?') ? '&' : '?';
+  process.env['DATABASE_URL'] = `${_rawDbUrl}${_sep}connect_timeout=10&pool_timeout=5&connection_limit=3`;
+}
+
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
 export const prisma =
