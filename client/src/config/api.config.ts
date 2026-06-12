@@ -9,5 +9,7 @@
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const _env = (import.meta as any).env as Record<string, string | undefined>;
+const RENDER_BACKEND = 'https://pinit-dna-backend.onrender.com/api/v1';
 export const API_BASE_URL: string =
-  (_env['VITE_API_BASE_URL'])?.replace(/\/$/, '') ?? '/api/v1';
+  (_env['VITE_API_BASE_URL'])?.replace(/\/$/, '') ??
+  (import.meta.env.PROD ? RENDER_BACKEND : '/api/v1');
