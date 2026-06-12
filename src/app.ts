@@ -60,7 +60,8 @@ app.use(cors({
       origin.includes('ngrok-free.app')  ||
       origin.includes('ngrok-free.dev')  ||
       origin.includes('ngrok.app')       ||
-      origin.includes('vercel.app')      ||   // ← Vercel preview + production deployments
+      origin.includes('vercel.app')      ||
+      origin.includes('onrender.com')    ||   // ← Render deployments
       (!!process.env['ALLOWED_ORIGIN'] && origin === process.env['ALLOWED_ORIGIN']);
 
     if (allowed) return callback(null, true);
