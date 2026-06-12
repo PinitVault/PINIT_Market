@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && cd client && npm install && npm run build && cd .. && npx prisma generate && npm run build && (pip install -r python-ai/requirements.txt --quiet || echo "Python AI deps skipped - AI search unavailable")
-    startCommand: npx prisma migrate deploy && npm run start:prod
+    startCommand: npx prisma db push --accept-data-loss && npm run start:prod
     envVars:
       - key: NODE_ENV
         value: production
