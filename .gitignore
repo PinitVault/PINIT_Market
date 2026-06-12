@@ -20,3 +20,12 @@ Thumbs.db
 
 # Local env overrides
 .env.local
+
+# Python AI — large model files (downloaded at runtime)
+python-ai/models/
+python-ai/__pycache__/
+python-ai/data/
+
+# Client build output
+client/dist/
+client/node_modules/
