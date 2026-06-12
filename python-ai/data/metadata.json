@@ -6058,5 +6058,29 @@
     "textHash": "5ef534a239ec719e",
     "indexedAt": "2026-06-10T14:53:47.641333Z",
     "_deleted": false
+  },
+  {
+    "dnaRecordId": "1bbfa157-4176-4b6f-be08-c1fe6f3af047",
+    "filename": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "fileType": "DOCX",
+    "title": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "author": "",
+    "snippet": "Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com LinkedIn | GitHub 274320370463Professional Summary Software Engineer with hands-on experience building full-stack web applications, backend services, and AI-assisted development workflows using React.js, Next.js, TypeScript, JavaScript, FastAPI , PostgreSQL, and REST APIs. Experienced in leveraging AI coding tools for rapid prototyping, debugging, code generation, and feature development. Strong foundation in",
+    "fullText": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha Hyderabad, Telangana | +91 6302004848 | ashwithareddykavvam39@gmail.com LinkedIn | GitHub 274320370463Professional Summary Software Engineer with hands-on experience building full-stack web applications, backend services, and AI-assisted development workflows using React.js, Next.js, TypeScript, JavaScript, FastAPI , PostgreSQL, and REST APIs. Experienced in leveraging AI coding tools for rapid prototyping, debugging, code generation, and feature development. Strong foundation in software engineering, API integration, database design, and scalable application development with a passion for building high-quality products in fast-paced environments. 274320197971Technical Skills Languages: JavaScript, TypeScript, Python, SQL Frontend: React.js, Next.js, HTML5, CSS3, Tailwind CSS Backend: Node.js, FastAPI , REST APIs Databases: PostgreSQL, MongoDB, SQLite Tools: Git, GitHub, Postman, VS Code AI Development: ChatGPT, Gemini, Prompt Engineering, AI-Assisted Development Core Concepts: Full Stack Development, Authentication, API Integration, SDLC 274320198188Experience TCT (The Career Tech) | Junior Software Developer | Jan 2026 \u2013 Present \u2022 Developed backend services and application features using Python, FastAPI , SQL, and modern software development practices. \u2022 Built REST APIs, authentication workflows, database integrations, and scalable backend systems. \u2022 Utilized AI-assisted development tools to accelerate debugging, code generation, testing, documentation, and feature implementation. \u2022 Collaborated with team members on application development, testing, deployment, and maintenance activities. 274320198185Projects PINIT-DNA \u2014 AI-Powered Image Fingerprinting &amp; Secure Smart-Sharing Platform \u2022 Architected a 6-layer image DNA fingerprinting system using React.js, TypeScript, Node.js, Express.js, PostgreSQL, and modern full-stack development practices. \u2022 Built secure Smart Link workflows featuring OTP verification, access controls, download restrictions, expiry policies, and authorization middleware. \u2022 Developed AI-powered risk scoring, analytics dashboards, audit monitoring, and intelligent activity tracking modules. \u2022 Leveraged AI-assisted development workflows and prompt engineering techniques to accelerate feature development, debugging, and implementation. PinIT Vault \u2014 Secure Digital Identity &amp; Portfolio Management Platform \u2022 Developed a secure document management platform with encrypted storage, intelligent portfolio generation, and secure sharing features. \u2022 Built responsive interfaces using React.js, Next.js, Tailwind CSS, FastAPI , PostgreSQL, and Supabase . \u2022 Implemented OCR-based document classification, automated organization, and AI-powered workflow automation. \u2022 Designed access controls, activity tracking, and scalable frontend-backend integrations. Lung Cancer Prediction System \u2022 Developed a machine learning application using Python, Scikit-learn, Django, and SQLite for healthcare prediction. \u2022 Performed data preprocessing, feature engineering, model training, validation, and evaluation workflows. \u2022 Integrated trained models into web applications for real-time prediction and decision support. 274320198170 Education CMR Institute of Technology Nov 2022 \u2013 Apr 2026 Bachelor of Technology in Computer Science and Engineering (Data Science) CGPA: 7.75 274320198066Certifications AWS Academy Cloud Foundations Google AI-ML Virtual Internship Software Engineering Job Simulation \u2013 Goldman Sachs (Forage) Full Stack Web Development \u2013 DevTown",
+    "textHash": "0621476b348f0e6d",
+    "indexedAt": "2026-06-11T09:18:16.773916Z",
+    "_deleted": true
+  },
+  {
+    "dnaRecordId": "1bbfa157-4176-4b6f-be08-c1fe6f3af047",
+    "filename": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "fileType": "DOCX",
+    "title": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx",
+    "author": "",
+    "snippet": "Kavvam Ashwitha FuLL Stack Resume1",
+    "fullText": "Kavvam_Ashwitha_FuLL_Stack_Resume1.docx Kavvam Ashwitha FuLL Stack Resume1",
+    "textHash": "22016c8fcbdaf096",
+    "indexedAt": "2026-06-11T12:35:27.970932Z",
+    "_deleted": false
   }
 ]
