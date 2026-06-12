@@ -217,10 +217,12 @@ export default function App() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-6 max-w-2xl mx-auto bg-red-500/10 border border-red-500/30 rounded-xl px-5 py-4"
                 >
-                  <p className="text-red-400 text-sm font-medium">⚠ API Error</p>
+                  <p className="text-red-400 text-sm font-medium">⚠ Upload Failed</p>
                   <p className="text-red-300 text-xs mt-1 mono">{error}</p>
                   <p className="text-gray-500 text-xs mt-1">
-                    Make sure the backend is running on port 4000.
+                    {error === 'Network Error'
+                      ? 'The server is warming up — please wait a few seconds and try again.'
+                      : 'Please try again or select a different file.'}
                   </p>
                 </motion.div>
               ) : null}
