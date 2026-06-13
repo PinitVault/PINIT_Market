@@ -168,11 +168,17 @@ export class DuplicateCheckService {
       // Compute pHash64 of the uploaded image using the same sharp pipeline
       // as Layer 3 so comparisons are valid.
       const sharp = await import('sharp');
-      const { data: rawPixels, info } = await sharp.default(buffer)
-        .resize(32, 32, { fit: 'fill' })
-        .removeAlpha()
-        .raw()
-        .toBuffer({ resolveWithObject: true });
+      const sharpTimeout = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('sharp pHash timeout')), 8_000)
+      );
+      const { data: rawPixels, info } = await Promise.race([
+        sharp.default(buffer)
+          .resize(32, 32, { fit: 'fill' })
+          .removeAlpha()
+          .raw()
+          .toBuffer({ resolveWithObject: true }),
+        sharpTimeout,
+      ]);
 
       // DCT-based pHash64 — simplified 8x8 DCT of greyscale 32x32 block
       // (matches the implementation in layer3.perceptual.ts)

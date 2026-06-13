@@ -182,7 +182,7 @@ export class DnaOrchestrator {
     layerLabel: string
   ): Promise<T> {
     try {
-      return await withTimeout(fn, 30_000, layerLabel);
+      return await withTimeout(fn, 10_000, layerLabel);
     } catch (err) {
       logger.error(`Layer failed or timed out: ${layerLabel}`, { error: err });
       return { success: false, error: String(err) } as unknown as T;

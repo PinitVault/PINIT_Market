@@ -140,6 +140,19 @@ if (require.main === module) {
     // Phase 5: Start scheduled tasks
     vaultScheduler.start();
 
+    // Pre-warm sharp/libvips so the first real upload request doesn't hang
+    // waiting for native thread-pool initialization (critical on Render cold start).
+    setTimeout(() => {
+      import('sharp').then(({ default: sharp }) => {
+        const dummy = Buffer.from([0xff, 0xff, 0xff]); // 1×1 white pixel RGB
+        sharp(dummy, { raw: { width: 1, height: 1, channels: 3 } })
+          .toFormat('jpeg')
+          .toBuffer()
+          .then(() => logger.info('sharp warm-up complete'))
+          .catch(() => logger.warn('sharp warm-up failed (non-fatal)'));
+      }).catch(() => {});
+    }, 500);
+
     // Python AI and auto-reindex are disabled in production (free tier: 512MB RAM limit).
     // Enable locally with ENABLE_AI=true.
     if (process.env['ENABLE_AI'] === 'true') {
